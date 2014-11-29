@@ -29,6 +29,10 @@ gem 'spring',        group: :development
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.1'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
