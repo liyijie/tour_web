@@ -24,7 +24,17 @@ RSpec.describe ToursController, :type => :controller do
   # Tour. As you add validations to Tour, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+      title: "title",
+      sub_title: "sub title",
+      addr: "tour addr",
+      price: 100,
+      work_range: "1 to 8",
+      hint: "tour hint text",
+      desc: "tour desc text",
+      traffic: "tour traffic text",
+      city_id: 1
+    }
   }
 
   let(:invalid_attributes) {
