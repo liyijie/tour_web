@@ -22,4 +22,11 @@
 
 class Tour < ActiveRecord::Base
   belongs_to :city
+  has_many :tickets
+
+  accepts_nested_attributes_for :tickets, :allow_destroy => true
+
+  def price
+    tickets.minimum(:price)
+  end
 end
