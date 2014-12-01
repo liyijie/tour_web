@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :tours
 
+  resources :cities, only: [:index]
+
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
