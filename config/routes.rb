@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :tours
 
-  resources :cities, only: [:index]
+  resources :cities, only: [:show] do
+    resources :tours, only: [:index]
+  end
 
   get 'home/index'
 
