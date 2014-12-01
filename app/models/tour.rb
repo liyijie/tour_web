@@ -23,10 +23,20 @@
 class Tour < ActiveRecord::Base
   belongs_to :city
   has_many :tickets
+  belongs_to :imageable, :polymorphic => true
 
   accepts_nested_attributes_for :tickets, :allow_destroy => true
+  accepts_nested_attributes_for :images, :allow_destroy => true
 
   def price
     tickets.minimum(:price)
+  end
+  
+  def image_thumb
+    images.first.photo.url(:medium) if images.first
+  end
+
+  def image_large
+    images.first.photo.url if images.first
   end
 end
