@@ -15,3 +15,25 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+// 程序主JS
+// @author suntongwei
+(function($, window, document, undefined) {
+
+	var BasePath = window.BasePath = window.location.protocol + "//" + window.location.host + "/"
+	var ResPath  = window.ResPath  = BasePath;
+
+	var isDebug = window.isDebug = true;
+
+
+	var Web = window.Web = {
+
+		
+
+	};
+
+	jQuery(document).ready(function($) {
+		
+	});
+
+})(jQuery, window, document, undefined);

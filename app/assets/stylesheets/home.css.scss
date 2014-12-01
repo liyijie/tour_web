@@ -1,3 +1,93 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.search {
+	border: 2px solid #d1d1d1;
+	height: 300px;
+	.tt {
+		clear:both;
+		padding: 0px 30px 0px 30px;
+		border-bottom: 1px solid #d1d1d1;
+		border-right: 1px solid #d1d1d1;
+		background: #f1f1f1;
+		height: 49px;
+		line-height: 49px;
+		cursor: pointer;
+		color: #0c0c0c;
+		font-weight: bolder;
+		font-size: 15px;
+	}
+	.tt.active {
+		border-right: 0px;
+		background: #ffffff;
+		color: #55c0a5;
+	}
+	.tt:last-child {
+		border-bottom: 0px;
+	}
+	.cc {
+		float: left;
+		width: 430px;
+		height: 296px;
+		background: #ffffff;
+		display: none;
+		overflow: hidden;
+	}
+	.cc.active {
+		display: block;
+	}
+
+}
+
+#carousel-generic .carousel-inner .item img {
+	width: 485px;
+	height: 297px; 
+}
+
+#index-map {
+	margin-top: 20px;
+	.panel-body {
+		padding: 10px;
+		height: 400px;
+	}
+}
+
+#index-thumbnail {
+	border: 1px solid #d1d1d1 !important;
+	background: #fff;
+	.thumbnail {
+		border: 0px; 
+		padding-top: 15px;
+		.caption {
+			text-align: center;
+			background: #f4f4f4;
+			p {
+				color:#fe863c;
+			}
+			.price {
+				color: #ff5b0a;
+				font-size: 14px;
+			}
+			span {
+				font-size: 12px;
+				color: #000;
+			}
+		}
+	}
+	.thumbnail.line {
+		border-right: 1px solid #d1d1d1 !important;
+		.caption {
+			background: #fff;
+		}
+	}
+	.thumbnail.last {
+		.caption {
+			background: #fff;
+		}
+	}
+}
+
+
+
+
