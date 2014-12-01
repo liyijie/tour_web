@@ -41,7 +41,6 @@ RSpec.describe "tours/index", :type => :view do
     assert_select "tr>td", :text => "Title".to_s, :count => 2
     assert_select "tr>td", :text => "Sub Title".to_s, :count => 2
     assert_select "tr>td", :text => "Addr".to_s, :count => 2
-    assert_select "tr>td", :text => 1.5.to_s, :count => 2
     assert_select "tr>td", :text => "Work Range".to_s, :count => 2
     assert_select "tr>td", :text => "hint text".to_s, :count => 2
     assert_select "tr>td", :text => "desc text".to_s, :count => 2
@@ -50,6 +49,5 @@ RSpec.describe "tours/index", :type => :view do
     assert_select "tr>td", :text => 1.to_s, :count => 2
     assert_select "tr>td", :text => 2.5.to_s, :count => 2
     assert_select "tr>td", :text => 3.5.to_s, :count => 2
-    assert_select "tr>td", :text => nil.to_s, :count => 2
   end
 end
