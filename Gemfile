@@ -33,6 +33,9 @@ gem 'bootstrap-sass', '~> 3.3.1'
 gem 'friendly_id', '~> 5.0.0'
 gem 'babosa'
 
+# File Attachment Upload
+gem "paperclip", "~> 4.2"
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
