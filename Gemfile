@@ -29,6 +29,10 @@ gem 'spring',        group: :development
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.1'
 
+# FriendlyID
+gem 'friendly_id', '~> 5.0.0'
+gem 'babosa'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
