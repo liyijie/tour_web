@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141130072017) do
+ActiveRecord::Schema.define(version: 20141201011524) do
 
   create_table "cities", force: true do |t|
     t.string   "provice"
@@ -21,6 +21,19 @@ ActiveRecord::Schema.define(version: 20141130072017) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "tickets", force: true do |t|
+    t.string   "style"
+    t.string   "title"
+    t.text     "desc"
+    t.float    "price"
+    t.integer  "position"
+    t.integer  "tour_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tickets", ["tour_id"], name: "index_tickets_on_tour_id"
 
   create_table "tours", force: true do |t|
     t.string   "title"
