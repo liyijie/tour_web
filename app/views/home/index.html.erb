@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-md-6">
-  	 <div class="search">
+	<div class="col-md-6">
+  	 <!-- <div class="search">
 			<div class="pull-left">
   	 		<div class="tt active">景区门票</div>
   	 		<div class="tt">酒店预订</div>
@@ -15,205 +15,223 @@
   	 	<div class="cc" data-target="">
   	 			
   	 	</div>
+  	 </div> -->
+  	<div class="row" role="tabpanel">
+  	 	<div class="col-md-3 col-xs-3">
+  	 		<ul class="nav nav-tabs nav-stacked" role="tablist">
+  	 			<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+  	 			<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+  	 			<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+  	 			<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+  	 		</ul>
+  	 	</div>
+  	 	<div class="col-md-9 col-xs-9">
+  	 		<div class="tab-content">
+  	 			<div role="tabpanel" class="tab-pane active" id="home">home</div>
+  	 			<div role="tabpanel" class="tab-pane" id="profile">profile</div>
+  	 			<div role="tabpanel" class="tab-pane" id="messages">messages</div>
+  	 			<div role="tabpanel" class="tab-pane" id="settings">settings</div>
+  	 		</div>
+  	 	</div>
   	 </div>
+  	</div>
+  	<div class="col-md-6">
+  		<div id="carousel-generic" class="carousel slide" data-ride="carousel">
+  			<!-- Indicators -->
+  			<ol class="carousel-indicators">
+  				<li data-target="#carousel-generic" data-slide-to="0" class="active"></li>
+  				<li data-target="#carousel-generic" data-slide-to="1"></li>
+  			</ol>
+  			<!-- Wrapper for slides -->
+  			<div class="carousel-inner" role="listbox">
+  				<div class="item active">
+  					<%= image_tag "index_ad_1.png" %>
+  					<div class="carousel-caption">
+  					</div>
+  				</div>
+  				<div class="item">
+  					<%= image_tag "index_ad_1.png" %>
+  					<div class="carousel-caption">
+  					</div>
+  				</div>
+  			</div>
+  			<!-- Controls -->
+  			<a class="left carousel-control" href="#carousel-generic" role="button" data-slide="prev">
+  				<span class="glyphicon glyphicon-chevron-left"></span>
+  				<span class="sr-only"></span>
+  			</a>
+  			<a class="right carousel-control" href="#carousel-generic" role="button" data-slide="next">
+  				<span class="glyphicon glyphicon-chevron-right"></span>
+  				<span class="sr-only"></span>
+  			</a>
+  		</div>
+  	</div>
   </div>
-  <div class="col-md-6">
-	  <div id="carousel-generic" class="carousel slide" data-ride="carousel">
-		  <!-- Indicators -->
-		  <ol class="carousel-indicators">
-		    <li data-target="#carousel-generic" data-slide-to="0" class="active"></li>
-		    <li data-target="#carousel-generic" data-slide-to="1"></li>
-		  </ol>
-		  <!-- Wrapper for slides -->
-		  <div class="carousel-inner" role="listbox">
-		    <div class="item active">
-		      <%= image_tag "index_ad_1.png" %>
-		      <div class="carousel-caption">
-		      </div>
-		    </div>
-		    <div class="item">
-		      <%= image_tag "index_ad_1.png" %>
-		      <div class="carousel-caption">
-		      </div>
-		    </div>
-		  </div>
-		  <!-- Controls -->
-		  <a class="left carousel-control" href="#carousel-generic" role="button" data-slide="prev">
-		    <span class="glyphicon glyphicon-chevron-left"></span>
-		    <span class="sr-only"></span>
-		  </a>
-		  <a class="right carousel-control" href="#carousel-generic" role="button" data-slide="next">
-		    <span class="glyphicon glyphicon-chevron-right"></span>
-		    <span class="sr-only"></span>
-		  </a>
-		</div>
-	</div>
-</div>
 
-<div id="index-map" class="row clearfix">
-	<div class="col-md-12">
-		<div class="panel panel-default">
-		  <div class="panel-heading">
-		    <h3 class="panel-title">贵州旅游地图</h3>
-		  </div>
-		  <div id="bMap" class="panel-body">	
-		  </div>
-		</div>
-	</div> 
-</div>
+  <div id="index-map" class="row clearfix">
+  	<div class="col-md-12">
+  		<div class="panel panel-default">
+  			<div class="panel-heading">
+  				<h3 class="panel-title">贵州旅游地图</h3>
+  			</div>
+  			<div id="bMap" class="panel-body">	
+  			</div>
+  		</div>
+  	</div> 
+  </div>
 
-<div class="row clearfix">
-	<div class="col-md-12">
-		<h5><%= image_tag "icon_top.png", class: "pull-left" %>&nbsp;景区推荐/更多</h5>
-	</div>
-</div>
+  <div class="row clearfix">
+  	<div class="col-md-12">
+  		<h5><%= image_tag "icon_top.png", class: "pull-left" %>&nbsp;景区推荐/更多</h5>
+  	</div>
+  </div>
 
-<div id="index-thumbnail" class="row clearfix tours">
-	<div class="col-md-6">
-		<div class="thumbnail">
-			<%= image_tag "1.png" %>
-			<div class="caption">
-				<h5>黄果树瀑布</h5>
-				<p>[贵州旅游名片,世界上最大的瀑布群，名至实归的“中国第一瀑布”。]</p>
-				<p class="price">￥50元<span>起</span></p>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-3">
-		<div class="thumbnail clearfix">
-			<%= image_tag "2.png" %>
-			<div class="caption">
-				<h5>黄果树瀑布</h5>
-				<p>[山水灵洞，梦幻组合]</p>
-				<p class="price">￥50元<span>起</span></p>
-			</div>
-		</div>
-		<div class="thumbnail clearfix">
-			<%= image_tag "2.png" %>
-			<div class="caption">
-				<h5>黄果树瀑布</h5>
-				<p>[山水灵洞，梦幻组合]</p>
-				<p class="price">￥50元<span>起</span></p>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-3">
-			<div class="thumbnail clearfix">
-			<%= image_tag "2.png" %>
-			<div class="caption">
-				<h5>黄果树瀑布</h5>
-				<p>[山水灵洞，梦幻组合]</p>
-				<p class="price">￥50元<span>起</span></p>
-			</div>
-		</div>
-		<div class="thumbnail clearfix">
-			<%= image_tag "2.png" %>
-			<div class="caption">
-				<h5>黄果树瀑布</h5>
-				<p>[山水灵洞，梦幻组合]</p>
-				<p class="price">￥50元<span>起</span></p>
-			</div>
-		</div>
-	</div>
-</div>
+  <div id="index-thumbnail" class="row clearfix tours">
+  	<div class="col-md-6">
+  		<div class="thumbnail">
+  			<%= image_tag "1.png" %>
+  			<div class="caption">
+  				<h5>黄果树瀑布</h5>
+  				<p>[贵州旅游名片,世界上最大的瀑布群，名至实归的“中国第一瀑布”。]</p>
+  				<p class="price">￥50元<span>起</span></p>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="col-md-3">
+  		<div class="thumbnail clearfix">
+  			<%= image_tag "2.png" %>
+  			<div class="caption">
+  				<h5>黄果树瀑布</h5>
+  				<p>[山水灵洞，梦幻组合]</p>
+  				<p class="price">￥50元<span>起</span></p>
+  			</div>
+  		</div>
+  		<div class="thumbnail clearfix">
+  			<%= image_tag "2.png" %>
+  			<div class="caption">
+  				<h5>黄果树瀑布</h5>
+  				<p>[山水灵洞，梦幻组合]</p>
+  				<p class="price">￥50元<span>起</span></p>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="col-md-3">
+  		<div class="thumbnail clearfix">
+  			<%= image_tag "2.png" %>
+  			<div class="caption">
+  				<h5>黄果树瀑布</h5>
+  				<p>[山水灵洞，梦幻组合]</p>
+  				<p class="price">￥50元<span>起</span></p>
+  			</div>
+  		</div>
+  		<div class="thumbnail clearfix">
+  			<%= image_tag "2.png" %>
+  			<div class="caption">
+  				<h5>黄果树瀑布</h5>
+  				<p>[山水灵洞，梦幻组合]</p>
+  				<p class="price">￥50元<span>起</span></p>
+  			</div>
+  		</div>
+  	</div>
+  </div>
 
-<div class="row clearfix">
-	<div class="col-md-12">
-		<h5><%= image_tag "icon_top.png", class: "pull-left" %>&nbsp;酒店预订/更多</h5>
-	</div>
-</div>
+  <div class="row clearfix">
+  	<div class="col-md-12">
+  		<h5><%= image_tag "icon_top.png", class: "pull-left" %>&nbsp;酒店预订/更多</h5>
+  	</div>
+  </div>
 
-<div id="index-thumbnail" class="row clearfix">
-	<div class="col-md-3 right">
-		<div class="thumbnail line">
-			<%= image_tag "3.png" %>
-			<div class="caption">
-				<h5>贵阳天怡豪生大酒店</h5>
-				<p class="price">￥638元<span>起</span></p>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-3 right">
-		<div class="thumbnail line">
-			<%= image_tag "3.png" %>
-			<div class="caption">
-				<h5>贵阳天怡豪生大酒店</h5>
-				<p class="price">￥638元<span>起</span></p>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-3 right">
-		<div class="thumbnail line">
-			<%= image_tag "3.png" %>
-			<div class="caption">
-				<h5>贵阳天怡豪生大酒店</h5>
-				<p class="price">￥638元<span>起</span></p>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-3 right">
-		<div class="thumbnail last">
-			<%= image_tag "3.png" %>
-			<div class="caption">
-				<h5>贵阳天怡豪生大酒店</h5>
-				<p class="price">￥638元<span>起</span></p>
-			</div>
-		</div>
-	</div>
-</div>
+  <div id="index-thumbnail" class="row clearfix">
+  	<div class="col-md-3 right">
+  		<div class="thumbnail line">
+  			<%= image_tag "3.png" %>
+  			<div class="caption">
+  				<h5>贵阳天怡豪生大酒店</h5>
+  				<p class="price">￥638元<span>起</span></p>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="col-md-3 right">
+  		<div class="thumbnail line">
+  			<%= image_tag "3.png" %>
+  			<div class="caption">
+  				<h5>贵阳天怡豪生大酒店</h5>
+  				<p class="price">￥638元<span>起</span></p>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="col-md-3 right">
+  		<div class="thumbnail line">
+  			<%= image_tag "3.png" %>
+  			<div class="caption">
+  				<h5>贵阳天怡豪生大酒店</h5>
+  				<p class="price">￥638元<span>起</span></p>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="col-md-3 right">
+  		<div class="thumbnail last">
+  			<%= image_tag "3.png" %>
+  			<div class="caption">
+  				<h5>贵阳天怡豪生大酒店</h5>
+  				<p class="price">￥638元<span>起</span></p>
+  			</div>
+  		</div>
+  	</div>
+  </div>
 
-<div class="row clearfix">
-	<div class="col-md-12">
-		<h5><%= image_tag "icon_top.png", class: "pull-left" %>&nbsp;特色美食/更多</h5>
-	</div>
-</div>
+  <div class="row clearfix">
+  	<div class="col-md-12">
+  		<h5><%= image_tag "icon_top.png", class: "pull-left" %>&nbsp;特色美食/更多</h5>
+  	</div>
+  </div>
 
-<div id="index-thumbnail" class="row clearfix">
-	<div class="col-md-3 right">
-		<div class="thumbnail line">
-			<%= image_tag "3.png" %>
-			<div class="caption">
-				<h5>金牌罗记汤旺面</h5>
-				<p>菜系：贵州菜</p>
-				<p class="price">￥38元<span>起</span></p>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-3 right">
-		<div class="thumbnail line">
-			<%= image_tag "3.png" %>
-			<div class="caption">
-				<h5>金牌罗记汤旺面</h5>
-				<p>菜系：贵州菜</p>
-				<p class="price">￥38元<span>起</span></p>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-3 right">
-		<div class="thumbnail line">
-			<%= image_tag "3.png" %>
-			<div class="caption">
-				<h5>金牌罗记汤旺面</h5>
-				<p>菜系：贵州菜</p>
-				<p class="price">￥38元<span>起</span></p>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-3 right">
-		<div class="thumbnail last">
-			<%= image_tag "3.png" %>
-			<div class="caption">
-				<h5>金牌罗记汤旺面</h5>
-				<p>菜系：贵州菜</p>
-				<p class="price">￥38元<span>起</span></p>
-			</div>
-		</div>
-	</div>
-</div>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>
-<script type="text/javascript">
-	var map = new BMap.Map("bMap");
-	map.addControl(new BMap.NavigationControl()); 
-	map.centerAndZoom("贵阳", 12);  
-</script>
+  <div id="index-thumbnail" class="row clearfix">
+  	<div class="col-md-3 right">
+  		<div class="thumbnail line">
+  			<%= image_tag "3.png" %>
+  			<div class="caption">
+  				<h5>金牌罗记汤旺面</h5>
+  				<p>菜系：贵州菜</p>
+  				<p class="price">￥38元<span>起</span></p>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="col-md-3 right">
+  		<div class="thumbnail line">
+  			<%= image_tag "3.png" %>
+  			<div class="caption">
+  				<h5>金牌罗记汤旺面</h5>
+  				<p>菜系：贵州菜</p>
+  				<p class="price">￥38元<span>起</span></p>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="col-md-3 right">
+  		<div class="thumbnail line">
+  			<%= image_tag "3.png" %>
+  			<div class="caption">
+  				<h5>金牌罗记汤旺面</h5>
+  				<p>菜系：贵州菜</p>
+  				<p class="price">￥38元<span>起</span></p>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="col-md-3 right">
+  		<div class="thumbnail last">
+  			<%= image_tag "3.png" %>
+  			<div class="caption">
+  				<h5>金牌罗记汤旺面</h5>
+  				<p>菜系：贵州菜</p>
+  				<p class="price">￥38元<span>起</span></p>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>
+  <script type="text/javascript">
+  	var map = new BMap.Map("bMap");
+  	map.addControl(new BMap.NavigationControl()); 
+  	map.centerAndZoom("贵阳", 12);  
+  </script>
 
