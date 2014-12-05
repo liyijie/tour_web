@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :categories , only: [:show]
+
   resources :tours
 
   resources :cities, only: [:show] do
