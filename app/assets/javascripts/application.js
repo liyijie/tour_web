@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require lazyload
 //= require_tree .
 
 // 程序主JS

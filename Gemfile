@@ -36,6 +36,9 @@ gem 'babosa'
 # File Attachment Upload
 gem "paperclip", "~> 4.2"
 
+# lazyload
+gem 'lazyload-rails'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
