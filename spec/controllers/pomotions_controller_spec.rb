@@ -52,20 +52,20 @@ RSpec.describe PomotionsController, :type => :controller do
     end
   end
 
-  describe "GET new" do
-    it "assigns a new pomotion as @pomotion" do
-      get :new, {}, valid_session
-      expect(assigns(:pomotion)).to be_a_new(Pomotion)
-    end
-  end
+  # describe "GET new" do
+  #   it "assigns a new pomotion as @pomotion" do
+  #     get :new, {}, valid_session
+  #     expect(assigns(:pomotion)).to be_a_new(Pomotion)
+  #   end
+  # end
 
-  describe "GET edit" do
-    it "assigns the requested pomotion as @pomotion" do
-      pomotion = Pomotion.create! valid_attributes
-      get :edit, {:id => pomotion.to_param}, valid_session
-      expect(assigns(:pomotion)).to eq(pomotion)
-    end
-  end
+  # describe "GET edit" do
+  #   it "assigns the requested pomotion as @pomotion" do
+  #     pomotion = Pomotion.create! valid_attributes
+  #     get :edit, {:id => pomotion.to_param}, valid_session
+  #     expect(assigns(:pomotion)).to eq(pomotion)
+  #   end
+  # end
 
   describe "POST create" do
     describe "with valid params" do
