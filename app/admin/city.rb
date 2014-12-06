@@ -13,7 +13,7 @@ ActiveAdmin.register City do
   #   permitted << :other if resource.something?
   #   permitted
   # end
-  permit_params :provice, :name, :desc, :position, :cover_image, :info_images,
+  permit_params :provice, :name, :desc, :position, 
     cover_image_attributes: [:id, :photo, :_destroy],
     banner_image_attributes: [:id, :photo, :_destroy],
     info_images_attributes: [:id, :photo, :_destroy]
