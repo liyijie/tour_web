@@ -14,3 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore for this project
+/public/system
+/solr
+/coverage/
+/spec/tmp
