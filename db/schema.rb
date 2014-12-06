@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141206084348) do
+ActiveRecord::Schema.define(version: 20141206144144) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -88,9 +88,11 @@ ActiveRecord::Schema.define(version: 20141206084348) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "photo_type"
   end
 
   add_index "images", ["imageable_id", "imageable_type"], name: "index_images_on_imageable_id_and_imageable_type"
+  add_index "images", ["photo_type"], name: "index_images_on_photo_type"
 
   create_table "pomotions", force: true do |t|
     t.string   "title"
