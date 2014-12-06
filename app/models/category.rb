@@ -10,4 +10,6 @@
 #
 
 class Category < ActiveRecord::Base
+  has_one :cover_image, as: :imageable
+  has_one :banner_image, as: :imageable
 end
