@@ -44,111 +44,30 @@
 
 <div class="container index-theme">
   <div class="title_line">精品主题</div>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="box">
-        <%= image_tag "index1.png" %>
-      </div> 
-    </div>
-    <div class="col-md-6">
-      <div class="box">
-        <%= image_tag "index2.png" %>
+  
+  <% @categories.each_with_index do |category, index| %>
+    <%= raw '<div class="row">' if index % 2 == 0 %>
+      <div class="col-md-6">
+        <div class="box">
+          <%= link_to image_tag(category.cover_image.photo.url), category %>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="box">
-        <%= image_tag "index3.png" %>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="box">
-        <%= image_tag "index4.png" %>
-      </div>
-    </div>
-  </div>   
+    <%= raw '</div>' if index % 2 == 1 %>
+  <% end %>
 </div>
 <div class="container index-theme">
   <div class="title_line">热门城市</div>
-  <div class="row">
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <%= image_tag "index-city1.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-          <p>贵阳市，贵州省省会，是贵州省的政治、经济、文化、科教、交通中心和西南地图重要的叫通信枢纽、工业基地及商贸旅游服务中心。</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <%= image_tag "index-city2.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-          <p>贵阳市，贵州省省会，是贵州省的政治、经济、文化、科教、交通中心和西南地图重要的叫通信枢纽、工业基地及商贸旅游服务中心。</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <%= image_tag "index-city3.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-          <p>贵阳市，贵州省省会，是贵州省的政治、经济、文化、科教、交通中心和西南地图重要的叫通信枢纽、工业基地及商贸旅游服务中心。</p>
-        </div>
-      </div>
-    </div>
-    
-    </div>
-    <div class="row">
+  <% @cities.each_with_index do |city, index| %>
+    <%= raw '<div class="row">' if index % 3 == 0 %>
       <div class="col-md-4">
-      <div class="thumbnail">
-        <%= image_tag "index-city4.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-          <p>贵阳市，贵州省省会，是贵州省的政治、经济、文化、科教、交通中心和西南地图重要的叫通信枢纽、工业基地及商贸旅游服务中心。</p>
+        <div class="thumbnail">
+          <%= link_to image_tag(city.cover_image.photo.url), city, lazy: true %>
+          <div class="caption">
+            <p><%= city.desc %></p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <%= image_tag "index-city5.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-          <p>贵阳市，贵州省省会，是贵州省的政治、经济、文化、科教、交通中心和西南地图重要的叫通信枢纽、工业基地及商贸旅游服务中心。</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <%= image_tag "index-city6.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-          <p>贵阳市，贵州省省会，是贵州省的政治、经济、文化、科教、交通中心和西南地图重要的叫通信枢纽、工业基地及商贸旅游服务中心。</p>
-        </div>
-      </div>
-    </div>
-  </div> 
-  <div class="row">
-      <div class="col-md-4">
-      <div class="thumbnail">
-        <%= image_tag "index-city7.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-          <p>贵阳市，贵州省省会，是贵州省的政治、经济、文化、科教、交通中心和西南地图重要的叫通信枢纽、工业基地及商贸旅游服务中心。</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <%= image_tag "index-city8.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-          <p>贵阳市，贵州省省会，是贵州省的政治、经济、文化、科教、交通中心和西南地图重要的叫通信枢纽、工业基地及商贸旅游服务中心。</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <%= image_tag "index-city9.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-          <p>贵阳市，贵州省省会，是贵州省的政治、经济、文化、科教、交通中心和西南地图重要的叫通信枢纽、工业基地及商贸旅游服务中心。</p>
-        </div>
-      </div>
-    </div>
-  </div> 
+    <%= raw '</div>' if index % 3 == 2 %>
+  <% end %>
 </div>
 

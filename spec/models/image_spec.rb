@@ -12,6 +12,7 @@
 #  photo_content_type :string(255)
 #  photo_file_size    :integer
 #  photo_updated_at   :datetime
+#  photo_type         :string(255)
 #
 
 require 'rails_helper'
