@@ -39,6 +39,10 @@ gem "paperclip", "~> 4.2"
 # lazyload
 gem 'lazyload-rails'
 
+# active admin
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
