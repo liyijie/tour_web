@@ -33,6 +33,10 @@ ul,ol,li {
   padding: 0 !important;
 }
 
+.text-align-center {
+	text-align: center;
+}
+
 body {
 	background: #f3f3f3;
 	padding-top: 80px;
@@ -51,4 +55,50 @@ body {
 .carousel-indicators {
 	width: auto;	
 }
+
+.head {
+	.introduce {
+		li {
+			color: #3c3c3c;
+			font-size: 12px;
+			height: 25px;
+			line-height: 25px;
+		}
+		li.first {
+			text-decoration: underline;
+			font-weight: bold;
+		}
+	}
+	hr {
+		border-top: 1px solid #d1d1d1;
+	}
+	.info {
+		text-align: center;
+		font-size: 13px;
+		padding-bottom: 20px;
+	}
+	.col-md-5 {
+		border-left: 1px solid #d1d1d1;
+		padding: 0px 100px 0px 100px;
+		li {
+			font-weight: bold;
+			.link-phone {
+				color: #ff6600;
+				font-size: 22px;
+			}
+			input {
+				border: 1px solid #ff6600;
+				font-weight: normal;
+			}
+			.input-group-addon {
+				background: #ff6600;
+				color: #fff;
+				font-weight: bold;
+				border: 1px solid #ff6600;
+			}
+		}
+	}
+		
+}
+
 
