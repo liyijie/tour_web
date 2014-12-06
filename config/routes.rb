@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pomotions
+
   resources :categories , only: [:show]
 
   resources :tours

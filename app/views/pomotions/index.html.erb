@@ -1,0 +1,33 @@
+<h1>Listing pomotions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Sub title</th>
+      <th>Content</th>
+      <th>Rate</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pomotions.each do |pomotion| %>
+      <tr>
+        <td><%= pomotion.title %></td>
+        <td><%= pomotion.sub_title %></td>
+        <td><%= pomotion.content %></td>
+        <td><%= pomotion.rate %></td>
+        <td><%= pomotion.category %></td>
+        <td><%= link_to 'Show', pomotion %></td>
+        <td><%= link_to 'Edit', edit_pomotion_path(pomotion) %></td>
+        <td><%= link_to 'Destroy', pomotion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pomotion', new_pomotion_path %>

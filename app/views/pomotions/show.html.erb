@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @pomotion.title %>
+</p>
+
+<p>
+  <strong>Sub title:</strong>
+  <%= @pomotion.sub_title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @pomotion.content %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @pomotion.rate %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @pomotion.category %>
+</p>
+
+<%= link_to 'Edit', edit_pomotion_path(@pomotion) %> |
+<%= link_to 'Back', pomotions_path %>
