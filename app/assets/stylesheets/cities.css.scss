@@ -1,0 +1,80 @@
+.top-image img {
+	width: 100%;
+	height: 452px; 
+}
+
+.city {
+	.title_line	{
+		width: 100%;
+		height: 42px;
+		margin-top: 20px;
+		line-height: 42px;
+		font-size: 20px;
+		font-weight: bold;
+		text-align: center;
+		background: url("title_line2.png") no-repeat;
+		background-size: 100% 42px;
+	}
+	.info {
+		height: 430px;
+		.col-md-4	{
+			
+		}
+		.col-md-8 {
+			p {
+				height: 425px;
+				padding: 30px 40px 40px 40px;
+				line-height: 25px;
+				background: #eeeeee;
+			}
+		}
+	}
+	.tour .thumbnail {
+		padding-left: 0px;
+		padding-right: 0px;
+		padding-top: 0px;
+		border-radius: 0;
+		h4 {
+			text-align: center;
+			font-weight: bold;
+		}
+		img {
+			width: 100%;
+			height: 248px;
+		}
+	}
+	.hotel {
+		.col-md-3.left {
+			padding-right: 0px;
+		}
+		.col-md-3.right {
+			padding-left: 0px;
+		}
+		.col-md-3.center {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		.thumbnail {
+			border-radius: 0;
+			padding: 10px 10px 0px 10px;
+			img {
+				width: 100%;
+				height: 154px;
+			}
+		}	
+	}
+	.more {
+		text-align: center;
+		color: #ff6600;
+		border-top: 1px solid #c3c3c3;
+		border-bottom: 1px solid #c3c3c3;
+		background: #fff;
+		font-size: 12px;
+		font-weight: bold;
+		height: 25px;
+		line-height: 25px;
+		margin-left: 0px;
+		margin-right: 0px;
+		cursor: pointer;
+	}	
+}

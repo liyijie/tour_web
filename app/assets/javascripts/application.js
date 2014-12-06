@@ -29,13 +29,21 @@
 
 	var Web = window.Web = {
 
-		
+		Top : {
+
+			init : function(menuId) {
+				$(menuId).addClass('active');
+			}
+
+		}
 
 	};
 
 	jQuery(document).ready(function($) {
 		
 		$("img").lazyload();
+
+
 
 	});
 

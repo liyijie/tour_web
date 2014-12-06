@@ -42,14 +42,21 @@ body {
 	padding-top: 80px;
 }
 
-.navbar-brand {	
-	padding-top: 8px;
-	margin-top: 0px;
-}
-
-.navbar-nav .dropdown-menu a {
-	height: 50px;
-	line-height: 50px;
+.navbar {
+	.navbar-brand {	
+		padding-top: 8px;
+		margin-top: 0px;
+	}
+	.dropdown-menu a {
+		height: 50px;
+		line-height: 50px;
+	}
+	.input-group {
+		.form-control, .btn {
+			border-radius: 0;
+			height: 35px;
+		}
+	}
 }
 
 .carousel-indicators {
@@ -57,6 +64,7 @@ body {
 }
 
 .head {
+	margin-top: 15px;
 	.introduce {
 		li {
 			color: #3c3c3c;
@@ -89,12 +97,14 @@ body {
 			input {
 				border: 1px solid #ff6600;
 				font-weight: normal;
+				border-radius: 0;
 			}
 			.input-group-addon {
 				background: #ff6600;
 				color: #fff;
 				font-weight: bold;
 				border: 1px solid #ff6600;
+				border-radius: 0;
 			}
 		}
 	}
