@@ -35,6 +35,8 @@
 
 	jQuery(document).ready(function($) {
 		
+		$("img").lazyload();
+
 	});
 
 })(jQuery, window, document, undefined);

@@ -2,101 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.search {
-	border: 2px solid #d1d1d1;
-	height: 300px;
-	.tt {
-		clear:both;
-		padding: 0px 30px 0px 30px;
-		border-bottom: 1px solid #d1d1d1;
-		border-right: 1px solid #d1d1d1;
-		background: #f1f1f1;
-		height: 49px;
-		line-height: 49px;
-		cursor: pointer;
-		color: #0c0c0c;
-		font-weight: bolder;
-		font-size: 15px;
-	}
-	.tt.active {
-		border-right: 0px;
-		background: #ffffff;
-		color: #55c0a5;
-	}
-	.tt:last-child {
-		border-bottom: 0px;
-	}
-	.cc {
-		float: left;
-		width: 428px;
-		height: 296px;
-		background: #ffffff;
-		display: none;
-		overflow: hidden;
-	}
-	.cc.active {
-		display: block;
-	}
 
-}
 
 #carousel-generic .carousel-inner .item img {
-	width: 485px;
-	height: 297px; 
+	width: 100%;
+	height: 452px; 
 }
 
-#index-map {
-	margin-top: 20px;
-	.panel-body {
-		padding: 10px;
-		height: 400px;
-	}
-}
 
-#index-thumbnail {
-	border: 1px solid #d1d1d1 !important;
-	background: #fff;
-	.thumbnail {	
-		border: 0px; 
-		padding-top: 15px;
-		margin-bottom: 0px;
-		padding-bottom: 0px;
-		.caption {
-			text-align: center;
-			background: #f4f4f4;
-			p {
-				color:#fe863c;
-			}
-			.price {
-				color: #ff5b0a;
-				font-size: 14px;
-			}
-			span {
-				font-size: 12px;
-				color: #000;
-			}
+.index-theme {
+	.title_line	{
+		width: 100%;
+		height: 42px;
+		margin-top: 20px;
+		line-height: 42px;
+		font-size: 20px;
+		font-weight: bold;
+		text-align: center;
+		background: image-url("title_line.png") no-repeat;
+		background-size: 100% 42px;
+	}
+	.row {
+		margin-top: 20px;
+	}
+	.box {
+		border: 1px solid #bcbcbc;
+		background: #fff;
+		img {
+			width: 100%;
+			padding: 7px;
 		}
 	}
-	.col-md-3.right {
-		border-right: 1px solid #d1d1d1 !important;
-		.caption {
-			background: #fff;
-		}
-	}
-	.thumbnail.last {
-		.caption {
-			background: #fff;
-		}
-	}
-}
-
-#index-thumbnail.tours {
-	padding: 15px;
 	.thumbnail {
-		padding-top: 5px;
+		img {
+			width: 100%;
+			height: 400px;
+		}
 	}
 }
-
-
-
-

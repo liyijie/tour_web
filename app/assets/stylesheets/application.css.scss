@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+$navbar-height: 80px;
+$navbar-default-color: #000;
+$navbar-default-link-active-color: #fff;
+$navbar-default-link-hover-color: #fff;
+$navbar-default-link-active-bg: #48c1ff;
+$navbar-default-link-hover-bg: #48c1ff;
+$carousel-control-width: 5%;
+$carousel-indicator-active-bg: #ff9c49;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -25,4 +35,20 @@ ul,ol,li {
 
 body {
 	background: #f3f3f3;
+	padding-top: 80px;
 }
+
+.navbar-brand {	
+	padding-top: 8px;
+	margin-top: 0px;
+}
+
+.navbar-nav .dropdown-menu a {
+	height: 50px;
+	line-height: 50px;
+}
+
+.carousel-indicators {
+	width: auto;	
+}
+
