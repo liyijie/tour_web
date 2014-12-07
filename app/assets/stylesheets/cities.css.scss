@@ -21,12 +21,22 @@
 			
 		}
 		.col-md-8 {
-			p {
-				// height: 425px;
-				// padding: 30px 40px 40px 40px;
-				// line-height: 25px;
+			.row {
+				height: 425px;
+				padding: 30px 40px 40px 40px;
+				line-height: 25px;
 				background: #eeeeee;
-			}
+				.clearfix {
+					text-align: right;
+				}
+				.clearfix a {
+					color: #ff6600;
+					text-decoration: none;
+				}
+				.clearfix a:hover, .clearfix a:active {
+					text-decoration: none;
+				}
+			}	
 		}
 	}
 	.tour .thumbnail {
