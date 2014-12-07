@@ -43,6 +43,9 @@ gem 'lazyload-rails'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 
+# ckedit
+gem 'ckeditor', github: 'galetahub/ckeditor'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
