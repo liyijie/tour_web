@@ -37,7 +37,7 @@ ActiveAdmin.register City do
       f.input :desc
       f.input :position
 
-      f.fields_for :cover_image, :for => [:cover_image, f.object.build_cover_image] do |cf|
+      f.fields_for :cover_image, :for => [:cover_image, f.object.cover_image || f.object.build_cover_image] do |cf|
         cover_image = cf.object
         cf.input :photo, as: :file, label: "缩略图", hint: (cover_image.photo.blank?) \
           ? cf.template.content_tag(:span, "no cover page yet")
