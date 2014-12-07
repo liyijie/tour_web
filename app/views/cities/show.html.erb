@@ -1,5 +1,5 @@
 <div class="row top-image">
-	<%= image_tag "index-ad2.png", lazy: true %>
+  <%= image_tag @city.banner_image.photo.url, lazy: true if @city.banner_image %>
 </div>
 <div class="container city">
 	<div class="title_line">城市介绍</div>
