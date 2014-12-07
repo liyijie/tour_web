@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/activeadmin/activeadmin.git
-  revision: 5af560b2b6cd18526d397331c0c5cca90dfcbaeb
+  revision: e4f8dbbbb8046b719e100fddf83319b9e6cb8796
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0, >= 1.0.2)
@@ -140,29 +140,20 @@ GEM
       activesupport (= 4.1.6)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-<<<<<<< HEAD
     rake (10.4.2)
-    rdoc (4.1.2)
-      json (~> 1.4)
-    rspec-core (3.1.7)
-      rspec-support (~> 3.1.0)
-    rspec-expectations (3.1.2)
-=======
-    rake (10.4.0)
     ransack (1.5.1)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
       activesupport (>= 3.0)
       i18n
       polyamorous (~> 1.1)
-    rdoc (4.1.2)
+    rdoc (4.2.0)
       json (~> 1.4)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
-    rspec-core (3.0.4)
-      rspec-support (~> 3.0.0)
-    rspec-expectations (3.0.4)
->>>>>>> 190d99efd5b1550fb1fdbf9e7166fdd9ec0545c8
+    rspec-core (3.1.7)
+      rspec-support (~> 3.1.0)
+    rspec-expectations (3.1.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.1.0)
     rspec-mocks (3.1.3)
