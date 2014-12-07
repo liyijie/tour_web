@@ -44,6 +44,9 @@ gem 'lazyload-rails'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 
+# truncate html
+gem 'truncate_html'
+
 # ckedit
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
