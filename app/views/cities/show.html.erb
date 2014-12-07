@@ -6,21 +6,22 @@
 	<div class="row info">
 		<div class="col-md-4">
 			<div class="row">
-				<div class="col-md-6">
-					<%= image_tag "city1.png", size: "184x277", lazy: true %><br/><br/>
-					<%= image_tag "city3.png", size: "184x129", lazy: true %>
-				</div>
-				<div class="col-md-6">
-					<%= image_tag "city2.png", size: "184x129", lazy: true %><br/><br/>
-					<%= image_tag "city4.png", size: "184x277", lazy: true %>
-				</div>
+        <% unless @info_images.blank? %>
+          <div class="col-md-6">
+            <%= image_tag @info_images[0].photo.url, size: "184x277", lazy: true %><br/><br/>
+            <%= image_tag @info_images[1].photo.url, size: "184x129", lazy: true %>
+          </div>
+          <div class="col-md-6">
+            <%= image_tag @info_images[2].photo.url, size: "184x129", lazy: true %><br/><br/>
+            <%= image_tag @info_images[3].photo.url, size: "184x277", lazy: true %>
+          </div>
+        <% end %>
 			</div>
 		</div>
 		<div class="col-md-8">
 			<p>
-				&nbsp;&nbsp;&nbsp;&nbsp;贵阳市，贵州省省会，是贵州省的政治、经济、文化、科教、交通中心和西南地区重要的交通通信枢纽、工业基地及商贸旅游服务中心。“贵阳”因位于境内贵山之南而得名，已有400多年历史。古代贵阳盛产竹子，以制作乐器“筑”而闻名，故简称“筑”，也称“金筑”。<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;贵阳风光旖旎，是一座“山中有城，城中有山，绿带环绕，森林围城，城在林中，林在城中”的具有高原特色的现代化都市，中国首个国家森林城市、循环经济试点城市。以温度适宜、湿度适中、风速有利、紫外线辐射低、空气清洁、水质优良、海拔适宜、夏季低耗能等气候优势，荣登“中国十大避暑旅游城市”榜首，被中国气象学会授予“中国避暑之都”称号。<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;2014年国务院批复设立第八个国家级新区贵安新区，该新区规划定位为中国内陆开放型经济示范区、中国西部重要的经济增长极和生态文明示范区。<a href="#">更多详情</a>
+        <%= @city.desc %>
+				<a href="#">更多详情</a>
 			</p>	
 		</div>	
 	</div>
