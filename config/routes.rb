@@ -8,9 +8,11 @@ Rails.application.routes.draw do
   end
 
   resources :tours, only: [:show]
+  resources :hotels, only: [:show]
 
   resources :cities, only: [:show] do
     resources :tours, only: [:index]
+    resources :hotels, only: [:index]
   end
 
   get 'home/index'
