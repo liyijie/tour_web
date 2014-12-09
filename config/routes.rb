@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :pomotions, only: [:index, :show]
   end
 
-  resources :tours
+  resources :tours, only: [:show]
 
   resources :cities, only: [:show] do
     resources :tours, only: [:index]

@@ -23,20 +23,24 @@
 class Tour < ActiveRecord::Base
   belongs_to :city
   has_many :tickets
-  has_many :images, as: :imageable
+
+  has_one :cover_image, -> { where photo_type: "cover" }, class_name: "Image", as: :imageable, dependent: :destroy
+  has_many :info_images, -> { where photo_type: "info" }, class_name: "Image", as: :imageable, dependent: :destroy
+
 
   accepts_nested_attributes_for :tickets, :allow_destroy => true
-  accepts_nested_attributes_for :images, :allow_destroy => true
+  accepts_nested_attributes_for :info_images, :allow_destroy => true
+  accepts_nested_attributes_for :cover_image, :allow_destroy => true
 
   def price
     tickets.minimum(:price)
   end
   
   def image_thumb
-    images.first.photo.url(:medium) if images.first
+    cover_image.photo.url(:medium) if cover_image
   end
 
   def image_large
-    images.first.photo.url if images.first
+    cover_image.photo.url if cover_image
   end
 end
