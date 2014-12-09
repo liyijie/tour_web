@@ -123,6 +123,7 @@ GEM
     mini_portile (0.6.1)
     minitest (5.4.3)
     multi_json (1.10.1)
+    mysql2 (0.3.16)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
@@ -227,6 +228,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   lazyload-rails
+  mysql2
   paperclip (~> 4.2)
   rails (= 4.1.6)
   rspec-rails (~> 3.0)
