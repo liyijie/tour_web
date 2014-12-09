@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: hotels
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  addr       :string(255)
+#  tel        :string(255)
+#  desc       :text
+#  traffic    :text
+#  city_id    :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Hotel < ActiveRecord::Base
   belongs_to :city
 
