@@ -12,6 +12,7 @@ class CitiesController < ApplicationController
   def show
     @info_images = @city.info_images.limit(4)
     @tours = @city.tours.limit(6)
+    @hotels = @city.hotels.limit(4)
   end
 
   # GET /cities/new

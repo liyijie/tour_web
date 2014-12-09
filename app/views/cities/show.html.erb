@@ -69,42 +69,26 @@
   <% end %>
   <div class="title_line">精品酒店</div>
   <div class="row hotel">
-      <div class="col-md-3 left">
-      <div class="thumbnail">
-        <%= image_tag "city-hotel-1.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-        	<h4>贵阳天怡豪生大酒店</h4>
+    <% (0..3).each do |index| %>
+      <% if @hotels[index] %>
+        <% hotel = @hotels[index] %>
+        <div class="col-md-3 col-xs-6">
+          <div class="thumbnail">
+            <%= link_to(image_tag(hotel.image_large), hotel , lazy: true) %>
+            <div class="caption">
+              <h4><%= hotel.name %></h4>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-3 center">
-      <div class="thumbnail">
-        <%= image_tag "city-hotel-1.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-        	<h4>贵阳天怡豪生大酒店</h4>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3 center">
-      <div class="thumbnail">
-        <%= image_tag "city-hotel-1.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-        	<h4>贵阳天怡豪生大酒店</h4>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3 right">
-      <div class="thumbnail">
-        <%= image_tag "city-hotel-1.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-        	<h4>贵阳天怡豪生大酒店</h4>
-        </div>
-      </div>
-    </div>
-  </div> 
-  <div class="row more">
-  	更多酒店
-  </div> 
+      <% end %>
+    <% end %>
+  </div>
+  <% if @tours.size > 4 %>
+    <div class="row more">
+      更多景点
+    </div> 
+  <% end %>
+
   <div class="title_line">特色美食</div>
   <div class="row hotel">
       <div class="col-md-3 left">

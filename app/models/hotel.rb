@@ -21,5 +21,13 @@ class Hotel < ActiveRecord::Base
   
   accepts_nested_attributes_for :info_images, :allow_destroy => true
   accepts_nested_attributes_for :cover_image, :allow_destroy => true
+
+  def image_thumb
+    cover_image.photo.url(:medium) if cover_image
+  end
+
+  def image_large
+    cover_image.photo.url if cover_image
+  end
   
 end
