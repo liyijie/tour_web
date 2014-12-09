@@ -11,6 +11,7 @@ class CitiesController < ApplicationController
   # GET /cities/1.json
   def show
     @info_images = @city.info_images.limit(4)
+    @tours = @city.tours.limit(6)
   end
 
   # GET /cities/new

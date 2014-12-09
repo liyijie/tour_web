@@ -29,66 +29,44 @@
 	</div>
 	<div class="title_line">推荐景点</div>
 	<div class="row tour">
-      <div class="col-md-4">
-      <div class="thumbnail">
-        <%= image_tag "city-tour-1.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-        	<h4>南江大峡谷</h4>
-          <p>贵阳市，贵州省省会，是贵州省的政治、经济、文化、科教、交通中心和西南地图重要的叫通信枢纽、工业基地及商贸旅游服务中心。</p>
+    <% (0..2).each do |index| %>
+      <% if @tours[index] %>
+        <% tour = @tours[index] %>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <%= link_to(image_tag(tour.image_large), tour , lazy: true) %>
+            <div class="caption">
+              <h4><%= tour.title %></h4>
+              <p><%= tour.sub_title %></p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <%= image_tag "city-tour-1.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-        	<h4>南江大峡谷</h4>
-          <p>贵阳市，贵州省省会，是贵州省的政治、经济、文化、科教、交通中心和西南地图重要的叫通信枢纽、工业基地及商贸旅游服务中心。</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <%= image_tag "city-tour-1.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-        	<h4>南江大峡谷</h4>
-          <p>贵阳市，贵州省省会，是贵州省的政治、经济、文化、科教、交通中心和西南地图重要的叫通信枢纽、工业基地及商贸旅游服务中心。</p>
-        </div>
-      </div>
-    </div>
-  </div> 
-  <div class="row tour">
-      <div class="col-md-4">
-      <div class="thumbnail">
-        <%= image_tag "city-tour-1.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-        	<h4>南江大峡谷</h4>
-          <p>贵阳市，贵州省省会，是贵州省的政治、经济、文化、科教、交通中心和西南地图重要的叫通信枢纽、工业基地及商贸旅游服务中心。</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <%= image_tag "city-tour-1.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-        	<h4>南江大峡谷</h4>
-          <p>贵阳市，贵州省省会，是贵州省的政治、经济、文化、科教、交通中心和西南地图重要的叫通信枢纽、工业基地及商贸旅游服务中心。</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <%= image_tag "city-tour-1.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-        	<h4>南江大峡谷</h4>
-          <p>贵阳市，贵州省省会，是贵州省的政治、经济、文化、科教、交通中心和西南地图重要的叫通信枢纽、工业基地及商贸旅游服务中心。</p>
-        </div>
-      </div>
-    </div>
+      <% end %>
+    <% end %>
   </div>
-  <div class="row more">
-  	更多景点
-  </div> 
+  <% if @tours.size > 3 %>
+    <div class="row tour">
+      <% (3..5).each do |index| %>
+        <% if @tours[index] %>
+          <% tour = @tours[index] %>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <%= link_to(image_tag(tour.image_large), tour , lazy: true) %>
+              <div class="caption">
+                <h4><%= tour.title %></h4>
+                <p><%= tour.sub_title %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+  <% if @tours.size > 6 %>
+    <div class="row more">
+    	更多景点
+    </div> 
+  <% end %>
   <div class="title_line">精品酒店</div>
   <div class="row hotel">
       <div class="col-md-3 left">

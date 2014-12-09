@@ -13,7 +13,8 @@ ActiveAdmin.register Tour do
   #   permitted << :other if resource.something?
   #   permitted
   # end
-  permit_params :title, :sub_title, :addr, :work_range, :hint, :desc, :traffic, :lon, :lat, :city,
+  permit_params :title, :sub_title, :addr, :work_range, 
+    :hint, :desc, :traffic, :lon, :lat, :city_id,
     cover_image_attributes: [:id, :photo, :_destroy],
     info_images_attributes: [:id, :photo, :_destroy]
 
