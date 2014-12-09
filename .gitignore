@@ -17,6 +17,7 @@
 
 # Ignore for this project
 /public/system
+/public/assets
 /solr
 /coverage/
 /spec/tmp
