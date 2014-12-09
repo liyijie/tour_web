@@ -20,3 +20,4 @@
 /solr
 /coverage/
 /spec/tmp
+/config/database.yml
