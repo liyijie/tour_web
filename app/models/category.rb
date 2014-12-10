@@ -10,6 +10,9 @@
 #
 
 class Category < ActiveRecord::Base
+
+  has_many :pomotions
+
   has_one :cover_image, -> { where photo_type: "cover" }, class_name: "Image", as: :imageable, dependent: :destroy
   has_one :banner_image, -> { where photo_type: "banner" }, class_name: "Image", as: :imageable, dependent: :destroy
 
