@@ -43,4 +43,14 @@ class Tour < ActiveRecord::Base
   def image_large
     cover_image.photo.url if cover_image
   end
+
+  def self.relates origin, options = {}
+    city = origin.city
+    count = options[:count] || 3
+    if origin.class == Tour
+      Tour.where(city: city).where.not(id: origin.id).limit(count)
+   else
+      Tour.where(city: city).limit(count)
+    end
+  end
 end
