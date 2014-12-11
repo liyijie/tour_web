@@ -48,6 +48,12 @@ gem 'devise'
 # truncate html
 gem 'truncate_html'
 
+# http client
+gem 'httparty'
+
+# xml parser
+gem 'nokogiri'
+
 # ckedit
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
