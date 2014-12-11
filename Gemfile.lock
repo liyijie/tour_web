@@ -94,6 +94,9 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hike (1.2.3)
+    httparty (0.13.3)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.6.11)
     inherited_resources (1.5.1)
       actionpack (>= 3.2, < 4.2)
@@ -124,6 +127,7 @@ GEM
     mini_portile (0.6.1)
     minitest (5.4.3)
     multi_json (1.10.1)
+    multi_xml (0.5.5)
     mysql2 (0.3.16)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
@@ -230,11 +234,13 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   friendly_id (~> 5.0.0)
+  httparty
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
   lazyload-rails
   mysql2
+  nokogiri
   paperclip (~> 4.2)
   rails (= 4.1.6)
   rspec-rails (~> 3.0)
