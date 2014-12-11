@@ -13,7 +13,7 @@ class CitiesController < ApplicationController
     @info_images = @city.info_images.limit(4)
     @tours = @city.tours.limit(6)
     @hotels = @city.hotels.limit(4)
-    @weather = Weather.new.sina_weather
+    @weather = Weather.new(@city).sina_weather
   end
 
   # GET /cities/new
