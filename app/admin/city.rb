@@ -14,13 +14,16 @@ ActiveAdmin.register City do
   #   permitted
   # end
   permit_params :provice, :name, :desc, :position, 
+    :traffic, :note, :history, :special_product,
     cover_image_attributes: [:id, :photo, :_destroy],
     banner_image_attributes: [:id, :photo, :_destroy],
     info_images_attributes: [:id, :photo, :_destroy]
 
   index do
     column :name
-    column :desc
+    column :desc do |city|
+      truncate_html(city.desc, length: 80, omission: '...')
+    end
     column :position
     column :cover_image do |city|
       link_to(image_tag(city.cover_image.photo.url(:mini)), city.cover_image.photo.url) if city.cover_image
@@ -38,6 +41,10 @@ ActiveAdmin.register City do
     end
 
     f.input :desc, as: :ckeditor
+    f.input :traffic, as: :ckeditor
+    f.input :note, as: :ckeditor
+    f.input :history, as: :ckeditor
+    f.input :special_product, as: :ckeditor
 
     f.inputs do
       f.fields_for :cover_image, :for => [:cover_image, f.object.cover_image || f.object.build_cover_image] do |cf|
@@ -71,7 +78,9 @@ ActiveAdmin.register City do
     attributes_table do
       row :name
       row :position
-      row :desc
+      row :desc do
+        city.desc.html_safe
+      end
       row :cover_image do
         if city.cover_image
           link_to(image_tag(city.cover_image.photo.url(:medium)), city.cover_image.photo.url, target: "_blank")

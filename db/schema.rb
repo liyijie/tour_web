@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141213110640) do
+ActiveRecord::Schema.define(version: 20141213115655) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -64,6 +64,10 @@ ActiveRecord::Schema.define(version: 20141213110640) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.text     "traffic"
+    t.text     "note"
+    t.text     "history"
+    t.text     "special_product"
   end
 
   add_index "cities", ["slug"], name: "index_cities_on_slug", unique: true
