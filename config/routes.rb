@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :tours, only: [:show]
   resources :hotels, only: [:show]
 
-  resources :cities, only: [:show] do
+  resources :cities, only: [:index, :show] do
     resources :tours, only: [:index]
     resources :hotels, only: [:index]
   end
