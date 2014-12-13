@@ -1,5 +1,5 @@
 json.extract! @city, :id, :name
-json.image image_url(@city.banner_image.photo.url(:large)) if @city.banner_image
+json.image image_url(@city.app_image.photo.url) if @city.app_image
 json.desc href_trans(@city.desc)
 json.traffic href_trans(@city.traffic)
 json.note href_trans(@city.note)
