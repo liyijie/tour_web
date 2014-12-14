@@ -4,7 +4,8 @@ class ToursController < ApplicationController
   # GET /tours
   # GET /tours.json
   def index
-    @tours = Tour.all
+    @city = City.find(params[:city_id])
+    @tours = @city.tours.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /tours/1
