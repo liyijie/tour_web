@@ -1,4 +1,8 @@
 class TourOrdersController < ApplicationController
+
+  before_action :authenticate_user_from_token!
+  before_action :authenticate_user! 
+  
   before_action :set_tour_order, only: [:show, :edit, :update, :destroy]
 
   # GET /tour_orders
