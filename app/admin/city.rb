@@ -1,5 +1,5 @@
 ActiveAdmin.register City do
-
+  menu parent: "区域资源"
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -25,12 +25,14 @@ ActiveAdmin.register City do
     column :desc do |city|
       truncate_html(city.desc, length: 80, omission: '...')
     end
-    column :position
     column :cover_image do |city|
       link_to(image_tag(city.cover_image.photo.url(:mini)), city.cover_image.photo.url) if city.cover_image
     end
     column :banner_image do |city|
       link_to(image_tag(city.banner_image.photo.url(:mini)), city.banner_image.photo.url) if city.banner_image
+    end
+    column :app_image do |city|
+      link_to(image_tag(city.app_image.photo.url(:mini)), city.app_image.photo.url) if city.app_image
     end
     actions
   end
@@ -38,7 +40,6 @@ ActiveAdmin.register City do
   form :html => {:multipart => true} do |f|
     f.inputs do 
       f.input :name
-      f.input :position
     end
 
     f.input :desc, as: :ckeditor
@@ -70,6 +71,7 @@ ActiveAdmin.register City do
       end
     end
 
+    f.label "城市图片"
     f.inputs do
       f.has_many :info_images, :allow_destroy => true, :new_record => true do |cf|
         image = cf.object
