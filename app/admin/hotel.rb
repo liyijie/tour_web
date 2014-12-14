@@ -1,4 +1,5 @@
 ActiveAdmin.register Hotel do
+  menu parent: "区域资源"
 
 
   # See permitted parameters documentation:
