@@ -18,10 +18,18 @@ ActiveAdmin.register Category do
     cover_image_attributes: [:id, :photo, :_destroy],
     banner_image_attributes: [:id, :photo, :_destroy]
 
+  sidebar "精品路线", only: [:show, :edit] do
+    ul do
+      li link_to "#{category.pomotions.size} 条精品路线",    admin_category_pomotions_path(category)
+    end
+  end
+
   index do
     column :id
     column :name
-    column :desc
+    column :pomotions do |category|
+      link_to "#{category.pomotions.size} 条精品路线",    admin_category_pomotions_path(category)
+    end
     column :cover_image do |category|
       link_to(image_tag(category.cover_image.photo.url(:mini)), category.cover_image.photo.url) if category.cover_image
     end
