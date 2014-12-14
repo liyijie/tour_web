@@ -27,6 +27,12 @@ Rails.application.routes.draw do
     resources :hotels, only: [:index]
   end
 
+  resources :tickets, only: [:show] do
+    resources :tour_orders
+  end
+
+  resources :tour_orders, only: [:index, :show]
+
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
