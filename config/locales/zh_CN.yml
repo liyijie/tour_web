@@ -208,6 +208,7 @@ zh_CN:
       pomotion: 精品路线
       category: 路线类型
       hotel: 酒店
+      ticket: 门票
     attributes:
       city:
         name: 城市名称
@@ -219,6 +220,8 @@ zh_CN:
         cover_image: 缩略图
         banner_image: 高清图
         app_image: APP图
+        tours: 景点
+        hotels: 酒店
       tour:
         title: 景点标题
         sub_title: 景点副标题
@@ -233,6 +236,7 @@ zh_CN:
         city: 所属城市
         cover_image: 缩略图
         info_images: 景点图片
+        tickets: 门票
       pomotion:
         title: 路线名称
         sub_title: 路线副标题
@@ -246,6 +250,7 @@ zh_CN:
         desc: 路线类型描述
         cover_image: 缩略图
         banner_image: 高清图
+        pomotions: 精品路线
       hotel:
         name: 酒店名称
         addr: 酒店地址
@@ -255,4 +260,10 @@ zh_CN:
         city: 所属城市
         cover_image: 缩略图
         info_images: 酒店图片
+      ticket:
+        style: 门票类型
+        title: 门票名称
+        desc: 门票内容描述
+        price: 门票价格
+        tour: 所属景点
 

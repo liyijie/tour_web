@@ -1,1 +1,2 @@
-json.extract! @tour, :id, :title, :sub_title, :addr, :price, :work_range, :hint, :desc, :traffic, :seq, :position, :lon, :lat, :city_id, :created_at, :updated_at
+json.extract! @tour, :id, :title, :sub_title, :addr, :lon, :lat, :desc
+json.image @tour.info_images[0].photo.url(:large) unless @tour.info_images.blank?
