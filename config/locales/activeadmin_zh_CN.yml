@@ -36,7 +36,7 @@ zh_CN:
       "no": "无"
     main_content: "请执行 %{model}#main_content 来显示内容."
     logout: "退出"
-    powered_by: "Powered by %{active_admin} %{version}"
+    powered_by: "Powered by 大唐邦彦 V1.0"
     sidebars:
       filters: "所有条件"
     pagination:
