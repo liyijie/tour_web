@@ -1,5 +1,6 @@
 ActiveAdmin.register City do
 
+  menu label: "城市"
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -21,31 +22,32 @@ ActiveAdmin.register City do
     info_images_attributes: [:id, :photo, :_destroy]
 
   index do
-    column :name
-    column :desc do |city|
+    column "城市名称", :name
+    column "城市描述"  do |city|
       truncate_html(city.desc, length: 80, omission: '...')
     end
-    column :position
-    column :cover_image do |city|
+    column "缩略图" do |city|
       link_to(image_tag(city.cover_image.photo.url(:mini)), city.cover_image.photo.url) if city.cover_image
     end
-    column :banner_image do |city|
+    column "高清图" do |city|
       link_to(image_tag(city.banner_image.photo.url(:mini)), city.banner_image.photo.url) if city.banner_image
+    end
+    column "APP图" do |city|
+      link_to(image_tag(city.app_image.photo.url(:mini)), city.app_image.photo.url) if city.app_image
     end
     actions
   end
 
   form :html => {:multipart => true} do |f|
     f.inputs do 
-      f.input :name
-      f.input :position
+      f.input :name, label: "城市名称"
     end
 
-    f.input :desc, as: :ckeditor
-    f.input :traffic, as: :ckeditor
-    f.input :note, as: :ckeditor
-    f.input :history, as: :ckeditor
-    f.input :special_product, as: :ckeditor
+    f.input :desc, as: :ckeditor, label: "城市描述"
+    f.input :traffic, as: :ckeditor, label: "城市交通"
+    f.input :note, as: :ckeditor, label: "攻略游记"
+    f.input :history, as: :ckeditor, label: "人文历史"
+    f.input :special_product, as: :ckeditor, label: "特产"
 
     f.inputs do
       f.fields_for :cover_image, :for => [:cover_image, f.object.cover_image || f.object.build_cover_image] do |cf|
@@ -70,6 +72,7 @@ ActiveAdmin.register City do
       end
     end
 
+    f.label "城市图片"
     f.inputs do
       f.has_many :info_images, :allow_destroy => true, :new_record => true do |cf|
         image = cf.object
@@ -84,7 +87,7 @@ ActiveAdmin.register City do
 
   show do |city|
     attributes_table do
-      row :name
+      row :name, label: "城市名称"
       row :position
       row :desc do
         city.desc.html_safe
