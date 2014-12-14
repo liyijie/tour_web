@@ -20,10 +20,20 @@ ActiveAdmin.register City do
     app_image_attributes: [:id, :photo, :_destroy],
     info_images_attributes: [:id, :photo, :_destroy]
 
+  sidebar "城市周边", only: [:show, :edit] do
+    ul do
+      li link_to "#{city.tours.size} 个景点",    admin_city_tours_path(city)
+      li link_to "#{city.hotels.size} 家酒店",    admin_city_hotels_path(city)
+    end
+  end
+
   index do
     column :name
-    column :desc do |city|
-      truncate_html(city.desc, length: 80, omission: '...')
+    column :tours do |city|
+      link_to "#{city.tours.size} 个景点",    admin_city_tours_path(city)
+    end
+    column :hotels do |city|
+      link_to "#{city.hotels.size} 家酒店",    admin_city_hotels_path(city)
     end
     column :cover_image do |city|
       link_to(image_tag(city.cover_image.photo.url(:mini)), city.cover_image.photo.url) if city.cover_image

@@ -265,5 +265,6 @@ zh_CN:
         title: 门票名称
         desc: 门票内容描述
         price: 门票价格
+        tour_id: 所属景点
         tour: 所属景点
 

@@ -1,6 +1,8 @@
 ActiveAdmin.register Tour do
 
-  menu parent: "区域资源"
+  menu parent: "景区资源"
+
+  belongs_to :city, optional: true
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -19,15 +21,18 @@ ActiveAdmin.register Tour do
     cover_image_attributes: [:id, :photo, :_destroy],
     info_images_attributes: [:id, :photo, :_destroy]
 
+  sidebar "景点门票", only: [:show, :edit] do
+    ul do
+      li link_to "#{tour.tickets.size} 张门票",    admin_tour_tickets_path(tour)
+    end
+  end
 
   index do
     column :title
-    column :sub_title
-    column :addr
-    column :work_range
-    column :lon
-    column :lat
     column :city
+    column :tickets do |tour|
+      link_to "#{tour.tickets.size} 张门票",    admin_tour_tickets_path(tour)
+    end
     column :cover_image do |tour|
       link_to(image_tag(tour.cover_image.photo.url(:mini)), tour.cover_image.photo.url) if tour.cover_image
     end
