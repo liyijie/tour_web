@@ -61,6 +61,10 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 # Paginate
 gem 'will_paginate', '~> 3.0.6'
 
+# State Machine for state
+# gem 'state_machine'
+gem 'aasm'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
