@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141214034912) do
+ActiveRecord::Schema.define(version: 20141214125556) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -154,6 +154,20 @@ ActiveRecord::Schema.define(version: 20141214034912) do
   end
 
   add_index "tickets", ["tour_id"], name: "index_tickets_on_tour_id"
+
+  create_table "tour_orders", force: true do |t|
+    t.float    "total_price"
+    t.string   "state"
+    t.integer  "number"
+    t.integer  "user_id"
+    t.integer  "ticket_id"
+    t.string   "token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tour_orders", ["ticket_id"], name: "index_tour_orders_on_ticket_id"
+  add_index "tour_orders", ["user_id"], name: "index_tour_orders_on_user_id"
 
   create_table "tours", force: true do |t|
     t.string   "title"
