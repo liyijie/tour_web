@@ -209,6 +209,7 @@ zh_CN:
       category: 路线类型
       hotel: 酒店
       ticket: 门票
+      tour_order: 门票订单
     attributes:
       city:
         name: 城市名称
@@ -267,4 +268,11 @@ zh_CN:
         price: 门票价格
         tour_id: 所属景点
         tour: 所属景点
+      tour_order:
+        total_price: 订单总价
+        state: 订单状态
+        number: 门票数量
+        ticket_id: 门票
+        ticket: 门票
+
 
