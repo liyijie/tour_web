@@ -85,7 +85,8 @@ ActiveAdmin.register City do
     f.inputs do
       f.has_many :info_images, :allow_destroy => true, :new_record => true do |cf|
         image = cf.object
-        cf.input :photo, label: "#{image.id}", as: :file, :hint => image.photo.blank? \
+        cf.input :desc, label: "图片描述"
+        cf.input :photo, label: "图片文件#{image.id}", as: :file, :hint => image.photo.blank? \
           ? cf.template.content_tag(:span, "no cover page yet")
           : cf.template.link_to(image_tag(image.photo.url(:medium)), image.photo.url, target: "_blank")
       end
