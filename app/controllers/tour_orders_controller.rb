@@ -3,7 +3,8 @@ class TourOrdersController < ApplicationController
   before_action :authenticate_user_from_token!
   before_action :authenticate_user! 
   
-  before_action :set_tour_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_tour_order, only: [:show, :edit, :update, :destroy, 
+            :pay, :cancel, :refund, :complete]
 
   # GET /tour_orders
   # GET /tour_orders.json
