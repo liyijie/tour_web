@@ -65,6 +65,9 @@ gem 'will_paginate', '~> 3.0.6'
 # gem 'state_machine'
 gem 'aasm'
 
+# Payment
+gem 'alipay', :github => 'chloerei/alipay'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end

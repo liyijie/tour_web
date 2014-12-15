@@ -17,6 +17,12 @@ GIT
       sass-rails
 
 GIT
+  remote: git://github.com/chloerei/alipay.git
+  revision: cef30ff5c3291369bff3417f6657a13692b825f4
+  specs:
+    alipay (0.3.0)
+
+GIT
   remote: git://github.com/galetahub/ckeditor.git
   revision: d0bc44a6fc9fa67d4b007877688f89e5a0cbf79f
   specs:
@@ -233,6 +239,7 @@ DEPENDENCIES
   aasm
   active_skin
   activeadmin!
+  alipay!
   babosa
   bootstrap-sass (~> 3.3.1)
   ckeditor!
