@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141214125556) do
+ActiveRecord::Schema.define(version: 20141215113747) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -164,6 +164,9 @@ ActiveRecord::Schema.define(version: 20141214125556) do
     t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "outdate"
+    t.string   "user_phone"
+    t.string   "user_name"
   end
 
   add_index "tour_orders", ["ticket_id"], name: "index_tour_orders_on_ticket_id"
