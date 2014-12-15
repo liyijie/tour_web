@@ -31,7 +31,17 @@ Rails.application.routes.draw do
     resources :tour_orders
   end
 
-  resources :tour_orders, only: [:index, :show]
+  resources :tour_orders, only: [:index, :show] do
+    member do
+      post 'pay' 
+
+      post 'cancel'
+      post 'refund'
+
+      get 'alipay_done'
+      post 'alipay_notify'
+    end
+  end
 
   get 'home/index'
 
