@@ -65,6 +65,87 @@ class TourOrdersController < ApplicationController
     end
   end
 
+  # POST /tour_orders/1/pay
+  # POST /tour_orders/1/pay.json
+  def pay
+    if @tour_order.in_progress?
+      respond_to do |format|
+        format.html { redirect_to generate_pay_link_by_order(@tour_order) }
+        format.json { render json: {url: generate_wap_pay_link_by_order(@tour_order)} }
+      end
+      
+    end
+  end
+
+  def alipay_done
+    callback_params = params.except(*request.path_parameters.keys)
+    if callback_params.any? && Alipay::Sign.verify?(callback_params) && ['TRADE_SUCCESS', 'TRADE_FINISHED'].include?(params[:trade_status])
+      @order = current_user.tour_orders.find params[:id]
+      @order.pay! if @order.token == params[:out_trade_no] && @order.may_pay?
+      redirect_to @order, notice: 'Tour order was successfully paid.'
+    end
+  end
+
+  def alipay_notify
+    notify_params = params.except(*request.path_parameters.keys)
+    if Alipay::Sign.verify?(notify_params) && Alipay::Notify.verify?(notify_params)
+      @order = TourOrder.find params[:id]
+      if ['TRADE_SUCCESS', 'TRADE_FINISHED'].include?(params[:trade_status])
+        @order.pay! if @order.token == params[:out_trade_no] && @order.may_pay?
+      elsif params[:trade_status] == 'TRADE_CLOSED'
+        @order.cancel!
+      end
+      render text: 'success'
+    else
+      render text: 'fail'
+    end
+  end
+
+  # POST /tour_orders/1/cancel
+  # POST /tour_orders/1/cancel.json
+  def cancel
+    @tour_order.cancel
+    respond_to do |format|
+      if @tour_order.save
+        format.html { redirect_to @tour_order, notice: 'Tour order was successfully canceled.' }
+        format.json { render :show, status: :ok, location: @tour_order }
+      else
+        format.html { redirect_to @tour_order }
+        format.json { render json: @tour_order.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # POST /tour_orders/1/refund
+  # POST /tour_orders/1/refund.json
+  def refund
+    @tour_order.refund
+    respond_to do |format|
+      if @tour_order.save
+        format.html { redirect_to @tour_order, notice: 'Tour order was successfully refunded.' }
+        format.json { render :show, status: :ok, location: @tour_order }
+      else
+        format.html { redirect_to @tour_order }
+        format.json { render json: @tour_order.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # POST /tour_orders/1/complete
+  # POST /tour_orders/1/complete.json
+  def complete
+    @tour_order.complete
+    respond_to do |format|
+      if @tour_order.save
+        format.html { redirect_to @tour_order, notice: 'Tour order was successfully completed.' }
+        format.json { render :show, status: :ok, location: @tour_order }
+      else
+        format.html { redirect_to @tour_order }
+        format.json { render json: @tour_order.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tour_order
