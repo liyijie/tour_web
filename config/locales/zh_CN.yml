@@ -274,5 +274,8 @@ zh_CN:
         number: 门票数量
         ticket_id: 门票
         ticket: 门票
+        user_phone: 预订电话
+        user_name: 预订名称
+        outdate: 截至日期
 
 
