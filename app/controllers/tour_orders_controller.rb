@@ -101,6 +101,22 @@ class TourOrdersController < ApplicationController
     end
   end
 
+  def alipay_wap_notify
+    notify_params = params.except(*request.path_parameters.keys)
+
+    if Alipay::Notify::Wap.verify?(notify_params)
+      alipay_params = {}
+      alipay_params[:id] = params[:id]
+      alipay_params[:out_trade_no] = Hash.from_xml(params[:notify_data])['notify']['out_trade_no']
+      alipay_params[:trade_status] = Hash.from_xml(params[:notify_data])['notify']['trade_status']
+
+      alipay_notify! alipay_params
+      render :text => 'success'
+    else
+      render :text => 'error'
+    end
+  end
+
   def alipay_notify
     notify_params = params.except(*request.path_parameters.keys)
     if Alipay::Sign.verify?(notify_params) && Alipay::Notify.verify?(notify_params)
