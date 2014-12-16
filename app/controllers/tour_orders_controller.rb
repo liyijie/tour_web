@@ -182,7 +182,10 @@ class TourOrdersController < ApplicationController
     def alipay_notify! alipay_params
       @order = TourOrder.find alipay_params[:id]
       if ['TRADE_SUCCESS', 'TRADE_FINISHED'].include?(alipay_params[:trade_status])
-        @order.pay! if @order.token == alipay_params[:out_trade_no] && @order.may_pay?
+        if @order.token == alipay_params[:out_trade_no] && @order.may_pay?
+          @order.pay!
+          @order.sms 
+        end
       elsif alipay_params[:trade_status] == 'TRADE_CLOSED'
         @order.cancel!
       end

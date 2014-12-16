@@ -64,5 +64,46 @@ class TourOrder < ActiveRecord::Base
     end
   end
 
+  def sms
+    timestamp = DateTime.now.strftime('%Y%m%d%H%M%S')
+    url = "http://api.dsjtour.com/api/openinterface.ashx?account=ctd01@dsjtour"
+    response = HTTParty.post(url, 
+        :body => 
+        {
+          head: {
+            sequenceid:"80000001",
+            sign:"C0-7C-C7-6C-56-CB-AE-B3-1F-EF-0A-69-D8-79-7A-FE",
+            timestamp: timestamp,
+            organization:"153",
+            account:"gtw01@dsjtour",
+            method:"send"
+          },
+          body: {
+            dltel: "010-52360768",
+            dlurl:"www.gt278.com",
+            dlname:"贵途网",
+            productid:"1654",
+            priceid:"6664",
+            policyid:"9336",
+            tel: self.user_phone,
+            count:"1",
+            orderid: self.token,
+            usename: self.user_name,
+            typeid:"0",
+            tickettype:"4",
+            ticketcode:"",
+            zipcode:"",
+            add:"",
+            email:"gtw01@dsjtour",
+            isbespeak:"0",
+            bespeakDate: self.outdate.to_s,
+            bespeakid:"0"
+          }                   
+        }.to_json,
+        :headers => { 'Content-Type' => 'application/json' } )
+    response.code == 200
+  end
+    
+
 
 end
