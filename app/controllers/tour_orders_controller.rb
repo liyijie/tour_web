@@ -90,6 +90,17 @@ class TourOrdersController < ApplicationController
     end
   end
 
+  def alipay_web_notify
+    notify_params = params.except(*request.path_parameters.keys)
+
+    if Alipay::Notify.verify?(notify_params)
+      alipay_notify! params
+      render :text => 'success'
+    else
+      render :text => 'error'
+    end
+  end
+
   def alipay_notify
     notify_params = params.except(*request.path_parameters.keys)
     if Alipay::Sign.verify?(notify_params) && Alipay::Notify.verify?(notify_params)
@@ -159,5 +170,14 @@ class TourOrdersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_order_params
       params.require(:tour_order).permit(:number, :ticket_id, :user_phone, :user_name, :outdate)
+    end
+
+    def alipay_notify! alipay_params
+      @order = TourOrder.find alipay_params[:id]
+      if ['TRADE_SUCCESS', 'TRADE_FINISHED'].include?(alipay_params[:trade_status])
+        @order.pay! if @order.token == alipay_params[:out_trade_no] && @order.may_pay?
+      elsif alipay_params[:trade_status] == 'TRADE_CLOSED'
+        @order.cancel!
+      end
     end
 end
