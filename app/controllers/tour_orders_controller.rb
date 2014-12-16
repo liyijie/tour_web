@@ -117,6 +117,17 @@ class TourOrdersController < ApplicationController
     end
   end
 
+  def alipay_app_notify
+    notify_params = params.except(*request.path_parameters.keys)
+
+    if Alipay::Notify::App.verify?(notify_params)
+      alipay_notify! params
+      render :text => 'success'
+    else
+      render :text => 'error'
+    end
+  end
+
   def alipay_notify
     notify_params = params.except(*request.path_parameters.keys)
     if Alipay::Sign.verify?(notify_params) && Alipay::Notify.verify?(notify_params)
