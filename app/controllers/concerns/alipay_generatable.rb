@@ -17,8 +17,8 @@ module AlipayGeneratable
         :price             => order.ticket.price,
         :quantity          => order.number,
         :discount          => 0,
-        :return_url        => alipay_done_tour_order_url(order), # localhost isn't work http://bit.ly/1cwKbsw
-        :notify_url        => alipay_notify_tour_order_url(order)
+        :return_url        => tour_order_url(order), # localhost isn't work http://bit.ly/1cwKbsw
+        :notify_url        => alipay_web_notify_tour_order_url(order)
     }
     Alipay::Service.create_direct_pay_by_user_url(options)
   end
@@ -29,8 +29,8 @@ module AlipayGeneratable
         :out_trade_no  =>  order.token,
         :subject       => "#{order.ticket.title} 门票",
         :total_fee     => order.total_price,
-        :notify_url    => alipay_notify_tour_order_url(order),
-        :call_back_url => tour_order_url(order)
+        :notify_url    => alipay_wap_notify_tour_order_url(order),
+        :call_back_url => alipay_done_tour_order_url(order)
       }
     }
     token = Alipay::Service::Wap.trade_create_direct_token(options)

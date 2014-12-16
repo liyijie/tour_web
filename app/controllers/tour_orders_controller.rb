@@ -1,8 +1,8 @@
 class TourOrdersController < ApplicationController
   include AlipayGeneratable
 
-  before_action :authenticate_user_from_token!
-  before_action :authenticate_user! 
+  before_action :authenticate_user_from_token!, except: [:alipay_web_notify, :alipay_wap_notify, :alipay_app_notify, :alipay_done]
+  before_action :authenticate_user!, except: [:alipay_web_notify, :alipay_wap_notify, :alipay_app_notify, :alipay_done]
   
   before_action :set_tour_order, only: [:show, :edit, :update, :destroy, 
             :pay, :cancel, :refund, :complete]
@@ -82,12 +82,7 @@ class TourOrdersController < ApplicationController
   end
 
   def alipay_done
-    callback_params = params.except(*request.path_parameters.keys)
-    if callback_params.any? && Alipay::Sign.verify?(callback_params) && ['TRADE_SUCCESS', 'TRADE_FINISHED'].include?(params[:trade_status])
-      @order = current_user.tour_orders.find params[:id]
-      @order.pay! if @order.token == params[:out_trade_no] && @order.may_pay?
-      redirect_to @order, notice: 'Tour order was successfully paid.'
-    end
+    render text: "您已支付成功"
   end
 
   def alipay_web_notify
@@ -125,21 +120,6 @@ class TourOrdersController < ApplicationController
       render :text => 'success'
     else
       render :text => 'error'
-    end
-  end
-
-  def alipay_notify
-    notify_params = params.except(*request.path_parameters.keys)
-    if Alipay::Sign.verify?(notify_params) && Alipay::Notify.verify?(notify_params)
-      @order = TourOrder.find params[:id]
-      if ['TRADE_SUCCESS', 'TRADE_FINISHED'].include?(params[:trade_status])
-        @order.pay! if @order.token == params[:out_trade_no] && @order.may_pay?
-      elsif params[:trade_status] == 'TRADE_CLOSED'
-        @order.cancel!
-      end
-      render text: 'success'
-    else
-      render text: 'fail'
     end
   end
 
