@@ -39,7 +39,9 @@ Rails.application.routes.draw do
       post 'refund'
 
       get 'alipay_done'
-      post 'alipay_notify'
+      post 'alipay_web_notify'
+      post 'alipay_wap_notify'
+      post 'alipay_app_notify'
     end
   end
 
