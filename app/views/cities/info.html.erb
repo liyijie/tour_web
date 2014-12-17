@@ -26,7 +26,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row title_line">旅游天气</div>
+	<div class="title_line">旅游天气</div>
 	<div class="row weather">	
 		<div class="col-md-4">
 			<ul>
@@ -116,7 +116,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="row title_line">地图交通</div>
+	<div class="title_line">地图交通</div>
 	<div class="row map">
 		<div class="col-md-5">
 			<ul class="nav nav-pills" role="tablist">
@@ -136,8 +136,7 @@
 			  <div role="tabpanel" class="tab-pane" id="car">...</div>
 			</div>
 		</div>	
-		<div class="col-md-7">
-			<div id="bmap"></div>	
+		<div id="bmap" class="col-md-7">
 		</div>
 	</div>
 	<div class="row info-menu">
@@ -180,9 +179,11 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=wBIWFAbfDRVkW0Hnsd5UGmlW" />
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>
 <script type="text/javascript">
-	var map = new BMap.Map("bmap"); 
-	var point = new BMap.Point(116.404, 39.915);
-	map.centerAndZoom(point, 15); 
+  var map = new BMap.Map("bmap");
+	map.centerAndZoom("<%= @city.name %>", 12);
+	map.disableScrollWheelZoom();
+	map.addControl(new BMap.NavigationControl());
+	map.addControl(new BMap.PanoramaControl());
 </script>
