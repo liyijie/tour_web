@@ -1,16 +1,9 @@
 <%=image_tag("head-1.png", :class => "headpic") %>
 <div class="container">
-  <br>
-  <div class="row-fluid">
-    <a href="#" style="color:black;">首页</a>
-    >
-    <a href="#" style="color:black;">精品线路</a>
-    >
-    <a href="#" style="color:black;">好山乐水</a>
-    >
-    <a href="#" style="color:black;">黄果树、天星桥、陡坡塘高品质一日游</a>
-  </div>
-  <br></div>
+  <ol class="breadcrumb">
+    <%= render_breadcrumbs :tag => :li, :separator => "" %>
+  </ol>
+</div>
 
 <div class="panel panel-default container">
   <div class="row">
