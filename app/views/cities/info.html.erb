@@ -1,0 +1,188 @@
+
+<div class="row top-image">
+	<%= image_tag @city.banner_image.photo.url, lazy: true if @city.banner_image %></div>
+
+<div class="container city_info">
+	<div class="row">
+		<ol class="breadcrumb">
+			<li>
+				<a href="#">首页</a>
+			</li>
+			<li>
+				<a href="#">热门城市</a>
+			</li>
+			<li>
+				<a href="#">
+					<%= @city.name %></a>
+			</li>
+			<li class="active">城市介绍</li>
+		</ol>
+	</div>
+	<div class="row">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h3 class="text-align-center">简&nbsp;&nbsp;介</h3><br/>
+				<%= @city.desc.html_safe %>
+			</div>
+		</div>
+	</div>
+	<div class="row title_line">旅游天气</div>
+	<div class="row weather">	
+		<div class="col-md-4">
+			<ul>
+				<li><h4>贵阳</h4></li>
+				<li><h4>2014-12-10 周三</h4></li>
+				<li>12:00</li>
+			</ul>
+		</div>	
+		<div class="col-md-4 text-align-center">
+			<ul>
+				<li>图标</li>
+				<li><h1>21℃</h1></li>
+				<li>小雨 | 东北风微风 | 湿度：71%</li>
+			</ul>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+	<div class="row weather-days title">
+		<span>天气预报</span>
+	</div>
+	<div class="row weather-days">
+		<div class="col-md-2">
+			<ul>
+				<li>12月10日</li>
+				<li class="today">今天</li>
+				<li>图标</li>
+				<li class="temperature">2~-1℃</li>
+				<li>白天：小雨</li>
+				<li>夜间：雨加雪</li>
+				<li>东北风：微风</li>
+			</ul>
+		</div>
+		<div class="col-md-2">
+			<ul>
+				<li>12月10日</li>
+				<li>今天</li>
+				<li>图标</li>
+				<li class="temperature">2~-1℃</li>
+				<li>白天：小雨</li>
+				<li>夜间：雨加雪</li>
+				<li>东北风：微风</li>
+			</ul>
+		</div>
+		<div class="col-md-2">
+			<ul>
+				<li>12月10日</li>
+				<li>今天</li>
+				<li>图标</li>
+				<li class="temperature">2~-1℃</li>
+				<li>白天：小雨</li>
+				<li>夜间：雨加雪</li>
+				<li>东北风：微风</li>
+			</ul>
+		</div>
+		<div class="col-md-2">
+			<ul>
+				<li>12月10日</li>
+				<li>今天</li>
+				<li>图标</li>
+				<li class="temperature">2~-1℃</li>
+				<li>白天：小雨</li>
+				<li>夜间：雨加雪</li>
+				<li>东北风：微风</li>
+			</ul>
+		</div>
+		<div class="col-md-2">
+			<ul>
+				<li>12月10日</li>
+				<li>今天</li>
+				<li>图标</li>
+				<li class="temperature">2~-1℃</li>
+				<li>白天：小雨</li>
+				<li>夜间：雨加雪</li>
+				<li>东北风：微风</li>
+			</ul>
+		</div>
+		<div class="col-md-2 last">
+			<ul>
+				<li>12月10日</li>
+				<li>今天</li>
+				<li>图标</li>
+				<li class="temperature">2~-1℃</li>
+				<li>白天：小雨</li>
+				<li>夜间：雨加雪</li>
+				<li>东北风：微风</li>
+			</ul>
+		</div>
+	</div>
+	<div class="row title_line">地图交通</div>
+	<div class="row map">
+		<div class="col-md-5">
+			<ul class="nav nav-pills" role="tablist">
+				<li role="presentation" class="active">
+					<a href="#plane" role="tab" data-toggle="tab">飞机</a>
+				</li>
+				<li role="presentation">
+					<a href="#train" role="tab" data-toggle="tab">火车</a>
+				</li>
+				<li role="presentation">
+					<a href="#car" role="tab" data-toggle="tab">客车</a>
+				</li>
+			</ul>
+			<div class="tab-content">
+			  <div role="tabpanel" class="tab-pane active" id="plane">...</div>
+			  <div role="tabpanel" class="tab-pane" id="train">...</div>
+			  <div role="tabpanel" class="tab-pane" id="car">...</div>
+			</div>
+		</div>	
+		<div class="col-md-7">
+			<div id="bmap"></div>	
+		</div>
+	</div>
+	<div class="row info-menu">
+		<ul class="nav nav-pills" role="tablist">
+			<li role="presentation" class="active">
+				<a href="#history" role="tab" data-toggle="tab">人文历史</a>
+			</li>
+			<li role="presentation">
+				<a href="#note" role="tab" data-toggle="tab">攻略-游记</a>
+			</li>
+			<li role="presentation">
+				<a href="#special_product" role="tab" data-toggle="tab">特产</a>
+			</li>
+		</ul>
+	</div>
+	<div class="row content">
+		<div class="col-md-9">
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="history">
+					<%= @city.desc.html_safe %>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="note">
+					<%= @city.note.html_safe %>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="special_product">
+					<%= @city.special_product.html_safe %>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="tour_recom">
+				<div class="title">人文景观推荐</div>
+				<div class="thumbnail">
+					<img />
+		      <div class="caption">
+		        <p>甲秀楼</p>
+		      </div>
+		    </div>	
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=wBIWFAbfDRVkW0Hnsd5UGmlW" />
+<script type="text/javascript">
+	var map = new BMap.Map("bmap"); 
+	var point = new BMap.Point(116.404, 39.915);
+	map.centerAndZoom(point, 15); 
+</script>

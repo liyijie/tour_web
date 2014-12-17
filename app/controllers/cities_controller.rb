@@ -1,10 +1,14 @@
 class CitiesController < ApplicationController
-  before_action :set_city, only: [:show, :edit, :update, :destroy]
+  before_action :set_city, only: [:show, :edit, :update, :destroy, :info]
 
   # GET /cities
   # GET /cities.json
   def index
     @cities = City.all
+  end
+
+  def info
+    @weather = Weather.new(@city).sina_weather
   end
 
   # GET /cities/1
@@ -13,7 +17,6 @@ class CitiesController < ApplicationController
     @info_images = @city.info_images.limit(4)
     @tours = @city.tours.limit(6)
     @hotels = @city.hotels.limit(4)
-    @weather = Weather.new(@city).sina_weather
   end
 
   # GET /cities/new

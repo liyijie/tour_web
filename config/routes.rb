@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   resources :tour_orders
 
   devise_for :users
@@ -23,6 +24,9 @@ Rails.application.routes.draw do
   resources :hotels, only: [:show]
 
   resources :cities, only: [:index, :show] do
+    member do
+      get 'info'
+    end
     resources :tours, only: [:index]
     resources :hotels, only: [:index]
   end

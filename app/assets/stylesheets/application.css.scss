@@ -22,6 +22,7 @@ $navbar-default-link-active-bg: #48c1ff;
 $navbar-default-link-hover-bg: #48c1ff;
 $carousel-control-width: 5%;
 $carousel-indicator-active-bg: #ff9c49;
+$breadcrumb-separator: ">";
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -130,6 +131,16 @@ body {
 	margin-bottom: 0px;
 	padding-bottom: 0px;
 }
+.title_line	{
+	width: 100%;
+	height: 42px;
+	line-height: 42px;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	background: url("title_line2.png") no-repeat;
+	background-size: 100% 42px;
+}
 .paddingleft{
 	padding-left: 25px;
 	width: 48%;
@@ -145,4 +156,10 @@ body {
 	padding: 0px 0px 0px 0px;
 	margin: 0px 0px 0px 0px;
 }
+
+ol.breadcrumb {
+	height: 40px;
+	line-height: 40px;	
+}
+
 #myFocus{ width:540px; height:300px;}
