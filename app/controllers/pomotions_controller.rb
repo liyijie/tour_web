@@ -1,6 +1,8 @@
 class PomotionsController < ApplicationController
   before_action :set_pomotion, only: [:show, :edit, :update, :destroy]
 
+  add_breadcrumb "首页", :root_path
+
   # GET /pomotions
   # GET /pomotions.json
   def index
@@ -10,6 +12,9 @@ class PomotionsController < ApplicationController
   # GET /pomotions/1
   # GET /pomotions/1.json
   def show
+    @category = @pomotion.category
+    add_breadcrumb @category.name, @category
+    add_breadcrumb @pomotion.title, [@category, @pomotion]
   end
 
   # GET /pomotions/new

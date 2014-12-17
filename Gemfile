@@ -68,6 +68,9 @@ gem 'aasm'
 # Payment
 gem 'alipay', :github => 'chloerei/alipay'
 
+# breadcrumbs_on_rails
+gem 'breadcrumbs_on_rails'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end

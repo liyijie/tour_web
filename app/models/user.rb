@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :authentication_keys => [:phone]
+         
+  has_many :tour_orders
 
   validates_uniqueness_of :phone
   validates_presence_of :phone
