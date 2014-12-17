@@ -11,6 +11,9 @@ class TourOrdersController < ApplicationController
   # GET /tour_orders.json
   def index
     @tour_orders = current_user.tour_orders
+    if params[:state]
+      @tour_orders = @tour_orders.where(state: params[:state])
+    end
   end
 
   # GET /tour_orders/1
@@ -171,7 +174,7 @@ class TourOrdersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tour_order
-      @tour_order = TourOrder.find(params[:id])
+      @tour_order = current_user.tour_orders.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

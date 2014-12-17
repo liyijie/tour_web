@@ -1,3 +1,11 @@
 // Place all the styles related to the pomotions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#pomotion-carousel.carousel {
+  margin-top: 10px;
+  img {
+     width: 100%;//图片自适应
+     max-height: 300px;
+   }
+}
