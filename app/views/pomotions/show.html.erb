@@ -1,27 +1,167 @@
-<p id="notice"><%= notice %></p>
+<%=image_tag("head-1.png", :class => "headpic") %>
+<div class="container">
+  <br>
+  <div class="row-fluid">
+    <a href="#" style="color:black;">首页</a>
+    >
+    <a href="#" style="color:black;">精品线路</a>
+    >
+    <a href="#" style="color:black;">好山乐水</a>
+    >
+    <a href="#" style="color:black;">黄果树、天星桥、陡坡塘高品质一日游</a>
+  </div>
+  <br></div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @pomotion.title %>
-</p>
+<div class="panel panel-default container">
+  <div class="row withoutpadding">
+    <div class="col-md-6">
+      <div class="row">
+        <div id="myFocus">
+          <!--焦点图盒子-->
+          <div class="pic">
+            <!--图片列表-->
+            <ul>
+              <li>
+                <a href="#1">
+                  <%= image_tag("contant-5.png", :alt =>"icon_start", :thumb => "", :text => "")%></a>
+              </li>
+              <li>
+                <a href="#2">
+                  <%= image_tag("contant-5.png", :alt =>"icon_start", :thumb => "", :text => "")%></a>
+              </li>
+              <li>
+                <a href="#3">
+                  <%= image_tag("contant-5.png", :alt =>"icon_start", :thumb => "", :text => "")%></a>
+              </li>
+              <li>
+                <a href="#4">
+                  <%= image_tag("contant-5.png", :alt =>"icon_start", :thumb => "", :text => "")%></a>
+              </li>
+              <li>
+                <a href="#5">
+                  <%= image_tag("contant-5.png", :alt =>"icon_start", :thumb => "", :text => "")%></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-<p>
-  <strong>Sub title:</strong>
-  <%= @pomotion.sub_title %>
-</p>
+    </div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @pomotion.content %>
-</p>
+    <div class="col-md-6">
+      <h4 class="text-center">黄果树、天星桥、陡坡塘高品质一日游</h4>
+      <p  class="text-center">
+        推荐指数：
+        <%= image_tag("icon_start.png", :alt =>
+        "icon_start")%>
+        <%= image_tag("icon_start.png", :alt =>
+        "icon_start")%>
+        <%= image_tag("icon_start.png", :alt =>
+        "icon_start")%>
+        <%= image_tag("icon_start.png", :alt =>
+        "icon_start")%>
+        <%= image_tag("icon_start.png", :alt =>"icon_start")%></p>
+      <br>
+      <br>
+      <p class="text-left fontsize12" > <strong>景点地址：</strong>
+        贵州省安顺市镇宁布依族苗族自治县。
+        <a href="#" style="color:black;">查看地图</a>
+      </p>
+      <p class="text-left fontsize12"> <strong>营业时间：</strong>
+        8:00-18:00
+      </p>
+      <hr/>
+      <p class="text-left">
+        <span style="color: red;">AAAAA</span>
+        级景区
+      </p>
+      <p class="text-left fontsize12">
+        <strong>[特色1]</strong>
+        中华第一大瀑布
+      </p>
+      <p class="text-left fontsize12">
+        <strong>[特色2]</strong>
+        黄果树风景名胜区以黄果树大瀑布为中心，分布有石头寨景区、天星桥景区、滴水滩瀑布景区、霸陵河峡谷三国古驿道景区、陡坡塘景区、郎宫景区等几大景区。
+      </p>
+      <p class="text-left fontsize12">
+        <strong>[特色3]</strong>
+        黄果树景区内风景秀丽、环境优美、空气清新、气候宜人。
+      </p>
+    </div>
+  </div>
 
-<p>
-  <strong>Rate:</strong>
-  <%= @pomotion.rate %>
-</p>
+  <hr class="withoutpadding"/>
+  <br>
+  <div class="row">
+    <div class="col-md-2">
+      <div class="container">
+        <p class="text_line">行程推荐</p>
+        <%=image_tag("blue_line.png", :alt => "blue line") %></div>
+    </div>
 
-<p>
-  <strong>Category:</strong>
-  <%= @pomotion.category %>
-</p>
+    <div class="col-md-10"></div>
+    <br>
+    <br></div>
+  <div class="row">
+    <div class="col-md-2">
+      <span class="timefont">7:00</span>
+      <%=image_tag("diamond.png", :alt => "diamond") %></div>
+    <div class="col-md-10 fontsize12">
+      <p>
+        在指定地点（火车站，湘雅村华联酒店，黔灵酒店，）集合上车。全程经贵黄高速公路，约2.5小时到达国家5A景区【黄果树景区】，换乘景区环保车（成人含环保车 ）。
+      </p>
+      <hr style="border-bottom:1px dashed #000000;"></div>
+  </div>
 
+  <div class="row">
+    <div class="col-md-2">
+      <span class="timefont">9:00</span>
+      <%=image_tag("diamond.png", :alt => "diamond") %></div>
+    <div class="col-md-10 fontsize12">
+      <p>
+        前往有水上石林、天然盆景之称的【天星桥景区】，这里顽石突兀而起，星罗棋布，一路欣赏高老庄【天星湖】、【数生步】【美女榕】等喀斯特溶洞奇观。
+      </p>
+      <div class="row" >
+        <%=image_tag("scenery-1.png", :alt => "scenery", :class => "paddingleft")%>
+        <%=image_tag("scenery-2.png", :alt => "scenery", :class => "paddingleft")%></div>
+      <hr style="border-bottom:1px dashed #000000;"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      <span class="timefont">11:30</span>
+      <%=image_tag("diamond.png", :alt => "diamond") %></div>
+    <div class="col-md-10 fontsize12">
+      <p>前往景区餐厅用中餐。</p>
+      <hr style="border-bottom:1px dashed #000000;"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <span class="timefont">12:30</span>
+      <%=image_tag("diamond.png", :alt => "diamond") %></div>
+    <div class="col-md-10 fontsize12">
+      <p>
+        餐后乘环保车前往【黄果树大瀑布】，（不含黄果树大扶梯双程50/人）给您充足的游览时间，您可以从前后左右，上下里外8个角度欣赏这个亚洲最大的瀑布，您也可以一路向上走进美猴王的府邸【水帘洞】，去找找黄果树名称的由来【黄角榕】，过铁索桥；您也可以在观瀑台寻找大瀑布最美的角度留影。之后游览瀑布群最宽的【陡坡塘瀑布】，这里也是唐僧师徒四人取经的必经之地。
+      </p>
+      <div class="row" >
+        <%=image_tag("scenery-3.png", :alt => "scenery", :class => "paddingleft")%>
+        <%=image_tag("scenery-4.png", :alt => "scenery", :class => "paddingleft")%></div>
+      <hr style="border-bottom:1px dashed #000000;"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <span class="timefont">15:30</span>
+      <%=image_tag("diamond.png", :alt => "diamond") %></div>
+    <div class="col-md-10 fontsize12">
+      <p>乘车返回贵阳。</p>
+      <hr style="border-bottom:1px dashed #000000;"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <span class="timefont">17:00</span>
+      <%=image_tag("diamond.png", :alt => "diamond") %></div>
+    <div class="col-md-10 fontsize12">
+      <p>19:00左右抵达贵阳，结束愉快旅程！</p>
+      <hr style="border-bottom:1px dashed #000000;"></div>
+  </div>
+</div>
