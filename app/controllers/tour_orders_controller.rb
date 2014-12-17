@@ -10,7 +10,7 @@ class TourOrdersController < ApplicationController
   # GET /tour_orders
   # GET /tour_orders.json
   def index
-    @tour_orders = TourOrder.all
+    @tour_orders = current_user.tour_orders
   end
 
   # GET /tour_orders/1

@@ -44,7 +44,7 @@ gem 'lazyload-rails'
 # active admin
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
-gem 'active_skin'
+gem 'active_skin', github: 'liyijie/active_skin'
 
 # truncate html
 gem 'truncate_html'

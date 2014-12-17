@@ -30,6 +30,12 @@ GIT
       cocaine
       orm_adapter (~> 0.5.0)
 
+GIT
+  remote: git://github.com/liyijie/active_skin.git
+  revision: ff903a5350ead12543f2790bd36965d2c2d7a0c7
+  specs:
+    active_skin (0.0.8)
+
 GEM
   remote: https://ruby.taobao.org/
   specs:
@@ -47,7 +53,6 @@ GEM
       activesupport (= 4.1.6)
       builder (~> 3.1)
       erubis (~> 2.7.0)
-    active_skin (0.0.8)
     activemodel (4.1.6)
       activesupport (= 4.1.6)
       builder (~> 3.1)
@@ -237,7 +242,7 @@ PLATFORMS
 
 DEPENDENCIES
   aasm
-  active_skin
+  active_skin!
   activeadmin!
   alipay!
   babosa
