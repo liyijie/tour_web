@@ -210,6 +210,7 @@ zh_CN:
       hotel: 酒店
       ticket: 门票
       tour_order: 门票订单
+      room: 房型
     attributes:
       city:
         name: 城市名称
@@ -277,5 +278,14 @@ zh_CN:
         user_phone: 预订电话
         user_name: 预订名称
         outdate: 截至日期
+      room:
+        name: 房型名称
+        price: 价格
+        area: 面积(平方米)
+        floor: 楼层
+        bed: 床型
+        hotel: 所属酒店
+        hotel_id床: 所属酒店
+        cover_image: 房型图片
 
 
