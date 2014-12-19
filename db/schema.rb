@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141215113747) do
+ActiveRecord::Schema.define(version: 20141218235656) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -141,6 +141,17 @@ ActiveRecord::Schema.define(version: 20141215113747) do
   end
 
   add_index "pomotions", ["category_id"], name: "index_pomotions_on_category_id"
+
+  create_table "rooms", force: true do |t|
+    t.integer  "hotel_id"
+    t.string   "name"
+    t.float    "price"
+    t.string   "area"
+    t.string   "floor"
+    t.string   "bed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tickets", force: true do |t|
     t.string   "style"
