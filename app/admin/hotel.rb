@@ -21,6 +21,10 @@ ActiveAdmin.register Hotel do
     cover_image_attributes: [:id, :photo, :_destroy],
     info_images_attributes: [:id, :photo, :_destroy]
 
+  action_item :new, only: :show do
+    link_to '新建酒店', new_admin_hotel_path
+  end
+
   sidebar "酒店房型", only: [:show, :edit] do
     ul do
       li link_to "#{hotel.rooms.size} 个房型",    admin_hotel_rooms_path(hotel)

@@ -27,6 +27,10 @@ ActiveAdmin.register Tour do
     end
   end
 
+  action_item :new, only: :show do
+    link_to '新建景点', new_admin_tour_path
+  end
+
   index do
     column :title
     column :city

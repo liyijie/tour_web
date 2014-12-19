@@ -29,6 +29,10 @@ ActiveAdmin.register Room do
   permit_params :hotel_id, :name, :price, :area, :floor, :bed,
     cover_image_attributes: [:id, :photo, :_destroy]
 
+  action_item :new, only: :show do
+    link_to '新建关联房型', new_admin_hotel_room_path(room.hotel)
+  end
+
   index do
     column :hotel
     column :name
@@ -38,6 +42,7 @@ ActiveAdmin.register Room do
     column :cover_image do |room|
       link_to(image_tag(room.cover_image.photo.url(:mini)), room.cover_image.photo.url) if room.cover_image
     end
+    actions
   end
 
   form :html => {:multipart => true} do |f|
