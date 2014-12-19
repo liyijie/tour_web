@@ -1,35 +1,38 @@
-<h1>Listing hotels</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Addr</th>
-      <th>Tel</th>
-      <th>Desc</th>
-      <th>Traffic</th>
-      <th>City</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @hotels.each do |hotel| %>
-      <tr>
-        <td><%= hotel.name %></td>
-        <td><%= hotel.addr %></td>
-        <td><%= hotel.tel %></td>
-        <td><%= hotel.desc %></td>
-        <td><%= hotel.traffic %></td>
-        <td><%= hotel.city %></td>
-        <td><%= link_to 'Show', hotel %></td>
-        <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
-        <td><%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Hotel', new_hotel_path %>
+<div class="row top-image">
+  <%= image_tag "hotel_title_bg.png", lazy: true %>
+</div>
+<div class="container hotel">
+  <% @hotels.each_with_index do |hotel, index| %>
+    <div class="row item <% if index == 0 %>top<% end %>">
+      <div class="col-md-4">
+        <%= image_tag hotel.cover_image.photo.url(:product), lazy: true if hotel.cover_image %>
+      </div>
+      <div class="col-md-6">
+        <ul>
+          <li>
+            <h3><%= hotel.name %></h3>
+          </li>
+          <li class="col-star">
+            <%= image_tag "icon_start.png" %>
+            <%= image_tag "icon_start.png" %>
+            <%= image_tag "icon_start.png" %>
+            <%= image_tag "icon_start.png" %>
+            <%= image_tag "icon_start.png" %>
+          </li>
+          <li>
+            电话：<%= hotel.tel %>
+          </li>
+          <li>
+            地址：<%= hotel.addr %>
+          </li>
+        </ul> 
+      </div> 
+      <div class="col-md-2">
+        <span class="color">￥</span>
+        <span class="color size">634</span>
+        <span class="color">元</span>
+        <span>起</span>
+      </div>
+    </div>
+  <% end %>
+</div>

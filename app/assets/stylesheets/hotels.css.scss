@@ -1,3 +1,186 @@
 // Place all the styles related to the hotels controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.hotel {
+	
+	.item {
+		border-left: 1px solid #b9b9b9;
+		border-right: 1px solid #b9b9b9;
+		border-bottom: 1px solid #b9b9b9;
+		.col-md-4 {
+			text-align: center;
+			img {
+				max-width: 289px;
+				max-height: 208px;
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+		}
+		.col-md-2 {
+			text-align: center;
+			span {
+				float: left;
+				line-height: 200px;
+			}
+			span.color {
+				color: #eb8521;
+			}
+			span.size {
+				font-size: 40px;
+			}
+		}
+		.col-star {
+			height: 40px;
+		}
+	}
+
+	.item.top {
+		border-top: 1px solid #b9b9b9;
+	}
+
+}
+
+
+.hotel_show {
+	.title {
+		margin-left: 0px;
+		margin-right: 0px;
+		border: 1px solid #b9b9b9;
+		background: #fff;
+		margin-bottom: 10px;
+	}
+	.nav-tabs {
+		border-bottom: 0px;
+		li {
+			border-bottom: 0px;
+			a, a:hover {
+				background: #fff;
+				border-radius: 0;
+				border: 1px solid #b9b9b9;
+				text-decoration: none;
+			}
+		}
+		li.active {
+			a, a:visited, a:active, a:hover, a:link {
+				border-top: 2px solid #48c1ff;
+				border-left: 1px solid #b9b9b9;
+				border-right: 1px solid #b9b9b9;
+			}
+		}
+	}
+	.tab-pane {
+		background: #ffffff;
+		border-radius: 0;
+		margin-top: -2px;
+		border: 1px solid #b9b9b9;
+		#hotel .row {
+			margin-left: 10px;
+			margin-right: 10px;
+			border-bottom: 1px dotted #b9b9b9;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			.col-md-10 {
+				padding: 0px;
+				.num-index {
+					float: left;
+					background: #91cfe5;
+					padding: 0px 5px 0px 5px;
+					color: #fff;
+					margin-left: 5px;
+				}
+				.content {
+					float:left;
+					margin-left: 10px;
+					.name {
+						color: #6b6b6b;
+						font-size: 16px;
+						font-weight: bolder;
+					}
+					.remark {
+						color: #959595;
+						font-size: 12px;
+					}
+				}
+			}
+			.col-md-2 {
+				text-align: center;
+				span {
+					font-size: 24px;
+					color: #ff6600;
+				}
+			}
+		}
+		#traffic.row, #instructions.row {
+			margin-top: 20px;
+			margin-left: 0px;
+			margin-right: 0px;
+			.col-md-1 {
+				margin: 0px;
+				padding: 0px;
+				.title {
+					background: #48c1ff;
+					color: #fff;
+					text-align: center;
+					padding-top: 10px;
+					padding-bottom: 10px;
+					border:0px;
+				}
+			}
+			#bmap {
+				min-height: 500px;
+				padding-right: 15px;
+			}
+			dt {
+				color: #48c1ff;
+				font-size: 18px;
+			}
+			dd span {
+				font-weight: bold;
+			}
+			hr {
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+		}
+	}
+	.food {
+		padding-left: 0px;
+		.content {
+			background: #fff;
+			border: 1px solid #b9b9b9;
+			.food-title {
+				border: 0px;
+				height: 30px;
+				line-height: 30px;
+				width: 100%;
+				span {
+					padding-left: 10px;
+					text-align: left;
+					font-weight: bold;
+				}
+				a {
+					padding-right: 10px;
+					float: right;
+					color: #ff6600;
+				}
+			}
+			.thumbnail {
+				border:0px;
+				text-align: center;
+				border-bottom: 1px solid #b9b9b9;
+				border-radius: 0;
+				margin-left: 10px;
+				margin-right: 10px;
+				.caption {
+					padding-top: 0px;
+					padding-bottom: 0px;
+					margin-top: 0px;
+					margin-bottom: 0px;
+				}
+			}
+		}
+	}
+
+}

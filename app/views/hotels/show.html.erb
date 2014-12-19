@@ -1,34 +1,164 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @hotel.name %>
-</p>
-
-<p>
-  <strong>Addr:</strong>
-  <%= @hotel.addr %>
-</p>
-
-<p>
-  <strong>Tel:</strong>
-  <%= @hotel.tel %>
-</p>
-
-<p>
-  <strong>Desc:</strong>
-  <%= @hotel.desc %>
-</p>
-
-<p>
-  <strong>Traffic:</strong>
-  <%= @hotel.traffic %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @hotel.city %>
-</p>
-
-<%= link_to 'Edit', edit_hotel_path(@hotel) %> |
-<%= link_to 'Back', hotels_path %>
+<div class="row top-image">
+  <%= image_tag "hotel_title_bg.png", lazy: true %>
+</div>
+<div class="container hotel_show">
+  <div class="row title">
+    <div class="col-md-6">
+      <div id="hotel-carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <% (0..@hotel.info_images.size-1).each do |index| %>
+            <li data-target="#hotel-carousel" data-slide-to="<%= index %>" class = "<%= "active" if index == 0 %>"></li>
+          <% end %>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <% @hotel.info_images.each_with_index do |image, index| %>
+          <div class="item<%= ' active' if index == 0 %>">
+            <%= image_tag image.photo.url(:large) %>
+            <div class="carousel-caption">
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div> 
+    </div>
+    <div class="col-md-6 info">
+      <ul>
+        <li><h3>贵阳天怡豪生大酒店</h3></li>
+        <li>
+          <%= image_tag "icon_start.png" %>
+          <%= image_tag "icon_start.png" %>
+          <%= image_tag "icon_start.png" %>
+          <%= image_tag "icon_start.png" %>
+          <%= image_tag "icon_start.png" %>
+        </li>
+        <li>电话：<%= @hotel.tel %></li>
+        <li>地址：<%= @hotel.addr %></li>
+      </ul> 
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9">
+     <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#hotel">酒店房型</a></li>
+        <li role="presentation"><a href="#traffic">交通位置</a></li>
+        <li role="presentation"><a href="#instructions">设施概况</a></li>
+      </ul>
+     <div class="tab-pane">
+        <div id="hotel">
+          <div class="row">
+            <div class="col-md-10">
+              <div class="num-index">1</div>
+              <div class="content">
+                <span class="name">豪华客房</span><br/>
+                <span class="remark">面积：30m 房型：19-26层 床型：双人床2米，1张或单人床1.2米，2张 设施：有线上网（免费）/有窗</span>
+              </div>
+            </div>
+            <div class="col-md-2">
+              ￥<span>658</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-10">
+              <div class="num-index">2</div>
+              <div class="content">
+                <span class="name">豪华客房</span><br/>
+                <span class="remark">面积：30m 房型：19-26层 床型：双人床2米，1张或单人床1.2米，2张 设施：有线上网（免费）/有窗</span>
+              </div>
+            </div>
+            <div class="col-md-2">
+              ￥<span>658</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-10">
+              <div class="num-index">3</div>
+              <div class="content">
+                <span class="name">豪华客房</span><br/>
+                <span class="remark">面积：30m 房型：19-26层 床型：双人床2米，1张或单人床1.2米，2张 设施：有线上网（免费）/有窗</span>
+              </div>
+            </div>
+            <div class="col-md-2">
+              ￥<span>658</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-10">
+              <div class="num-index">4</div>
+              <div class="content">
+                <span class="name">豪华客房</span><br/>
+                <span class="remark">面积：30m 房型：19-26层 床型：双人床2米，1张或单人床1.2米，2张 设施：有线上网（免费）/有窗</span>
+              </div>
+            </div>
+            <div class="col-md-2">
+              ￥<span>658</span>
+            </div>
+          </div>
+        </div>
+        <div id="traffic" class="row">
+          <div class="col-md-1">
+            <div class="title">交通<br/>位置</div>
+          </div>
+          <div class="col-md-11">
+            <div id="bmap"></div>
+          </div>
+        </div>
+        <div id="instructions" class="row">
+          <div class="col-md-1">
+            <div class="title">设施<br/>概况</div>
+          </div>
+          <div class="col-md-11">
+            <dl class="clearfix">
+              <dt>酒店介绍</dt>
+              <dd>酒店2003年开业 2012年装修 310间房 电话0851-6518888 传真0851-6517777 纠错</dd>
+            </dl>
+            <hr/>
+            <dl class="clearfix">
+              <dt>酒店设施</dt>
+              <dd><span>网络设施</span> 有可无线上网的公共区域 免费</dd>
+              <dd><span>停车场</span> 停车场免费停车场</dd>
+              <dd><span>酒店设施</span> 免费停车场 免费旅游交通图（可赠送） 穿梭机场班车</dd>
+            </dl>
+            <hr/>
+            <dl class="clearfix">
+              <dt>酒店设施</dt>
+              <dd><span>入住和离店</span> 入住时间：14：00以后 离店时间：12:00以前</dd>
+              <dd><span>取消政策</span> 不同类型的客房附带不同的取消预订和预先付费政策</dd>
+              <dd><span>押金/预付款</span>入住时需要出示政府核发的身份证件（带照片）。</dd>
+              <dd><span>宠物</span> 允许携带宠物。酒店会收取额外费用。</dd>
+              <dd><span>特殊条款</span> 信用卡授权解除需时1-3个月。视不同国家、城市之银行操作时间耳钉。</dd>
+            </ul>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <div class="col-md-3 food">
+      <div class="content">
+        <div class="food-title">
+          <span>周边美食推荐</span>
+          <a href="#">更多</a>
+        </div>
+        <div class="thumbnail">
+          <%= image_tag "3.png", lazy: true %>
+          <div class="caption">
+            <h4>金牌罗记肠旺面</h4>
+            <p>菜系：贵州菜</p>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>
+<script type="text/javascript">
+  var map = new BMap.Map("bmap");
+  map.disableScrollWheelZoom();
+  map.addControl(new BMap.NavigationControl());
+  map.addControl(new BMap.PanoramaControl());
+  var myGeo = new BMap.Geocoder();
+  myGeo.getPoint("<%= @hotel.addr %>", function(point){
+    if (point) {
+      map.centerAndZoom(point, 16);
+      map.addOverlay(new BMap.Marker(point));
+    }
+  }, "<%= @hotel.city.name %>");
+</script>
