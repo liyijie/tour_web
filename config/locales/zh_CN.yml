@@ -262,6 +262,7 @@ zh_CN:
         city: 所属城市
         cover_image: 缩略图
         info_images: 酒店图片
+        rooms: 酒店房型
       ticket:
         style: 门票类型
         title: 门票名称

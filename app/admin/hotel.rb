@@ -1,5 +1,5 @@
 ActiveAdmin.register Hotel do
-  menu parent: "区域资源"
+  menu parent: "酒店资源"
 
   belongs_to :city, optional: true 
 
@@ -21,9 +21,18 @@ ActiveAdmin.register Hotel do
     cover_image_attributes: [:id, :photo, :_destroy],
     info_images_attributes: [:id, :photo, :_destroy]
 
+  sidebar "酒店房型", only: [:show, :edit] do
+    ul do
+      li link_to "#{hotel.rooms.size} 个房型",    admin_hotel_rooms_path(hotel)
+    end
+  end
+
   index do
     column :name
     column :city
+    column :rooms do |hotel|
+      link_to "#{hotel.rooms.size} 个房型",    admin_hotel_rooms_path(hotel)
+    end
     column :addr
     column :tel
     column :cover_image do |hotel|
