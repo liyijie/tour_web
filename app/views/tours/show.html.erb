@@ -1,2 +1,117 @@
-
-
+<div class="row top-image">
+  <%= image_tag "tour_title_bg.png", lazy: true %>
+</div>
+<div class="container tour_show">
+	<div class="row title">
+    <div class="col-md-6">
+      <div id="tour-carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <% (0..@tour.info_images.size-1).each do |index| %>
+            <li data-target="#tour-carousel" data-slide-to="<%= index %>" class = "<%= "active" if index == 0 %>"></li>
+          <% end %>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <% @tour.info_images.each_with_index do |image, index| %>
+          <div class="item<%= ' active' if index == 0 %>">
+            <%= image_tag image.photo.url(:large) %>
+            <div class="carousel-caption">
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div> 
+    </div>
+    <div class="col-md-6 info">
+      <ul>
+        <li><h3>南江大峡谷</h3></li>
+        <li>
+        	推荐指数：
+          <%= image_tag "icon_start.png" %>
+          <%= image_tag "icon_start.png" %>
+          <%= image_tag "icon_start.png" %>
+          <%= image_tag "icon_start.png" %>
+          <%= image_tag "icon_start.png" %>
+        </li>
+        <li><span>地址：</span><%= @tour.addr %></li>
+        <li><span>开放时间：</span><%= @tour.work_range %></li>
+        <li><hr/></li>
+        <li><span>[门票]</span></li>
+        <li>旺季(5月1日~10月31日)：88.00元</li>
+        <li>淡季(11月1日~4月30日)：78.00元</li>
+        <li>休闲漂流票（含门票、漂流票、交通车票）：168.00元</li>
+        <li>激情漂流票（含门票、漂流票、交通车票）：188.00元</li>
+      </ul> 
+    </div>
+  </div>
+	<div class="row">
+		<div class="col-md-9">
+     <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home">预订须知</a></li>
+        <li role="presentation"><a href="#instructions">景点简介</a></li>
+        <li role="presentation"><a href="#traffic">地图交通</a></li>
+      </ul>
+     <div class="tab-pane">
+        <div id="home" class="row">
+         <div class="col-md-1">
+         	<div class="title">预订<br/>须知</div>
+         </div> 
+         <div class="col-md-11">
+         	<dl>
+         		<dt>预订限制</dt>
+         		<dd>本产品限网上及手机客户端预订，不接受电话预订。</dd>
+         		<dd>本产品仅限承认预订，儿童票请自行前往景区购买。</dd>
+         		<dt>优惠政策</dt>
+         		<dd>1.身高1.2米一下儿童免票；身高1.2米以上、14周岁一下儿童，门票半价优惠。</dd>
+         		<dd>2.60~69周岁老年人凭有效证件，门票半价优惠。</dd>
+         		<dd>3.现役士兵、残疾人凭有效证件，门票半价优惠。</dd>
+         		<dd>Tips:以上优惠政策仅针对门票，漂流票无优惠。</dd>
+         	</dl>
+         </div>
+        </div>
+        <div id="instructions" class="row">
+          <div class="col-md-1">
+            <div class="title">景点<br/>介绍</div>
+          </div>
+          <div class="col-md-11">
+         		<%= @tour.desc.html_safe %> 
+          </div>
+        </div>
+        <div id="traffic" class="row">
+          <div class="col-md-1">
+            <div class="title">地图<br/>交通</div>
+          </div>
+          <div class="col-md-11">
+            <div id="bmap"></div>
+            <div class="clearfix">
+            	<%= @tour.traffic.html_safe %>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <div class="col-md-3 hotel">
+      <div class="content">
+        <div class="hotel-title">
+          <span>周边酒店推荐</span>
+          <a href="#">更多</a>
+        </div>
+        <div class="thumbnail">
+          <%= image_tag "3.png", lazy: true %>
+          <div class="caption">
+            <h4>贵阳南江大峡谷度假酒店</h4>
+            <p>距离：景区内</p>
+            <p>￥178起</p>
+          </div>
+        </div>
+      </div>  
+    </div>
+	</div>
+</div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>
+<script type="text/javascript">
+  var map = new BMap.Map("bmap");
+  map.disableScrollWheelZoom();
+  map.addControl(new BMap.NavigationControl());
+  map.addControl(new BMap.PanoramaControl());
+  map.centerAndZoom(new BMap.Point(<%= @tour.lon %>, <%= @tour.lat %>), 15);
+</script>

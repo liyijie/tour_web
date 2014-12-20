@@ -3,3 +3,104 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.tour_show {
+	.title {
+		margin-left: 0px;
+		margin-right: 0px;
+		border: 1px solid #b9b9b9;
+		background: #fff;
+		margin-bottom: 10px;
+		.col-md-6 {
+			padding-left: 0px;
+		}
+		.info {
+			span {
+				font-weight: bold;
+			}
+		}
+	}
+	.nav-tabs {
+		border-bottom: 0px;
+		li {
+			border-bottom: 0px;
+			a, a:hover {
+				background: #fff;
+				border-radius: 0;
+				border: 1px solid #b9b9b9;
+				text-decoration: none;
+			}
+		}
+		li.active {
+			a, a:visited, a:active, a:hover, a:link {
+				border-top: 2px solid #48c1ff;
+				border-left: 1px solid #b9b9b9;
+				border-right: 1px solid #b9b9b9;
+			}
+		}
+	}
+	.tab-pane {
+		background: #ffffff;
+		border-radius: 0;
+		margin-top: -2px;
+		border: 1px solid #b9b9b9;
+		#home.row, #traffic.row, #instructions.row {
+			margin-top: 20px;
+			margin-left: 0px;
+			margin-right: 0px;
+			.col-md-1 {
+				margin: 0px;
+				padding: 0px;
+				.title {
+					background: #48c1ff;
+					color: #fff;
+					text-align: center;
+					padding-top: 10px;
+					padding-bottom: 10px;
+					border:0px;
+				}
+			}
+			#bmap {
+				min-height: 400px;
+				padding-right: 15px;
+			}
+		}
+	}	
+	.hotel {
+		padding-left: 0px;
+		.content {
+			background: #fff;
+			border: 1px solid #b9b9b9;
+			.hotel-title {
+				border: 0px;
+				height: 30px;
+				line-height: 30px;
+				width: 100%;
+				span {
+					padding-left: 10px;
+					text-align: left;
+					font-weight: bold;
+				}
+				a {
+					padding-right: 10px;
+					float: right;
+					color: #ff6600;
+				}
+			}
+			.thumbnail {
+				border:0px;
+				text-align: center;
+				border-bottom: 1px solid #b9b9b9;
+				border-radius: 0;
+				margin-left: 10px;
+				margin-right: 10px;
+				.caption {
+					padding-top: 0px;
+					padding-bottom: 0px;
+					margin-top: 0px;
+					margin-bottom: 0px;
+				}
+			}
+		}
+	}
+
+}
