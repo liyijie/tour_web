@@ -1,34 +1,199 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @shop.name %>
-</p>
-
-<p>
-  <strong>Addr:</strong>
-  <%= @shop.addr %>
-</p>
-
-<p>
-  <strong>Tel:</strong>
-  <%= @shop.tel %>
-</p>
-
-<p>
-  <strong>Special:</strong>
-  <%= @shop.special %>
-</p>
-
-<p>
-  <strong>Work range:</strong>
-  <%= @shop.work_range %>
-</p>
-
-<p>
-  <strong>Price avg:</strong>
-  <%= @shop.price_avg %>
-</p>
-
-<%= link_to 'Edit', edit_shop_path(@shop) %> |
-<%= link_to 'Back', shops_path %>
+<div class="row top-image">
+  <%= image_tag "food_title_bg.png", lazy: true %>
+</div>
+<div class="container food">
+  <div class="row">
+    <div class="col-md-9 food-left">
+      <div class="row title">
+        <div class="col-md-6">
+          <%= image_tag "test-1.png", lazy: true %>
+          <div class="pic-inst">
+            <a class="pic-all" href="#">全部照片(15)</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <dl>
+            <dt><%= @shop.name %></dt>
+            <dd class="price">人均 <span class="price_color">￥<%= @shop.price_avg %></span></dd>
+            <dd>菜系：贵州菜(缺少字段)</dd>
+            <dd>地址：<%= @shop.addr %></dd>
+            <dd>电话：<%= @shop.tel %></dd>
+            <dd>特色：<%= @shop.special %></dd>
+            <dd>营业时间：<%= @shop.work_range %></dd>
+          </dl>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-md-1 tip-div">
+           <div class="tip">
+             推荐<br/>菜品
+           </div>
+        </div>
+        <div class="col-md-11 food-list">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <%= image_tag "test-2.png", lazy: true %>
+                <div class="caption">
+                  酸汤鱼 
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <%= image_tag "test-2.png", lazy: true %>
+                <div class="caption">
+                  酸汤鱼 
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <%= image_tag "test-2.png", lazy: true %>
+                <div class="caption">
+                  酸汤鱼 
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <%= image_tag "test-2.png", lazy: true %>
+                <div class="caption">
+                  酸汤鱼 
+                </div>
+              </div>
+            </div>
+          </div> 
+          <div class="row">
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <%= image_tag "test-2.png", lazy: true %>
+                <div class="caption">
+                  酸汤鱼 
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <%= image_tag "test-2.png", lazy: true %>
+                <div class="caption">
+                  酸汤鱼 
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <%= image_tag "test-2.png", lazy: true %>
+                <div class="caption">
+                  酸汤鱼 
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <%= image_tag "test-2.png", lazy: true %>
+                <div class="caption">
+                  酸汤鱼 
+                </div>
+              </div>
+            </div>
+          </div> 
+          <div class="row more">
+            <span class="more-link">更多<span class="glyphicon glyphicon-chevron-down"></span></span>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row review">
+        <div class="col-md-1 tip-div">
+          <div class="tip">
+            餐厅<br/>点评 
+          </div> 
+        </div>
+        <div class="col-md-11">
+          <div>
+            <span>24条评论排序</span>
+            <span class="date">日期<span class="caret"></span></span>
+            <span>&nbsp;|&nbsp;</span>
+            <span class="score">评分</span>
+          </div>
+        </div>
+      </div>
+      <div class="row review-item">
+        <dl>
+          <dt>游客</dt>
+          <dd class="title">"今晚三位吃货出动......来吃老凯里酸汤鱼...味..."</dd>
+          <dd>2012-6-16点评</dd>
+          <dd>今晚三位吃货出动......来吃老凯里酸汤鱼...味道很不错吖！尝了很多特色的小吃，糕粑稀饭，二块粑等等等等，我要继续啦，不吃就没啦，哈哈...我再这里：#老凯里酸汤鱼 省府店#@我系阿童木@丹小鱼</dd>
+        </dl>
+      </div>
+      <div class="row review-item">
+        <dl>
+          <dt>游客</dt>
+          <dd class="title">"今晚三位吃货出动......来吃老凯里酸汤鱼...味..."</dd>
+          <dd>2012-6-16点评</dd>
+          <dd>今晚三位吃货出动......来吃老凯里酸汤鱼...味道很不错吖！尝了很多特色的小吃，糕粑稀饭，二块粑等等等等，我要继续啦，不吃就没啦，哈哈...我再这里：#老凯里酸汤鱼 省府店#@我系阿童木@丹小鱼</dd>
+        </dl>
+      </div>
+      <div class="row review-item">
+        <dl>
+          <dt>游客</dt>
+          <dd class="title">"今晚三位吃货出动......来吃老凯里酸汤鱼...味..."</dd>
+          <dd>2012-6-16点评</dd>
+          <dd>今晚三位吃货出动......来吃老凯里酸汤鱼...味道很不错吖！尝了很多特色的小吃，糕粑稀饭，二块粑等等等等，我要继续啦，不吃就没啦，哈哈...我再这里：#老凯里酸汤鱼 省府店#@我系阿童木@丹小鱼</dd>
+        </dl>
+      </div>
+      <div class="row review-pub">
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label for="nickname" class="col-md-1 control-label">昵称</label>
+            <div class="col-md-11">
+              <input type="email" class="form-control" id="nickname" placeholder="请输入昵称">
+            </div>
+          </div>
+          <textarea class="form-control" rows="5"></textarea><br/>
+          <button type="submit" class="btn btn-primary">发表评论</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-3 food-right">
+      <div class="row map-div">
+        <div id="bmap"></div>
+      </div> 
+      <div class="row hotel-list">
+        <div class="title">
+          <span>周边酒店推荐</span>
+          <a class="more" href="#">更多</a>
+        </div>
+        <div class="thumbnail">
+          <%= image_tag "city-hotel-1.png", lazy: true %>
+          <div class="caption">
+            <h5>贵阳天怡豪生大酒店</h5>
+            <span><span class="price_color">￥638元</span>起</span>
+          </div>
+        </div>
+        <div class="thumbnail">
+          <%= image_tag "city-hotel-1.png", lazy: true %>
+          <div class="caption">
+            <h5>贵阳天怡豪生大酒店</h5>
+            <span><span class="price_color">￥638元</span>起</span>
+          </div>
+        </div>
+        <div class="thumbnail">
+          <%= image_tag "city-hotel-1.png", lazy: true %>
+          <div class="caption">
+            <h5>贵阳天怡豪生大酒店</h5>
+            <span><span class="price_color">￥638元</span>起</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>
+<script type="text/javascript">
+  var map = new BMap.Map("bmap");
+  map.disableScrollWheelZoom();
+  map.centerAndZoom("上海",15);
+</script>
