@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :shops
+
   resources :tour_orders
 
   devise_for :users
