@@ -2,6 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.food-list {
+	.row {
+		margin-top: 20px;
+	}
+	.thumbnail {
+		border-radius: 0;
+		border:1px solid #cacaca;
+		background: #fff;
+		text-align: center;
+		margin: 0px;
+		padding: 0px;
+		img {
+			width: 100%;
+		}
+		.caption {
+			p {
+				color: #7f7f7f;
+			}
+		}
+	}	
+}
 
 .food {
 	.food-left {
