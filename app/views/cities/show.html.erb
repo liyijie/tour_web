@@ -5,20 +5,27 @@
 <div class="container city">
 	<div class="title_line">城市介绍</div>
 	<div class="row info">
-		<div class="col-md-4">
-			<div class="row">
-        <% unless @info_images.blank? %>
-          <div class="col-md-6">
-            <%= image_tag @info_images[0].photo.url, size: "184x277", lazy: true %><br/><br/>
-            <%= image_tag @info_images[1].photo.url, size: "184x129", lazy: true %>
-          </div>
-          <div class="col-md-6">
-            <%= image_tag @info_images[2].photo.url, size: "184x129", lazy: true %><br/><br/>
-            <%= image_tag @info_images[3].photo.url, size: "184x277", lazy: true %>
-          </div>
-        <% end %>
-			</div>
-		</div>
+    <div class="col-md-4">
+      <div class="row">
+        <% unless @info_images.blank? %>    
+        <div class="col-md-6">
+          <ul>
+            <li>
+              <%= image_tag @info_images[0].photo.url, lazy: true %></li>
+            <li>
+              <%= image_tag @info_images[1].photo.url, class: "pt", lazy: true %></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul>
+            <li>
+              <%= image_tag @info_images[2].photo.url, lazy: true %></li>
+            <li>
+              <%= image_tag @info_images[3].photo.url, class: "pt", lazy: true %></li>
+          </ul>
+        </div>
+        <% end %></div>
+    </div>
 		<div class="col-md-8">
         <div class="row">
           <%= raw @city.desc %>
@@ -63,7 +70,7 @@
       <% end %>
     </div>
   <% end %>
-  <% if @tours.size > 6 %>
+  <% if @tours.size > 5 %>
     <div class="row more">
     	更多景点
     </div> 
@@ -86,7 +93,7 @@
   </div>
   <% if @tours.size > 4 %>
     <div class="row more">
-      更多景点
+      更多酒店
     </div> 
   <% end %>
 

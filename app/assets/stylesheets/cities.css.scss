@@ -15,9 +15,13 @@
 
 .city {
 	.info {
-		height: 430px;
-		.col-md-4	{
-			
+		.col-md-4	.row .col-md-6 {
+			ul {
+				float: left;
+			}
+			img.pt {
+				padding-top: 15px;
+			}
 		}
 		.col-md-8 {
 			.row {
