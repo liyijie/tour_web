@@ -2,6 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.tour_list {
+	border: 1px solid #cacaca;
+	background: #fff;
+	.row {
+		padding-top: 15px;
+		padding-bottom: 5px;
+		border-bottom: 1px solid #cacaca;
+		.col-md-3	img {
+			width: 100%;
+		}
+		.col-md-9	{
+			dt {
+				font-size: 20px;
+				letter-spacing: 2px;
+				span {
+					color: #fa2020;
+					font-size: 12px;
+					font-weight: normal;
+					letter-spacing: 0px;
+				}
+			}
+			dd {
+				color: #5c5c5c;
+				font-size: 13px;
+			}
+			dd.sub {
+				font-size: 14px;
+				color: #000;
+			}
+			dd.open {
+				color: #000;
+				padding-top: 20px;
+			}
+			dd.addr {
+				font-size: 14px;
+				color: #4c4c4c;
+				padding-top: 20px;
+			}
+		}
+	}	
+}
 
 .tour_show {
 	.title {
