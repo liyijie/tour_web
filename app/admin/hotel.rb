@@ -19,7 +19,8 @@ ActiveAdmin.register Hotel do
 
   permit_params :name, :addr, :tel, :desc, :traffic, :city_id,
     cover_image_attributes: [:id, :photo, :_destroy],
-    info_images_attributes: [:id, :photo, :_destroy]
+    info_images_attributes: [:id, :photo, :_destroy],
+    service_list: [], facility_list: []
 
   action_item :new, only: :show do
     link_to '新建酒店', new_admin_hotel_path
@@ -52,6 +53,8 @@ ActiveAdmin.register Hotel do
       f.input :city
       f.input :addr
       f.input :tel
+      f.input :service_list, as: :check_boxes, collection: Hotel.services_types
+      f.input :facility_list, as: :check_boxes, collection: Hotel.facilities_types
     end
 
     f.input :desc, as: :ckeditor
@@ -85,6 +88,8 @@ ActiveAdmin.register Hotel do
       row :city
       row :addr
       row :tel
+      row :service_list
+      row :facility_list
       row :desc do
         hotel.desc.html_safe if hotel.desc
       end
