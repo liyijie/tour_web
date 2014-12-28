@@ -290,5 +290,8 @@ zh_CN:
         hotel: 所属酒店
         hotel_id床: 所属酒店
         cover_image: 房型图片
+        bed_list: 床型
+        breakfast_list: 早餐
+        window_list: 是否有窗
 
 
