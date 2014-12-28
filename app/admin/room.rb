@@ -27,6 +27,7 @@ ActiveAdmin.register Room do
   #  created_at :datetime
   #  updated_at :datetime
   permit_params :hotel_id, :name, :price, :area, :floor, :bed,
+    :bed_list, :breakfast_list, :window_list,
     cover_image_attributes: [:id, :photo, :_destroy]
 
   action_item :new, only: :show do
@@ -39,10 +40,29 @@ ActiveAdmin.register Room do
     column :price
     column :area
     column :floor
+    column :bed_list
+    column :breakfast_list
+    column :window_list
     column :cover_image do |room|
       link_to(image_tag(room.cover_image.photo.url(:mini)), room.cover_image.photo.url) if room.cover_image
     end
     actions
+  end
+
+  show do |room|
+    attributes_table do
+      row :hotel
+      row :name
+      row :price
+      row :floor
+      row :area
+      row :bed_list
+      row :breakfast_list
+      row :window_list
+      row :cover_image do
+        link_to(image_tag(room.cover_image.photo.url(:mini)), room.cover_image.photo.url) if room.cover_image
+      end
+    end
   end
 
   form :html => {:multipart => true} do |f|
@@ -52,6 +72,9 @@ ActiveAdmin.register Room do
       f.input :price
       f.input :area
       f.input :floor
+      f.input :bed_list, collection: Room.bed_types
+      f.input :breakfast_list, collection: Room.breakfast_types
+      f.input :window_list, collection: Room.window_types
     end
 
     f.inputs do

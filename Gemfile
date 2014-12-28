@@ -71,6 +71,9 @@ gem 'alipay', :github => 'chloerei/alipay'
 # breadcrumbs_on_rails
 gem 'breadcrumbs_on_rails'
 
+# tagging 
+gem 'acts-as-taggable-on', '~> 3.4'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
