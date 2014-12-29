@@ -4,7 +4,8 @@ class HotelsController < ApplicationController
   # GET /hotels
   # GET /hotels.json
   def index
-    @hotels = Hotel.all
+    @city = City.find(params[:city_id])
+    @hotels = @city.hotels.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /hotels/1
