@@ -4,7 +4,8 @@ class ShopsController < ApplicationController
   # GET /shops
   # GET /shops.json
   def index
-    @shops = Shop.all
+    @city = City.find(params[:city_id])
+    @shops = @city.shops.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /shops/1
