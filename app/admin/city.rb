@@ -24,6 +24,7 @@ ActiveAdmin.register City do
     ul do
       li link_to "#{city.tours.size} 个景点",    admin_city_tours_path(city)
       li link_to "#{city.hotels.size} 家酒店",    admin_city_hotels_path(city)
+      li link_to "#{city.shops.size} 美食商家",    admin_city_shops_path(city)
     end
   end
 
@@ -34,6 +35,9 @@ ActiveAdmin.register City do
     end
     column :hotels do |city|
       link_to "#{city.hotels.size} 家酒店",    admin_city_hotels_path(city)
+    end
+    column :shops do |city|
+      link_to "#{city.shops.size} 美食商家",    admin_city_shops_path(city)
     end
     column :cover_image do |city|
       link_to(image_tag(city.cover_image.photo.url(:mini)), city.cover_image.photo.url) if city.cover_image

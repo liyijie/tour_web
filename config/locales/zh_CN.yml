@@ -226,6 +226,7 @@ zh_CN:
         app_image: APP图
         tours: 景点
         hotels: 酒店
+        shops: 美食商家
       tour:
         title: 景点标题
         sub_title: 景点副标题
