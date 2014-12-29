@@ -23,4 +23,14 @@ class Shop < ActiveRecord::Base
   
   accepts_nested_attributes_for :info_images, :allow_destroy => true
   accepts_nested_attributes_for :cover_image, :allow_destroy => true
+
+  def self.relates origin, options = {}
+    city = origin.city
+    count = options[:count] || 3
+    if origin.class == Shop
+      Hotel.where(city: city).where.not(id: origin.id).limit(count)
+   else
+      Hotel.where(city: city).limit(count)
+    end
+  end
 end
