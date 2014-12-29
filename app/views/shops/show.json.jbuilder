@@ -1,5 +1,6 @@
-json.extract! @shop, :id, :name, :addr, :tel, :special, :work_range, :price_avg
+json.extract! @shop, :id, :name, :addr, :tel, :work_range, :price_avg
 json.city @shop.city.name
+json.special href_trans(@shop.special)
 json.cover_image image_url(@shop.cover_image.photo.url(:large)) unless @shop.cover_image.blank?
 json.images(@shop.info_images) do |image|
   json.image image_url(image.photo.url(:large))
