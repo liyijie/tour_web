@@ -23,6 +23,7 @@ class City < ActiveRecord::Base
 
   has_many :tours
   has_many :hotels
+  has_many :shops
 
   has_one :cover_image, -> { where photo_type: "cover" }, class_name: "Image", as: :imageable, dependent: :destroy
   has_one :banner_image, -> { where photo_type: "banner" }, class_name: "Image", as: :imageable, dependent: :destroy

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141229074755) do
+ActiveRecord::Schema.define(version: 20141229093455) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -163,7 +163,10 @@ ActiveRecord::Schema.define(version: 20141229074755) do
     t.float    "price_avg"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "city_id"
   end
+
+  add_index "shops", ["city_id"], name: "index_shops_on_city_id"
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"

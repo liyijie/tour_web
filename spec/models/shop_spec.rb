@@ -11,6 +11,7 @@
 #  price_avg  :float
 #  created_at :datetime
 #  updated_at :datetime
+#  city_id    :integer
 #
 
 require 'rails_helper'
