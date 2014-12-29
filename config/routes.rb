@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
 
-  resources :shops
-
   resources :tour_orders
 
   devise_for :users
@@ -24,6 +22,7 @@ Rails.application.routes.draw do
 
   resources :tours, only: [:show]
   resources :hotels, only: [:show]
+  resources :shops, only: [:show]
 
   resources :cities, only: [:index, :show] do
     member do
@@ -31,6 +30,7 @@ Rails.application.routes.draw do
     end
     resources :tours, only: [:index]
     resources :hotels, only: [:index]
+    resources :shops, only: [:index]
   end
 
   resources :tickets, only: [:show] do
