@@ -38,6 +38,7 @@ ActiveAdmin.register Hotel do
     column :rooms do |hotel|
       link_to "#{hotel.rooms.size} 个房型",    admin_hotel_rooms_path(hotel)
     end
+    column :rate
     column :addr
     column :tel
     column :cover_image do |hotel|
@@ -51,6 +52,7 @@ ActiveAdmin.register Hotel do
     f.inputs do 
       f.input :name
       f.input :city
+      f.input :rate
       f.input :addr
       f.input :tel
       f.input :service_list, as: :check_boxes, collection: Hotel.services_types
@@ -86,6 +88,7 @@ ActiveAdmin.register Hotel do
     attributes_table do
       row :name
       row :city
+      row :rate
       row :addr
       row :tel
       row :service_list

@@ -22,6 +22,18 @@ class Room < ActiveRecord::Base
   # only have one option, but use taggable for convinient
   acts_as_taggable_on :breakfast, :bed, :window
 
+  def bed
+    bed_list.first.to_s
+  end
+
+  def breakfast
+    breakfast_list.first.to_s
+  end
+
+  def window
+    window_list.first.to_s
+  end
+
   def self.bed_types
     [
       "大床1.5米",
