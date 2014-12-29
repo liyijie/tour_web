@@ -265,6 +265,7 @@ zh_CN:
         rooms: 酒店房型
         service_list: 酒店服务项目
         facility_list: 酒店基础设施
+        rate: 星级
       ticket:
         style: 门票类型
         title: 门票名称
