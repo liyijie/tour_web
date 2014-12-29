@@ -211,6 +211,8 @@ zh_CN:
       ticket: 门票
       tour_order: 门票订单
       room: 房型
+      shop: 美食商家
+      dish: 菜品
     attributes:
       city:
         name: 城市名称
@@ -294,5 +296,20 @@ zh_CN:
         bed_list: 床型
         breakfast_list: 早餐
         window_list: 是否有窗
+      shop:
+        name: 商家名称
+        addr: 地址
+        tel: 联系电话
+        special: 商家介绍
+        work_range: 营业时间
+        price_avg: 平均消费
+        city: 所属城市
+        cover_image: 缩略图
+        info_images: 商家图片
+      dish:
+        name: 菜品名称
+        price: 菜品价格
+        shop: 所属商家
+        cover_image: 菜品图片
 
 
