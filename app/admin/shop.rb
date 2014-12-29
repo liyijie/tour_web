@@ -81,4 +81,23 @@ ActiveAdmin.register Shop do
     f.actions
   end
 
+  show do |shop|
+    attributes_table do
+      row :name
+      row :city
+      row :addr
+      row :tel
+      row :work_range
+      row :price_avg
+      row :special do
+        shop.special.html_safe if shop.special
+      end
+      row :cover_image do
+        if shop.cover_image
+          link_to(image_tag(shop.cover_image.photo.url(:medium)), shop.cover_image.photo.url, target: "_blank")
+        end
+      end
+    end
+  end
+
 end
