@@ -1,5 +1,9 @@
 ActiveAdmin.register Dish do
 
+  menu parent: "美食资源"
+
+  belongs_to :shop, optional: true
+
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

@@ -28,7 +28,7 @@ ActiveAdmin.register Room do
   #  updated_at :datetime
   permit_params :hotel_id, :name, :price, :area, :floor, :bed,
     :bed_list, :breakfast_list, :window_list,
-    cover_image_attributes: [:id, :photo, :_destroy]
+    cover_image_attributes: [:id, :desc, :photo, :_destroy]
 
   action_item :new, only: :show do
     link_to '新建关联房型', new_admin_hotel_room_path(room.hotel)

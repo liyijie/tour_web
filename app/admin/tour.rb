@@ -18,8 +18,8 @@ ActiveAdmin.register Tour do
   # end
   permit_params :title, :sub_title, :addr, :work_range, 
     :hint, :desc, :traffic, :lon, :lat, :city_id,
-    cover_image_attributes: [:id, :photo, :_destroy],
-    info_images_attributes: [:id, :photo, :_destroy]
+    cover_image_attributes: [:id, :desc, :photo, :_destroy],
+    info_images_attributes: [:id, :desc, :photo, :_destroy]
 
   sidebar "景点门票", only: [:show, :edit] do
     ul do
