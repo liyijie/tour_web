@@ -30,7 +30,7 @@
 	<div class="row weather">	
 		<div class="col-md-4">
 			<ul>
-				<li><h4><%= @weather.weather_city %></h4></li>
+				<li><h2><%= @weather.weather_city %></h2></li>
 				<li><h4><%= @weather.weather_date %></h4></li>
 				<li><%= @weather.weather_time %></li>
 			</ul>
@@ -52,9 +52,9 @@
 		<% (0..5).each do |index| %>
 			<div class="col-md-2">
 				<ul>
-					<li><%= @weather.forecast_dates[index] %></li>
-					<li class="today"><%= @weather.forecast_days[index] %></li>
-					<li><%= @weather.forecast_icons[index].to_s.html_safe %></li>
+					<li><h4><%= @weather.forecast_dates[index] %></h4></li>
+					<li class=<%= "today" if index == 0 %>><%= @weather.forecast_days[index] %></li>
+					<li class="image"><%= @weather.forecast_icons[index].to_s.html_safe %></li>
 					<li><%= @weather.forecast_times[index].html_safe %></li>
 					<li class="temperature"><%= @weather.forcast_temps[index] %></li>
 					<li><%= @weather.forcast_tips[index] %></li>
