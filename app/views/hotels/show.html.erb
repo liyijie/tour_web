@@ -2,6 +2,9 @@
   <%= image_tag "hotel_title_bg.png", lazy: true %>
 </div>
 <div class="container hotel_show">
+  <ol class="breadcrumb">
+    <%= render_breadcrumbs :tag => :li, :separator => "" %>
+  </ol>
   <div class="row title">
     <div class="col-md-6">
       <div id="hotel-carousel" class="carousel slide" data-ride="carousel">

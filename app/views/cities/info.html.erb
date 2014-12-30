@@ -3,21 +3,9 @@
 	<%= image_tag @city.banner_image.photo.url, lazy: true if @city.banner_image %></div>
 
 <div class="container city_info">
-	<div class="row">
-		<ol class="breadcrumb">
-			<li>
-				<a href="#">首页</a>
-			</li>
-			<li>
-				<a href="#">热门城市</a>
-			</li>
-			<li>
-				<a href="#">
-					<%= @city.name %></a>
-			</li>
-			<li class="active">城市介绍</li>
-		</ol>
-	</div>
+  <ol class="breadcrumb">
+    <%= render_breadcrumbs :tag => :li, :separator => "" %>
+  </ol>
 	<div class="row">
 		<div class="panel panel-default">
 			<div class="panel-body">

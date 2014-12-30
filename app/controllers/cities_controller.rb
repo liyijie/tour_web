@@ -9,6 +9,10 @@ class CitiesController < ApplicationController
 
   def info
     @weather = Weather.new(@city).sina_weather
+
+    add_breadcrumb "首页", :root_path
+    add_breadcrumb @city.name, @city
+    add_breadcrumb "城市信息"
   end
 
   # GET /cities/1
