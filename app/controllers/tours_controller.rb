@@ -6,11 +6,21 @@ class ToursController < ApplicationController
   def index
     @city = City.find(params[:city_id])
     @tours = @city.tours.paginate(page: params[:page], per_page: 10)
+
+    add_breadcrumb "首页", :root_path
+    add_breadcrumb @city.name, @city
+    add_breadcrumb "景点列表"
   end
 
   # GET /tours/1
   # GET /tours/1.json
   def show
+    @city = @tour.city
+
+    add_breadcrumb "首页", :root_path
+    add_breadcrumb @city.name, @city
+    add_breadcrumb "景点列表", city_tours_path(@city)
+    add_breadcrumb @tour.title
   end
 
   # GET /tours/new
