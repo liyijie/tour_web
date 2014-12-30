@@ -6,11 +6,21 @@ class ShopsController < ApplicationController
   def index
     @city = City.find(params[:city_id])
     @shops = @city.shops.paginate(page: params[:page], per_page: 10)
+
+    add_breadcrumb "首页", :root_path
+    add_breadcrumb @city.name, @city
+    add_breadcrumb "美食列表"
   end
 
   # GET /shops/1
   # GET /shops/1.json
   def show
+    @city = @shop.city
+
+    add_breadcrumb "首页", :root_path
+    add_breadcrumb @city.name, @city
+    add_breadcrumb "美食列表", city_shops_path(@city)
+    add_breadcrumb @shop.name
   end
 
   # GET /shops/new
