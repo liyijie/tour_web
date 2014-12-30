@@ -1,3 +1,12 @@
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>
+<script type="text/javascript">
+  var map = new BMap.Map("bmap");
+  map.disableScrollWheelZoom();
+  map.addControl(new BMap.NavigationControl());
+  map.addControl(new BMap.PanoramaControl());
+  map.centerAndZoom(new BMap.Point(<%= @tour.lon %>, <%= @tour.lat %>), 15);
+</script>
+
 <div class="row top-image">
   <%= image_tag "tour_title_bg.png", lazy: true %>
 </div>
@@ -112,11 +121,3 @@
     </div>
 	</div>
 </div>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>
-<script type="text/javascript">
-  var map = new BMap.Map("bmap");
-  map.disableScrollWheelZoom();
-  map.addControl(new BMap.NavigationControl());
-  map.addControl(new BMap.PanoramaControl());
-  map.centerAndZoom(new BMap.Point(<%= @tour.lon %>, <%= @tour.lat %>), 15);
-</script>
