@@ -30,16 +30,16 @@
 	<div class="row weather">	
 		<div class="col-md-4">
 			<ul>
-				<li><h4>贵阳</h4></li>
-				<li><h4>2014-12-10 周三</h4></li>
-				<li>12:00</li>
+				<li><h4><%= @weather.weather_city %></h4></li>
+				<li><h4><%= @weather.weather_date %></h4></li>
+				<li><%= @weather.weather_time %></li>
 			</ul>
 		</div>	
 		<div class="col-md-4 text-align-center">
 			<ul>
-				<li>图标</li>
-				<li><h1>21℃</h1></li>
-				<li>小雨 | 东北风微风 | 湿度：71%</li>
+				<li><%= image_tag @weather.weather_icon %></li>
+				<li><h1><%= @weather.weather_degree %></h1></li>
+				<li><%= @weather.weather_detail %></li>
 			</ul>
 		</div>
 		<div class="col-md-4">
@@ -49,72 +49,18 @@
 		<span>天气预报</span>
 	</div>
 	<div class="row weather-days">
-		<div class="col-md-2">
-			<ul>
-				<li>12月10日</li>
-				<li class="today">今天</li>
-				<li>图标</li>
-				<li class="temperature">2~-1℃</li>
-				<li>白天：小雨</li>
-				<li>夜间：雨加雪</li>
-				<li>东北风：微风</li>
-			</ul>
-		</div>
-		<div class="col-md-2">
-			<ul>
-				<li>12月10日</li>
-				<li>今天</li>
-				<li>图标</li>
-				<li class="temperature">2~-1℃</li>
-				<li>白天：小雨</li>
-				<li>夜间：雨加雪</li>
-				<li>东北风：微风</li>
-			</ul>
-		</div>
-		<div class="col-md-2">
-			<ul>
-				<li>12月10日</li>
-				<li>今天</li>
-				<li>图标</li>
-				<li class="temperature">2~-1℃</li>
-				<li>白天：小雨</li>
-				<li>夜间：雨加雪</li>
-				<li>东北风：微风</li>
-			</ul>
-		</div>
-		<div class="col-md-2">
-			<ul>
-				<li>12月10日</li>
-				<li>今天</li>
-				<li>图标</li>
-				<li class="temperature">2~-1℃</li>
-				<li>白天：小雨</li>
-				<li>夜间：雨加雪</li>
-				<li>东北风：微风</li>
-			</ul>
-		</div>
-		<div class="col-md-2">
-			<ul>
-				<li>12月10日</li>
-				<li>今天</li>
-				<li>图标</li>
-				<li class="temperature">2~-1℃</li>
-				<li>白天：小雨</li>
-				<li>夜间：雨加雪</li>
-				<li>东北风：微风</li>
-			</ul>
-		</div>
-		<div class="col-md-2 last">
-			<ul>
-				<li>12月10日</li>
-				<li>今天</li>
-				<li>图标</li>
-				<li class="temperature">2~-1℃</li>
-				<li>白天：小雨</li>
-				<li>夜间：雨加雪</li>
-				<li>东北风：微风</li>
-			</ul>
-		</div>
+		<% (0..5).each do |index| %>
+			<div class="col-md-2">
+				<ul>
+					<li><%= @weather.forecast_dates[index] %></li>
+					<li class="today"><%= @weather.forecast_days[index] %></li>
+					<li><%= @weather.forecast_icons[index].to_s.html_safe %></li>
+					<li><%= @weather.forecast_times[index].html_safe %></li>
+					<li class="temperature"><%= @weather.forcast_temps[index] %></li>
+					<li><%= @weather.forcast_tips[index] %></li>
+				</ul>
+			</div>
+		<% end %>
 	</div>
 	<div class="title_line">地图交通</div>
 	<div class="row map">
