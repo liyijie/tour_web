@@ -1,10 +1,10 @@
 <div class="row top-image">
   <%= image_tag "tour_list_title_bg.jpg", lazy: true %>
 </div>
+<ol class="breadcrumb">
+  <%= render_breadcrumbs :tag => :li, :separator => "" %>
+</ol>
 <div class="container tour_list">
-	<ol class="breadcrumb">
-    <%= render_breadcrumbs :tag => :li, :separator => "" %>
-  </ol>
 	<div class="row">
 		<div class="col-md-3">
 			<%= image_tag "test-3.png", lazy: true %>
