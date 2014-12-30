@@ -2,6 +2,9 @@
   <%= image_tag "food_title_bg.jpg", lazy: true %>
 </div>
 <div class="container food">
+  <ol class="breadcrumb">
+    <%= render_breadcrumbs :tag => :li, :separator => "" %>
+  </ol>
   <div class="row">
     <div class="col-md-9 food-left">
       <div class="row title">

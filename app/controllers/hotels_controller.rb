@@ -6,11 +6,20 @@ class HotelsController < ApplicationController
   def index
     @city = City.find(params[:city_id])
     @hotels = @city.hotels.paginate(page: params[:page], per_page: 10)
+
+    add_breadcrumb "首页", :root_path
+    add_breadcrumb @city.name, @city
+    add_breadcrumb "酒店列表"
   end
 
   # GET /hotels/1
   # GET /hotels/1.json
   def show
+    @city = @hotel.city
+    add_breadcrumb "首页", :root_path
+    add_breadcrumb @city.name, @city
+    add_breadcrumb "酒店列表", city_hotels_path(@city)
+    add_breadcrumb @hotel.name
   end
 
   # GET /hotels/new

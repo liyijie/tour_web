@@ -2,6 +2,9 @@
   <%= image_tag "tour_title_bg.png", lazy: true %>
 </div>
 <div class="container tour_show">
+  <ol class="breadcrumb">
+    <%= render_breadcrumbs :tag => :li, :separator => "" %>
+  </ol>
 	<div class="row title">
     <div class="col-md-6">
       <div id="tour-carousel" class="carousel slide" data-ride="carousel">
