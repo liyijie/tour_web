@@ -12,7 +12,7 @@ class Weather
       "安顺" => "anshun",
       "黔南州" => "duyun",
       "毕节" => "bijie",
-      "黔西南州" => "xingyi"
+      "黔西南州" => "xingyi",
       "六盘水" => "guiyang"
     }
     @city_code = city_map[city.name]

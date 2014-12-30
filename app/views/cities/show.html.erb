@@ -30,7 +30,7 @@
         <div class="row">
           <%= raw @city.desc %>
           <div class="clearfix">
-            <a href="#">更多详情</a>
+            <%= link_to "更多详情", info_city_path(@city) %>
           </div>
         </div>
 		</div>	
