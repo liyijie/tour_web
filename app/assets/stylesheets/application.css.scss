@@ -52,9 +52,15 @@ body {
 		padding-top: 8px;
 		margin-top: 0px;
 	}
-	.dropdown-menu a {
-		height: 50px;
-		line-height: 50px;
+	.dropdown-menu {
+		background: #48c1ff;
+		border: 0px;
+		border-radius: 0;
+		a {
+			height: 40px;
+			line-height: 35px;
+			color: #ffffff;
+		}
 	}
 	.input-group {
 		.form-control, .btn {
