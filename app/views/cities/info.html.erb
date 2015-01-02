@@ -1,10 +1,12 @@
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>
 <script type="text/javascript">
-  var map = new BMap.Map("bmap");
-	map.centerAndZoom("<%= @city.name %>", 12);
-	map.disableScrollWheelZoom();
-	map.addControl(new BMap.NavigationControl());
-	map.addControl(new BMap.PanoramaControl());
+	$(document).ready(function() {
+		var map = new BMap.Map("bmap");
+		map.centerAndZoom("<%= @city.name %>", 12);
+		map.disableScrollWheelZoom();
+		map.addControl(new BMap.NavigationControl());
+		map.addControl(new BMap.PanoramaControl());
+	});
 </script>
 
 <div class="row top-image">
