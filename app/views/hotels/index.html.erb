@@ -1,9 +1,11 @@
 <div class="row top-image">
   <%= image_tag "hotel_title_bg.png", lazy: true %>
 </div>
-<ol class="breadcrumb">
-  <%= render_breadcrumbs :tag => :li, :separator => "" %>
-</ol>
+<div class="container">
+  <ol class="breadcrumb">
+    <%= render_breadcrumbs :tag => :li, :separator => "" %>
+  </ol>  
+</div>
 <div class="container hotel">
   <% @hotels.each_with_index do |hotel, index| %>
     <div class="row item <% if index == 0 %>top<% end %>">
