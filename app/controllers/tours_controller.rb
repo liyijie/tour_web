@@ -17,6 +17,7 @@ class ToursController < ApplicationController
   # GET /tours/1.json
   def show
     @city = @tour.city
+    @relate_hotels = Hotel.relates @tour
 
     add_breadcrumb "首页", :root_path
     add_breadcrumb @city.name, @city

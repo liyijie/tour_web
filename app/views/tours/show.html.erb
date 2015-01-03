@@ -65,13 +65,15 @@
       </ul> 
     </div>
   </div>
+  <div>
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#home">预订须知</a></li>
+      <li role="presentation"><a href="#instructions">景点简介</a></li>
+      <li role="presentation"><a href="#traffic">地图交通</a></li>
+    </ul>
+  </div>
 	<div class="row">
 		<div class="col-md-9">
-     <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#home">预订须知</a></li>
-        <li role="presentation"><a href="#instructions">景点简介</a></li>
-        <li role="presentation"><a href="#traffic">地图交通</a></li>
-      </ul>
      <div class="tab-pane">
         <div id="home" class="row">
          <div class="col-md-1">
@@ -106,16 +108,19 @@
       <div class="content">
         <div class="hotel-title">
           <span>周边酒店推荐</span>
-          <a href="#">更多</a>
+          <%= link_to("更多酒店", city_hotels_path(@city)) %>
         </div>
-        <div class="thumbnail">
-          <%= image_tag "3.png", lazy: true %>
-          <div class="caption">
-            <h4>贵阳南江大峡谷度假酒店</h4>
-            <p>距离：景区内</p>
-            <p class="price_color">￥178起</p>
+
+        <% @relate_hotels.each do |hotel| %>
+          <div class="thumbnail">
+            <%= link_to image_tag(hotel.cover_image.photo.url(:large), lazy:true), hotel %>
+            <div class="caption">
+              <h4><%= hotel.name %></h4>
+              <p>酒店地址：<%= hotel.addr %></p>
+              <p class="price_color">￥<%= hotel.price %>起</p>
+            </div>
           </div>
-        </div>
+        <% end %> 
       </div>  
     </div>
 	</div>
