@@ -40,7 +40,7 @@
     </div>
     <div class="col-md-6 info">
       <ul>
-        <li><h3>南江大峡谷</h3></li>
+        <li><h3><%= @tour.title %></h3></li>
         <li>
         	推荐指数：
           <%= image_tag "icon_start.png" %>
@@ -52,11 +52,16 @@
         <li><span>地址：</span><%= @tour.addr %></li>
         <li><span>开放时间：</span><%= @tour.work_range %></li>
         <li><hr/></li>
-        <li><span>[门票]</span></li>
-        <li>旺季(5月1日~10月31日)：<span class="price_color">88.00元</span></li>
-        <li>淡季(11月1日~4月30日)：<span class="price_color">78.00元</span></li>
-        <li>休闲漂流票（含门票、漂流票、交通车票）：<span class="price_color">168.00元</span></li>
-        <li>激情漂流票（含门票、漂流票、交通车票）：<span class="price_color">188.00元</span></li>
+        <dl>
+          <dt>预订限制</dt>
+          <dd>本产品限网上及手机客户端预订，不接受电话预订。</dd>
+          <dd>本产品仅限承认预订，儿童票请自行前往景区购买。</dd>
+          <dt>优惠政策</dt>
+          <dd>1.身高1.2米一下儿童免票；身高1.2米以上、14周岁一下儿童，门票半价优惠。</dd>
+          <dd>2.60~69周岁老年人凭有效证件，门票半价优惠。</dd>
+          <dd>3.现役士兵、残疾人凭有效证件，门票半价优惠。</dd>
+          <dd>友情提示:以上优惠政策仅针对门票，漂流票无优惠。</dd>
+        </dl>
       </ul> 
     </div>
   </div>
@@ -73,16 +78,7 @@
          	<div class="title">预订<br/>须知</div>
          </div> 
          <div class="col-md-11">
-         	<dl>
-         		<dt>预订限制</dt>
-         		<dd>本产品限网上及手机客户端预订，不接受电话预订。</dd>
-         		<dd>本产品仅限承认预订，儿童票请自行前往景区购买。</dd>
-         		<dt>优惠政策</dt>
-         		<dd>1.身高1.2米一下儿童免票；身高1.2米以上、14周岁一下儿童，门票半价优惠。</dd>
-         		<dd>2.60~69周岁老年人凭有效证件，门票半价优惠。</dd>
-         		<dd>3.现役士兵、残疾人凭有效证件，门票半价优惠。</dd>
-         		<dd>Tips:以上优惠政策仅针对门票，漂流票无优惠。</dd>
-         	</dl>
+         	<%= @tour.hint.html_safe %>
          </div>
         </div>
         <div id="instructions" class="row">
