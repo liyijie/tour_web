@@ -9,10 +9,10 @@
 <div class="container tour_list">
 	<% @tours.each do |tour| %>
 		<div class="row">
-			<div class="col-xs-4 tour_image">
+			<div class="col-xs-3 tour_image">
 				<%= link_to image_tag(tour.image_thumb, lazy: true), tour %>
 			</div>
-			<div class="col-xs-6 tour_info">
+			<div class="col-xs-7 tour_info">
 				<dl>
 					<dt><%= link_to tour.title, tour %><span>AAAAA</span></dt>
 					<dd class="sub"><%= tour.sub_title %></dd>
