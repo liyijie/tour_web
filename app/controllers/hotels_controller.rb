@@ -1,5 +1,6 @@
 class HotelsController < ApplicationController
   before_action :set_hotel, only: [:show, :edit, :update, :destroy]
+  before_action :set_mode
 
   # GET /hotels
   # GET /hotels.json
@@ -80,5 +81,9 @@ class HotelsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def hotel_params
       params[:hotel]
+    end
+
+    def set_mode
+      @mode = "city"
     end
 end

@@ -1,6 +1,7 @@
 class CitiesController < ApplicationController
   before_action :set_city, only: [:show, :edit, :update, :destroy, :info]
-
+  before_action :set_mode
+  
   # GET /cities
   # GET /cities.json
   def index
@@ -21,6 +22,7 @@ class CitiesController < ApplicationController
     @info_images = @city.info_images.limit(4)
     @tours = @city.tours.limit(6)
     @hotels = @city.hotels.limit(4)
+    @shops = @city.shops.limit(4)
   end
 
   # GET /cities/new
@@ -81,5 +83,9 @@ class CitiesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def city_params
       params[:city]
+    end
+
+    def set_mode
+      @mode = "city"
     end
 end

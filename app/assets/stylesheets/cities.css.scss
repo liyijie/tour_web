@@ -33,6 +33,7 @@
 					text-align: right;
 				}
 				.clearfix a {
+					font-weight: bold;
 					color: #ff6600;
 					text-decoration: none;
 				}
@@ -78,7 +79,6 @@
 	}
 	.more {
 		text-align: center;
-		color: #ff6600;
 		border-top: 1px solid #c3c3c3;
 		border-bottom: 1px solid #c3c3c3;
 		background: #fff;
@@ -89,6 +89,10 @@
 		margin-left: 0px;
 		margin-right: 0px;
 		cursor: pointer;
+		a {
+			color: #ff6600;
+			text-decoration: none;
+		}
 	}	
 }
 

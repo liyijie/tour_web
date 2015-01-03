@@ -1,5 +1,6 @@
 class ShopsController < ApplicationController
   before_action :set_shop, only: [:show, :edit, :update, :destroy]
+  before_action :set_mode
 
   # GET /shops
   # GET /shops.json
@@ -81,5 +82,9 @@ class ShopsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def shop_params
       params.require(:shop).permit(:name, :addr, :tel, :special, :work_range, :price_avg)
+    end
+
+    def set_mode
+      @mode = "city"
     end
 end

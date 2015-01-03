@@ -1,4 +1,3 @@
-<% set_mode "city" %>
 <div class="row top-image">
   <%= image_tag @city.banner_image.photo.url, lazy: true if @city.banner_image %>
 </div>
@@ -28,9 +27,9 @@
     </div>
 		<div class="col-md-8">
         <div class="row">
-          <%= raw @city.desc %>
+          <%= @city.desc.html_safe if @city.desc %>
           <div class="clearfix">
-            <%= link_to "更多详情", info_city_path(@city) %>
+            <%= link_to ("更多详情" + content_tag(:span, "", class: "glyphicon glyphicon-expand", "aria-hidden" => true)).html_safe , info_city_path(@city) %>
           </div>
         </div>
 		</div>	
@@ -70,11 +69,13 @@
       <% end %>
     </div>
   <% end %>
-  <% if @tours.size > 5 %>
+
+  <% if @tours.size >= 6 %>
     <div class="row more">
-    	更多景点
-    </div> 
+      <%= link_to(("更多景点"+ content_tag(:span, "", class: "glyphicon glyphicon-expand", "aria-hidden" => true)).html_safe, city_tours_path(@city)) %>
+    </div>
   <% end %>
+
   <div class="title_line">精品酒店</div>
   <div class="row hotel">
     <% (0..3).each do |index| %>
@@ -91,52 +92,30 @@
       <% end %>
     <% end %>
   </div>
-  <% if @tours.size > 4 %>
+  <% if @tours.size >= 4 %>
     <div class="row more">
-      更多酒店
+      <%= link_to(("更多酒店"+ content_tag(:span, "", class: "glyphicon glyphicon-expand", "aria-hidden" => true)).html_safe, city_hotels_path(@city)) %>
     </div> 
   <% end %>
 
   <div class="title_line">特色美食</div>
   <div class="row hotel">
-      <div class="col-md-3 left">
-      <div class="thumbnail">
-        <%= image_tag "city-hotel-1.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-        	<h4>金牌罗记旺汤面</h4>
-        	<p>菜系：面条，小吃</p>
+    <% (0..3).each do |index| %>
+      <% if @shops[index] %>
+        <% shop = @shops[index] %>
+        <div class="col-md-3">
+          <div class="thumbnail">
+            <%= link_to(image_tag(shop.cover_image.photo.url(:large)), shop, lazy: true) %>
+            <h4><%= shop.name %></h4>
+            <p>商家地址：<%= shop.addr %></p>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-3 center">
-      <div class="thumbnail">
-        <%= image_tag "city-hotel-1.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-        	<h4>老凯里酸汤鱼(省府店)</h4>
-        	<p>菜系：贵州菜</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3 center">
-      <div class="thumbnail">
-        <%= image_tag "city-hotel-1.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-        	<h4>花溪王记牛肉粉(都司路店)</h4>
-        	<p>菜系：贵州菜</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3 right">
-      <div class="thumbnail">
-        <%= image_tag "city-hotel-1.png", alt: "贵阳", lazy: true %> 
-        <div class="caption">
-        	<h4>留一手特色烤鱼(青云路店)</h4>
-        	<p>菜系：烧烤</p>
-        </div>
-      </div>
-    </div>
+      <% end %>
+    <% end %>
   </div> 
-  <div class="row more">
-  	更多美食
-  </div> 
+  <% if @shops.size >= 4 %>
+    <div class="row more">
+      <%= link_to(("更多美食"+ content_tag(:span, "", class: "glyphicon glyphicon-expand", "aria-hidden" => true)).html_safe, city_shops_path(@city)) %>
+    </div> 
+  <% end %>
 </div>

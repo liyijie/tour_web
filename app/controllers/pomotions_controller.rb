@@ -1,5 +1,6 @@
 class PomotionsController < ApplicationController
   before_action :set_pomotion, only: [:show, :edit, :update, :destroy]
+  before_action :set_mode
 
   add_breadcrumb "首页", :root_path
 
@@ -75,5 +76,9 @@ class PomotionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def pomotion_params
       params.require(:pomotion).permit(:title, :sub_title, :content, :rate, :category_id)
+    end
+
+    def set_mode
+      @mode = "pomotion"
     end
 end

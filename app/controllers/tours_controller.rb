@@ -1,5 +1,6 @@
 class ToursController < ApplicationController
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
+  before_action :set_mode
 
   # GET /tours
   # GET /tours.json
@@ -85,5 +86,9 @@ class ToursController < ApplicationController
         tickets_attributes: [:id, :title, :style, :desc, :price, :_destroy],
         images_attributes: [:id, :photo, :_destroy],
         )
+    end
+
+    def set_mode
+      @mode = "city"
     end
 end
