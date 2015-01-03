@@ -1,13 +1,13 @@
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		var map = new BMap.Map("bmap");
-		map.centerAndZoom("<%= @city.name %>", 12);
-		map.disableScrollWheelZoom();
-		map.addControl(new BMap.NavigationControl());
-		map.addControl(new BMap.PanoramaControl());
-	});
-</script>
+<% content_for :heads do %>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW" data-turbolinks-track="true" ></script>
+<% end %>
+
+<% content_for :scripts do %>
+	<%= javascript_tag do %>
+		city = "<%= @city.name %>"
+	<% end %>
+  <%= javascript_include_tag "cities", 'data-turbolinks-track' => true %>
+<% end %>
 
 <div class="row top-image">
 	<%= image_tag @city.banner_image.photo.url, lazy: true if @city.banner_image %></div>

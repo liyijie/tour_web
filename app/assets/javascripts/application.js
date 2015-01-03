@@ -16,7 +16,6 @@
 //= require turbolinks
 //= require jquery.turbolinks
 //= require lazyload
-//= require_tree .
 
 // 程序主JS
 // @author suntongwei
