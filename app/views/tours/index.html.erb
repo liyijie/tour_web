@@ -1,9 +1,11 @@
 <div class="row top-image">
   <%= image_tag "tour_list_title_bg.jpg", lazy: true %>
 </div>
-<ol class="breadcrumb">
-  <%= render_breadcrumbs :tag => :li, :separator => "" %>
-</ol>
+<div class="container">
+	<ol class="breadcrumb">
+	  <%= render_breadcrumbs :tag => :li, :separator => "" %>
+	</ol>	
+</div>
 <div class="container tour_list">
 	<% @tours.each do |tour| %>
 		<div class="row">
@@ -30,4 +32,7 @@
       </div>
 		</div>	
 	<% end %>
+	<div class="apple_pagination">
+		<%= will_paginate @tour, class: "text-center" %>
+	</div>
 </div>
