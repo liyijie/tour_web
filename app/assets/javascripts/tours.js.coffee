@@ -1,3 +1,11 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  map = new BMap.Map("bmap");
+  map.disableScrollWheelZoom();
+  map.addControl(new BMap.NavigationControl());
+  map.addControl(new BMap.PanoramaControl());
+  myGeo = new BMap.Geocoder();
+  myGeo.getPoint(tour_addr, (point)->
+    if (point)
+      map.centerAndZoom(point, 16);
+      map.addOverlay(new BMap.Marker(point));
+  , city);

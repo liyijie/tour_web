@@ -1,11 +1,14 @@
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>
-<script type="text/javascript">
-  var map = new BMap.Map("bmap");
-  map.disableScrollWheelZoom();
-  map.addControl(new BMap.NavigationControl());
-  map.addControl(new BMap.PanoramaControl());
-  map.centerAndZoom(new BMap.Point(<%= @tour.lon %>, <%= @tour.lat %>), 15);
-</script>
+<% content_for :heads do %>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW" data-turbolinks-track="true" ></script>
+<% end %>
+
+<% content_for :scripts do %>
+  <%= javascript_tag do %>
+    city = "<%= @city.name %>"
+    tour_addr = "<%= @tour.addr %>"
+  <% end %>
+  <%= javascript_include_tag "tours", 'data-turbolinks-track' => true %>
+<% end %>
 
 <div class="row top-image">
   <%= image_tag "tour_title_bg.png", lazy: true %>
