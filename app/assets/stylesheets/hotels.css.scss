@@ -10,20 +10,20 @@
 		border-right: 1px solid #b9b9b9;
 		border-bottom: 1px solid #b9b9b9;
 		background: #fff;
-		.col-md-4 {
+		.hotel_image {
 			text-align: center;
 			img {
-				max-width: 289px;
-				max-height: 208px;
-				margin-top: 20px;
-				margin-bottom: 20px;
+				width: 100%;
+				// max-width: 289px;
+				// max-height: 208px;
+				margin-top: 10px;
+				margin-bottom: 10px;
 			}
 		}
-		.col-md-2 {
+		.hotel_price {
 			text-align: center;
 			span {
-				float: left;
-				line-height: 200px;
+				// float: left;
 			}
 			span.color {
 				color: #eb8521;
