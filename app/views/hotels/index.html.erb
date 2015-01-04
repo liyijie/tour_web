@@ -10,12 +10,12 @@
   <% @hotels.each_with_index do |hotel, index| %>
     <div class="row item <% if index == 0 %>top<% end %>">
       <div class="col-xs-4 hotel_image">
-        <%= image_tag hotel.cover_image.photo.url(:product), lazy: true if hotel.cover_image %>
+        <%= link_to image_tag(hotel.cover_image.photo.url(:product), lazy: true), hotel if hotel.cover_image %>
       </div>
       <div class="col-xs-6 hotel_info">
         <ul>
           <li>
-            <h3><%= hotel.name %></h3>
+            <h3><%= link_to hotel.name, hotel %></h3>
           </li>
           <li class="col-star">
             <% hotel.rate.to_i.times do %>
