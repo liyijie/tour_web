@@ -1,17 +1,14 @@
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>
-<script type="text/javascript">
-  var map = new BMap.Map("bmap");
-  map.disableScrollWheelZoom();
-  map.addControl(new BMap.NavigationControl());
-  map.addControl(new BMap.PanoramaControl());
-  var myGeo = new BMap.Geocoder();
-  myGeo.getPoint("<%= @hotel.addr %>", function(point){
-    if (point) {
-      map.centerAndZoom(point, 16);
-      map.addOverlay(new BMap.Marker(point));
-    }
-  }, "<%= @hotel.city.name %>");
-</script>
+<% content_for :heads do %>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW" data-turbolinks-track="true" ></script>
+<% end %>
+
+<% content_for :scripts do %>
+  <%= javascript_tag do %>
+    city = "<%= @city.name %>"
+    hotel_addr = "<%= @hotel.addr %>"
+  <% end %>
+  <%= javascript_include_tag "hotels", 'data-turbolinks-track' => true %>
+<% end %>
 
 <div class="row top-image">
   <%= image_tag "hotel_title_bg.png", lazy: true %>
