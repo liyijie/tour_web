@@ -113,7 +113,7 @@
 
         <% @relate_hotels.each do |hotel| %>
           <div class="thumbnail">
-            <%= link_to image_tag(hotel.cover_image.photo.url(:large), lazy:true), hotel %>
+            <%= link_to image_tag(hotel.cover_image.photo.url(:large), lazy:true), hotel if hotel.cover_image %>
             <div class="caption">
               <h4><%= hotel.name %></h4>
               <p>酒店地址：<%= hotel.addr %></p>
