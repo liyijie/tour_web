@@ -12,7 +12,11 @@
       <div class="caption text-center">
         <h5><%= hotel.name %></h5>
         <p class="text-muted">酒店地址：<%= hotel.addr %></p>
-        <p class="price_color">￥<%= hotel.price %>起</p>
+        <% if hotel.price.blank? %>
+          <p class="price_color">暂无报价</p>
+        <% else %>
+          <p class="price_color">￥<%= hotel.price %>起</p>  
+        <% end %>
       </div>
     </div>
   <% end %>
