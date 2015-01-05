@@ -1,0 +1,19 @@
+<div class="relates">
+  <div class="title">
+    <h5>
+      <span>周边景点推荐</span>
+      <%= link_to("更多", city_hotels_path(@city), class: "pull-right") %>  
+    </h5>
+  </div>
+  <% count = @relate_tours.count %>
+  <% @relate_tourss.each_with_index do |tour, index| %>
+    <div class="thumbnail <%= "last" if index == count - 1 %>">
+      <%= link_to image_tag(tour.cover_image.photo.url(:large)), tour if tour.cover_image %>
+      <div class="caption text-center">
+        <h5><%= tour.title %></h5>
+        <p class="text-muted">酒店地址：<%= tour.addr %></p>
+        <p class="price_color">￥<%= tour.price %>起</p>
+      </div>
+    </div>
+  <% end %>
+</div>
