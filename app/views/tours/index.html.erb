@@ -6,33 +6,42 @@
 	  <%= render_breadcrumbs :tag => :li, :separator => "" %>
 	</ol>	
 </div>
-<div class="container tour_list">
-	<% @tours.each do |tour| %>
-		<div class="row">
-			<div class="col-xs-3 tour_image">
-				<%= link_to image_tag(tour.image_thumb, lazy: true), tour %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-9 tour_list">
+			<% @tours.each do |tour| %>
+				<div class="row">
+					<div class="col-xs-3 tour_image">
+						<%= link_to image_tag(tour.image_thumb, lazy: true), tour %>
+					</div>
+					<div class="col-xs-7 tour_info">
+						<dl>
+							<dt><%= link_to tour.title, tour %><span>AAAAA</span></dt>
+							<dd class="sub"><%= tour.sub_title %></dd>
+							<dd class="open">开放时间：</dd>
+							<dd><%= tour.work_range %></dd>
+							<dd class="addr">地址：<%= tour.addr %></dd>
+						</dl>
+					</div>	
+					<div class="col-xs-2 tour_price ">
+						<% if tour.price.blank? %>
+						  <span class="color hint">暂无门票</span>
+						<% else %>
+						  <span class="color">￥</span>
+						  <span class="color size"><%= tour.price %></span>
+						  <span class="color">元起</span>
+						<% end %>
+		      </div>
+				</div>
+			<% end %>
+			<div class="apple_pagination">
+				<%= will_paginate @tour, class: "text-center" %>
 			</div>
-			<div class="col-xs-7 tour_info">
-				<dl>
-					<dt><%= link_to tour.title, tour %><span>AAAAA</span></dt>
-					<dd class="sub"><%= tour.sub_title %></dd>
-					<dd class="open">开放时间：</dd>
-					<dd><%= tour.work_range %></dd>
-					<dd class="addr">地址：<%= tour.addr %></dd>
-				</dl>
-			</div>	
-			<div class="col-xs-2 tour_price ">
-				<% if tour.price.blank? %>
-				  <span class="color hint">暂无门票</span>
-				<% else %>
-				  <span class="color">￥</span>
-				  <span class="color size"><%= tour.price %></span>
-				  <span class="color">元起</span>
-				<% end %>
-      </div>
-		</div>	
-	<% end %>
-	<div class="apple_pagination">
-		<%= will_paginate @tour, class: "text-center" %>
+		</div>
+		<div class="col-md-3 relate_hotels">
+			<%= render partial: "share/relate_hotels" %>
+		</div>
 	</div>
+
+
 </div>
