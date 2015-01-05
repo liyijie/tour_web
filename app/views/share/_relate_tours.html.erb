@@ -6,7 +6,7 @@
     </h5>
   </div>
   <% count = @relate_tours.count %>
-  <% @relate_tourss.each_with_index do |tour, index| %>
+  <% @relate_tours.each_with_index do |tour, index| %>
     <div class="thumbnail <%= "last" if index == count - 1 %>">
       <%= link_to image_tag(tour.cover_image.photo.url(:large)), tour if tour.cover_image %>
       <div class="caption text-center">

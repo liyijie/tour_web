@@ -7,6 +7,7 @@ class HotelsController < ApplicationController
   def index
     @city = City.find(params[:city_id])
     @hotels = @city.hotels.paginate(page: params[:page], per_page: 10)
+    @relate_tours = Tour.relates @hotels[0]
 
     add_breadcrumb "首页", :root_path
     add_breadcrumb @city.name, @city

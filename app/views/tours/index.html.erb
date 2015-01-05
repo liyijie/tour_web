@@ -11,7 +11,7 @@
 			<% @tours.each do |tour| %>
 				<div class="row">
 					<div class="col-xs-4 tour_image">
-						<%= link_to image_tag(tour.image_thumb, lazy: true), tour %>
+						<%= link_to image_tag(tour.image_thumb, lazy: true), tour if tour.cover_image%>
 					</div>
 					<div class="col-xs-6 tour_info">
 						<h4><%= link_to tour.title, tour %></h4>
@@ -36,14 +36,13 @@
 				</div>
 			<% end %>
 			<div class="apple_pagination">
-				<%= will_paginate @tour, class: "text-center" %>
+				<%= will_paginate @tours, class: "text-center" %>
 			</div>
 		</div>
 		<div class="col-md-3 hidden-sm hidden-xs">
 			<div class="col-md-12 tour_hotels">
 				<%= render partial: "share/relate_hotels" %>	
 			</div>
-			
 		</div>
 	</div>
 

@@ -17,7 +17,7 @@ ActiveAdmin.register Hotel do
   #   permitted
   # end
 
-  permit_params :name, :addr, :tel, :desc, :traffic, :city_id,
+  permit_params :name, :addr, :tel, :desc, :traffic, :city_id, :rate,
     cover_image_attributes: [:id, :photo, :_destroy],
     info_images_attributes: [:id, :photo, :_destroy],
     service_list: [], facility_list: []

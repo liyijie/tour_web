@@ -2,46 +2,84 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.hotel {
-	
-	.item {
-		border-left: 1px solid #b9b9b9;
-		border-right: 1px solid #b9b9b9;
-		border-bottom: 1px solid #b9b9b9;
-		background: #fff;
-		.hotel_image {
-			text-align: center;
-			img {
-				width: 100%;
-				// max-width: 289px;
-				// max-height: 208px;
-				margin-top: 10px;
-				margin-bottom: 10px;
-			}
-		}
-		.hotel_price {
-			text-align: center;
-			span {
-				// float: left;
-			}
-			span.color {
-				color: #eb8521;
-			}
-			span.size {
-				font-size: 40px;
-			}
-		}
-		.col-star {
-			height: 40px;
+.hotel_list {
+	border: 1px solid #cacaca;
+	background: #fff;
+	.row {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		border-bottom: 1px solid #cacaca;
+	}
+	.hotel_image img {
+		width: 100%;
+	}
+	.col-star {
+		img {
+			width: 10px;	
 		}
 	}
-
-	.item.top {
-		border-top: 1px solid #b9b9b9;
+	.tel {
+		padding-top: 10px;
 	}
-
+	.work_range {
+		padding: 15px 0px;
+	}
+	h4 {
+		line-height: 0.5;
+	}
+	p {
+		line-height: 1;
+	}
+	a {
+		color: #48c1ff;
+		text-decoration: none;
+	}
 }
+
+.hotel_tours {
+	border: 1px solid #cacaca;
+	background: #fff;
+}
+
+// .hotel {
+	
+// 	.item {
+// 		border-left: 1px solid #b9b9b9;
+// 		border-right: 1px solid #b9b9b9;
+// 		border-bottom: 1px solid #b9b9b9;
+// 		background: #fff;
+// 		.hotel_image {
+// 			text-align: center;
+// 			img {
+// 				width: 100%;
+// 				// max-width: 289px;
+// 				// max-height: 208px;
+// 				margin-top: 10px;
+// 				margin-bottom: 10px;
+// 			}
+// 		}
+// 		.hotel_price {
+// 			text-align: center;
+// 			span {
+// 				// float: left;
+// 			}
+// 			span.color {
+// 				color: #eb8521;
+// 			}
+// 			span.size {
+// 				font-size: 40px;
+// 			}
+// 		}
+// 		.col-star {
+// 			height: 40px;
+// 		}
+// 	}
+
+// 	.item.top {
+// 		border-top: 1px solid #b9b9b9;
+// 	}
+
+// }
 
 
 .hotel_show {

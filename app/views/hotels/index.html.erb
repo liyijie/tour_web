@@ -5,37 +5,44 @@
   <ol class="breadcrumb">
     <%= render_breadcrumbs :tag => :li, :separator => "" %>
   </ol>  
-</div>
-<div class="container hotel">
-  <% @hotels.each_with_index do |hotel, index| %>
-    <div class="row item <% if index == 0 %>top<% end %>">
-      <div class="col-xs-4 hotel_image">
-        <%= link_to image_tag(hotel.cover_image.photo.url(:product), lazy: true), hotel if hotel.cover_image %>
-      </div>
-      <div class="col-xs-6 hotel_info">
-        <ul>
-          <li>
-            <h3><%= link_to hotel.name, hotel %></h3>
-          </li>
-          <li class="col-star">
-            <% hotel.rate.to_i.times do %>
-              <%= image_tag "icon_start.png" %>
+  <div class="row">
+    <div class="col-md-9 hotel_list">
+      <% @hotels.each_with_index do |hotel, index| %>
+        <div class="row">
+          <div class="col-xs-4 hotel_image">
+            <%= link_to image_tag(hotel.cover_image.photo.url(:product), lazy: true), hotel if hotel.cover_image %>
+          </div>
+          <div class="col-xs-6 hotel_info">
+            <h4>
+              <%= link_to hotel.name, hotel %>
+              <span class="col-star">
+              <% hotel.rate.to_i.times do %>
+                <%= image_tag "icon_start.png" %>
+              <% end %>
+            </span>
+            </h4>
+            <p class="tel">电话：<%= hotel.tel %></p>
+            <p class="text-muted">地址：<%= hotel.addr %></p>
+          </div> 
+          <div class="col-sm-2 hidden-xs hotel_price text-right">
+            <% if hotel.price.blank? %>
+              <h4 class="price_color">暂无报价</h4>
+            <% else %>
+              <span class="price_color">￥</span>
+              <span class="price_color lead"><%= hotel.price %></span>
+              <span class="price_color">元起</span>
             <% end %>
-          </li>
-          <li>
-            电话：<%= hotel.tel %>
-          </li>
-          <li>
-            地址：<%= hotel.addr %>
-          </li>
-        </ul> 
-      </div> 
-      <div class="col-xs-2 hotel_price">
-        <span class="color">￥</span>
-        <span class="color size"><%= hotel.price %></span>
-        <span class="color">元</span>
-        <span>起</span>
+          </div>
+        </div>
+      <% end %>
+      <div class="apple_pagination">
+        <%= will_paginate @hotels, class: "text-center" %>
       </div>
     </div>
-  <% end %>
+    <div class="col-md-3 hidden-sm hidden-xs">
+      <div class="col-md-12 hotel_tours">
+        <%= render partial: "share/relate_tours" %>  
+      </div>
+    </div>
+  </div>
 </div>
