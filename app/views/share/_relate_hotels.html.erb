@@ -1,18 +1,19 @@
-<div class="content">
-  <div class="hotel-title">
-    <span>周边酒店推荐</span>
-    <%= link_to("更多酒店", city_hotels_path(@city)) %>
+<div class="relates">
+  <div class="title">
+    <h5>
+      <span>周边酒店推荐</span>
+      <%= link_to("更多酒店", city_hotels_path(@city), class: "pull-right") %>  
+    </h5>
   </div>
-
   <% count = @relate_hotels.count %>
   <% @relate_hotels.each_with_index do |hotel, index| %>
     <div class="thumbnail <%= "last" if index == count - 1 %>">
       <%= link_to image_tag(hotel.cover_image.photo.url(:large)), hotel if hotel.cover_image %>
-      <div class="caption">
-        <h4><%= hotel.name %></h4>
-        <p>酒店地址：<%= hotel.addr %></p>
+      <div class="caption text-center">
+        <h5><%= hotel.name %></h5>
+        <p class="text-muted">酒店地址：<%= hotel.addr %></p>
         <p class="price_color">￥<%= hotel.price %>起</p>
       </div>
     </div>
-  <% end %> 
-</div>  
+  <% end %>
+</div>

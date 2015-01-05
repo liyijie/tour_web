@@ -5,31 +5,32 @@
 	<ol class="breadcrumb">
 	  <%= render_breadcrumbs :tag => :li, :separator => "" %>
 	</ol>	
-</div>
-<div class="container">
+
 	<div class="row">
 		<div class="col-md-9 tour_list">
 			<% @tours.each do |tour| %>
 				<div class="row">
-					<div class="col-xs-3 tour_image">
+					<div class="col-xs-4 tour_image">
 						<%= link_to image_tag(tour.image_thumb, lazy: true), tour %>
 					</div>
-					<div class="col-xs-7 tour_info">
-						<dl>
-							<dt><%= link_to tour.title, tour %><span>AAAAA</span></dt>
-							<dd class="sub"><%= tour.sub_title %></dd>
-							<dd class="open">开放时间：</dd>
-							<dd><%= tour.work_range %></dd>
-							<dd class="addr">地址：<%= tour.addr %></dd>
-						</dl>
+					<div class="col-xs-6 tour_info">
+						<h4><%= link_to tour.title, tour %></h4>
+						<h4><small><%= tour.sub_title %></small></h4>
+						<div class="work_range">
+							<p>开放时间：</p>
+							<p class="text-muted"><%= tour.work_range %></p>	
+						</div>
+						<div class="addr">
+							<%= image_tag "addr.png", class: "addr_img" %><span> 地址：<%= tour.addr %></span>	
+						</div>
 					</div>	
-					<div class="col-xs-2 tour_price ">
+					<div class="col-sm-2 hidden-xs tour_price text-right">
 						<% if tour.price.blank? %>
-						  <span class="color hint">暂无门票</span>
+						  <h4 class="price_color">暂无门票</h4>
 						<% else %>
-						  <span class="color">￥</span>
-						  <span class="color size"><%= tour.price %></span>
-						  <span class="color">元起</span>
+						  <span class="price_color">￥</span>
+						  <span class="price_color lead"><%= tour.price %></span>
+						  <span class="price_color">元起</span>
 						<% end %>
 		      </div>
 				</div>
@@ -38,10 +39,12 @@
 				<%= will_paginate @tour, class: "text-center" %>
 			</div>
 		</div>
-		<div class="col-md-3 relate_hotels">
-			<%= render partial: "share/relate_hotels" %>
+		<div class="col-md-3 hidden-sm hidden-xs">
+			<div class="col-md-12 tour_hotels">
+				<%= render partial: "share/relate_hotels" %>	
+			</div>
+			
 		</div>
 	</div>
-
 
 </div>
