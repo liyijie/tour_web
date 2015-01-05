@@ -16,17 +16,21 @@
  */
 
 $navbar-height: 80px;
+$navbar-margin-bottom: 0;
+$navbar-default-border: 0;
 $navbar-default-color: #000;
-$navbar-default-link-active-color: #fff;
-$navbar-default-link-hover-color: #fff;
+$navbar-default-link-active-color: #ffffff;
+$navbar-default-link-hover-color: #ffffff;
 $navbar-default-link-active-bg: #48c1ff;
 $navbar-default-link-hover-bg: #48c1ff;
 $carousel-control-width: 5%;
 $carousel-indicator-active-bg: #ff9c49;
 $breadcrumb-bg: transparent;
 $breadcrumb-separator: ">";
+$breadcrumb-padding-vertical: 0;
 $breadcrumb-padding-horizontal: 0;
 $font-size-base: 13px;
+$link-hover-decoration: none;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -37,8 +41,8 @@ ul,ol,li {
   padding: 0 !important;
 }
 
-a:hover {
-	background: transparent !important;
+a {
+	text-decoration: none !important;
 }
 
 .text-align-center {
@@ -51,10 +55,9 @@ body {
 }
 
 .navbar {
-	margin-bottom: 0px;
+	height: $navbar-height;
 	.navbar-brand {	
-		padding-top: 8px;
-		margin-top: 0px;
+		padding-top: 10px;
 		img {
 			height: $navbar-height - 20px;
 		}
@@ -70,8 +73,10 @@ body {
 			height: 40px;
 			line-height: 35px;
 			color: #ffffff;
-			font-size: 12px;
 		}
+	}
+	.navbar-nav {
+		height: $navbar-height;
 	}
 	.input-group {
 		.form-control, .btn {
@@ -197,7 +202,7 @@ dl.explain {
 }
 
 .relates {
-	background: white;
+	background: #fff;
 	a {
 		color: #ff6600;
 		text-decoration: none;
