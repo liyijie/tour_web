@@ -15,8 +15,9 @@
  *= require pagination
  */
 
-$navbar-height: 80px;
+$navbar-height: 60px;
 $navbar-margin-bottom: 0;
+$navbar-default-bg: #fff;
 $navbar-default-border: 0;
 $navbar-default-color: #000;
 $navbar-default-link-active-color: #ffffff;
@@ -32,8 +33,37 @@ $breadcrumb-padding-horizontal: 0;
 $font-size-base: 13px;
 $link-hover-decoration: none;
 
+$color-blue: #2577E3;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.blue {
+	color: $color-blue;
+}
+.bg-blue {
+	background: $color-blue;
+}
+
+.nav-tabs.menu-top {
+	padding-top: 0px !important;
+	border-bottom: 0 !important;
+	a, li a:visited {
+		padding: 8px 10px 5px 10px;
+		font-size: 16px;
+		font-weight: bold;
+		color: #fff;
+		border-radius: 0;
+		border-top: 2px solid transparent;
+		background: transparent !important;
+	}
+	li a:hover, li a:active, li.active a {
+		color: $color-blue;
+		border-top: 2px solid #FFA024;
+		background: #fff !important;
+	}
+}
+
 
 ul,ol,li {
   list-style: none;
@@ -56,10 +86,10 @@ body {
 
 .navbar {
 	height: $navbar-height;
-	.navbar-brand {	
-		padding-top: 10px;
+	.navbar-brand {
+		padding-top: 0;	
 		img {
-			height: $navbar-height - 20px;
+			height: $navbar-height;
 		}
 	}
 	.navbar-nav li a {
