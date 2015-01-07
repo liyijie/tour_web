@@ -8,33 +8,17 @@
         <span class="icon-bar"></span>
       </button>
     </div>
-    <div id="navbar-collapsed" class="collapse navbar-collapse">
-    	<ul class="nav navbar-nav">
-    		<li id="navbar-home" class="<%= "active" if @mode.to_s == "" %>">
-          <%= link_to("首页", root_path) %>
-        </li>
-        <li id="navbar-line" class="dropdown <%= "active" if @mode.to_s == "pomotion" %>">
-          <%= link_to('#' , "data-toggle" => "dropdown", class: "dropdown-toggle") do %>
-            精品主题<span class="caret"></span>
-          <% end %>
-          <% categories = Category.all %>
-          <ul class="dropdown-menu" role="menu">
-            <% categories.each do |category| %>
-              <li><%= link_to(category.name, category) %></li>
-            <% end %>
-          </ul>
-        </li>
-        <li id="navbar-city" class="dropdown <%= "active" if @mode.to_s == "city" %>">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">热门城市<span class="caret"></span></a>
-          <% cities = City.all %>
-          <ul class="dropdown-menu" role="menu">
-            <% cities.each do |city| %>
-              <li><%= link_to(city.name, city) %></li>
-            <% end %>
-          </ul>
-        </li>
-    	</ul>
-    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="phone">客服电话：<span class="blue">80012341234</span></li>
+      <li class="dropdown">
+        <img class="dropdown-toggle" data-toggle="dropdown" src="/assets/app_down.png" />
+        <ul class="dropdown-menu" role="menu">
+          <li class="text-center">手机APP</li>
+          <li class="text-center"><img src="" /></li>
+          <li class="text-center">Android</li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </nav>
 <div class="container-fluid bg-blue">

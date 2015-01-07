@@ -168,26 +168,13 @@ body {
 			height: $navbar-height;
 		}
 	}
-	.navbar-nav li a {
-		text-decoration: none;
-	}
-	.dropdown-menu {
-		background: #48c1ff;
-		border: 0px;
-		border-radius: 0;
-		a {
-			height: 40px;
-			line-height: 35px;
-			color: #ffffff;
-		}
-	}
 	.navbar-nav {
 		height: $navbar-height;
-	}
-	.input-group {
-		.form-control, .btn {
-			border-radius: 0;
-			height: 35px;
+		li {
+			line-height: $navbar-height;
+		}
+		li.phone span {
+			padding-right: 20px;
 		}
 	}
 }
@@ -287,10 +274,6 @@ body {
 ol.breadcrumb {
 	height: 40px;
 	line-height: 40px;	
-}
-
-.blue {
-	color: #48c1ff;
 }
 
 dl.explain {
