@@ -100,6 +100,9 @@
 	.panel {
 		margin-bottom: 0px;
 		border-radius: 0;
+		.panel-body p {
+			line-height: 22px;
+		}
 	}
 	.weather {
 		background-color: #f8f8f8;
@@ -111,6 +114,7 @@
 		border-left: 1px;
 		border-right: 1px;
 		border-bottom: 1px;
+		border-top: 0;
 		border-style: solid;
 		border-color: #b9b9b9;
 		background-color: #fff;
@@ -137,7 +141,8 @@
 		}
 	}
 	.weather-days.title {
-		border-bottom: 0px;
+		border-top: 0;
+		border-bottom: 0;
 		padding-left: 15px;
 		height: 40px;
 		line-height: 40px;
@@ -175,32 +180,21 @@
 		}
 	}
 	.info-menu {
-		margin-top: 10px;
 		border: 1px solid #b9b9b9;
 		border-bottom: 0px;
-		.nav {
+		.nav-pills {
 			background-color: #48c1ff;
-			li {
+			li a:visited, a {
 				border-radius: 0;
-				a {
-					border-radius: 0;
-					text-decoration: none;
-					color:#fff;
-					margin-top: 5px;
-					margin-left: 5px;
-					margin-right: 5px;
-				}
-				a:hover {
-					background: transparent;
-				}
+				font-weight: bold;
+				font-size: 14px;
+				color: #fff;
 			}
-			li.active {
-				a {
-					background-color: #fff;
-					border-radius: 0;
-					text-decoration: none;
-					color: #000;
-				}
+			a:hover, a:active,
+			li.active a,
+			li.active a:visited {
+				color: #000;
+				background: #ffffff;
 			}
 		}
 	}
@@ -211,6 +205,10 @@
 		.tab-content {
 			border: 0px;
 			background: #fff;
+			p {
+				padding: 10px;
+				line-height: 23px;
+			}
 		}	
 		.col-md-9, .col-md-3 {
 			margin: 0;

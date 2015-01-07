@@ -28,12 +28,12 @@
 	<div class="row weather">	
 		<div class="col-md-4">
 			<ul>
-				<li><h2><%= @weather.weather_city %></h2></li>
+				<li><h1><%= @weather.weather_city %></h1></li>
 				<li><h4><%= @weather.weather_date %></h4></li>
 				<li><%= @weather.weather_time %></li>
 			</ul>
 		</div>	
-		<div class="col-md-4 text-align-center">
+		<div class="col-md-4 text-center">
 			<ul>
 				<li><%= image_tag @weather.weather_icon %></li>
 				<li><h1><%= @weather.weather_degree %></h1></li>
@@ -83,7 +83,7 @@
 		<div id="bmap" class="col-md-7">
 		</div>
 	</div>
-	<div class="row info-menu">
+	<div class="row mt info-menu">
 		<ul class="nav nav-pills" role="tablist">
 			<li role="presentation" class="active">
 				<a href="#history" role="tab" data-toggle="tab">人文历史</a>
