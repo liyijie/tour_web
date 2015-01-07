@@ -35,6 +35,33 @@
       </div>    
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-6 hotel_media">
+      <div class="media bg-gray">
+        <%= link_to image_tag(@tour.cover_image.photo(:small)), @tour, class: "media-left" %>
+        <div class="media-body">
+          <div class="media-heading">
+            <%= image_tag "icon_start.png", class: "hotel-icon" %>
+            <%= link_to("上海中环国际酒店", @tour) %>  
+          </div>
+          <div>
+            <% 5.times do %>
+              <%= image_tag "icon_start.png", class: "hotel-start" %>
+            <% end %>
+          </div>
+          <div class="col-xs-8 hotel-info">
+            <div class="text-muted">贵阳市</div>
+            <div class="text-muted"><small><%= truncate "大宁国际商业区,大宁国际商业区,大宁国际商业区", length: 12, omission: '' %></small></div>
+          </div>
+          <div class="col-xs-4 hotel-price">
+            <div class="pull-right">¥<span class="b-price">4420</span>起</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>--------------------</p>
   
 </div>
 <div class="container tour_show">

@@ -1,0 +1,37 @@
+.hotel_media {
+  :hover {
+    background: #e2eeff;
+  }
+  .media {
+    height: 90px;  
+  }
+  .media-heading {
+    a {
+      color: #06c;
+      line-height: 20px;
+      font-size: 14px;
+    }
+  }
+  .media-left img {
+    width: 90px;
+    height: 90px;
+    padding: 0px;
+  }
+  .media-body {
+    padding:5px 5px 5px 0px;
+    width: 100%;
+    .hotel-info {
+      padding: 0px;
+    }
+  }
+  .hotel-icon {
+    height: 16px;
+  }
+  .hotel-start {
+    height: 10px;
+  }
+  .b-price {
+    color: #ff6602;
+    font: 25px/1.5 arial;
+  }
+}
