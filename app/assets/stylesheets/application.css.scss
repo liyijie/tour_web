@@ -34,6 +34,11 @@ $font-size-base: 13px;
 $link-hover-decoration: none;
 
 $color-blue: #2577E3;
+$color-blue-light: #ECF4FC;
+$color-blue-light-hover: #92BBF0;
+$color-bg-gray: #f3f3f3;
+$color-orange: #FFB000;
+$color-orange-hover: #F79700;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -44,13 +49,28 @@ $color-blue: #2577E3;
 .bg-blue {
 	background: $color-blue;
 }
+.bg-gray {
+	background: $color-bg-gray;
+}
+.btn-orange {
+	background: $color-orange;
+	color: #fff;
+}
+.btn-orange:hover {
+	background: $color-orange-hover;
+	color: #fff;
+}
+
+.bold {
+	font-weight: bold;
+}
 
 .nav-tabs.menu-top {
 	padding-top: 0px !important;
 	border-bottom: 0 !important;
 	a, li a:visited {
 		padding: 8px 10px 5px 10px;
-		font-size: 16px;
+		font-size: $font-size-h4;
 		font-weight: bold;
 		color: #fff;
 		border-radius: 0;
@@ -64,6 +84,65 @@ $color-blue: #2577E3;
 	}
 }
 
+.menu-left {
+	border: 5px solid $color-blue;
+	border-radius: 5px;
+	.nav-tab {
+		a {
+			border-radius: 0;
+			background: $color-blue-light;
+			color: #000;
+			font-weight: bold;
+			font-size: $font-size-h4;
+			border-right: 1px solid #AECEF6;
+			border-bottom: 1px solid #AECEF6;
+		}	
+		li a:hover {
+			background: $color-blue-light-hover;
+			color: #fff;
+		}
+		li.active a {
+			background: #fff;
+			color: $color-blue;
+			border-right: 0px;
+		}
+	}
+	.tab-content {
+		border: 0;
+		.tab-pane {
+			overflow: hidden;
+			padding: 10px;
+		}
+		button {
+			width: 120px;
+		}
+		input, select {
+			border-radius: 0;
+		}
+		dl {
+			clear: both;
+			overflow: hidden;
+			dt {
+				clear: both;
+				float: left;
+				height: 30px;
+				line-height: 30px;
+				font-size: $font-size-h5;
+			}
+			dd {
+				float: left;
+				height: 30px;
+				line-height: 30px;
+				padding-left: 5px;
+			}
+		}
+	}
+}
+
+.row.mt {
+	margin-top: 10px;
+}
+
 
 ul,ol,li {
   list-style: none;
@@ -75,14 +154,11 @@ a {
 	text-decoration: none !important;
 }
 
-.text-align-center {
-	text-align: center;
-}
-
 body {
-	background: #f3f3f3;
+	background: #fff;
 	// padding-top: 70px;
 }
+
 
 .navbar {
 	height: $navbar-height;

@@ -1,3 +1,128 @@
+<div class="container">
+  <div class="row mt">
+    <div class="col-md-6">
+      <div class="row menu-left">
+        <ul class="nav nav-tab pull-left" role="tablist">
+          <li role="presentation" class="active"><a href="#line" role="tab" data-toggle="tab">线路</a></li>
+          <li role="presentation"><a href="#hotel" role="tab" data-toggle="tab">酒店</a></li>
+          <li role="presentation"><a href="#shop" role="tab" data-toggle="tab">美食</a></li>
+          <li role="presentation"><a href="#tour" role="tab" data-toggle="tab">门票</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade in active" id="line">
+            <form class="form-inline" role="form">
+              <dl>
+                <dt>推荐线路</dt>
+                <dd>黄果树瀑布</dd>
+                <dd>江西千户苗寨</dd>
+                <dd>测试线路1</dd>
+                <dd>测试线路2</dd>
+                <dt>热门线路</dt>
+                <dd>黄果树瀑布</dd>
+                <dd>江西千户苗寨</dd>
+                <dd>测试线路1</dd>
+                <dd>测试线路2</dd>
+              </dl>
+              <div class="form-group">
+                <label for="txtLine" class="control-label">目的地</label>
+                <input type="text" class="form-control" id="txtLine" placeholder="景点名称" />
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-orange bold">搜  索</button>
+              </div>
+            </form>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="hotel">
+            <form class="form-inline" role="form">
+              <div class="form-group">
+                <label for="txtHotelDist" class="control-label">&nbsp;&nbsp;&nbsp;&nbsp;目的地</label>
+                <input type="text" class="form-control" id="txtHotelDist" placeholder="城市名称" />
+              </div>
+              <div class="row mt">
+                <div class="form-group col-md-12">
+                  <label for="txtHotelDist" class="control-label">酒店级别</label>
+                  <select class="form-control">
+                    <option>不限</option>
+                    <option>五星级豪华</option>
+                    <option>四星级高档</option>
+                    <option>三星级舒适</option>
+                    <option>三星级以下经济</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mt">
+                <div class="form-group col-md-12">
+                  <label class="control-label">&nbsp;&nbsp;&nbsp;&nbsp;关键字</label>
+                  <input type="text" class="form-control" id="txtHotelKey" placeholder="(选填)酒店名" />
+                </div>
+              </div>
+              <div class="row mt">
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-orange bold pull-right">搜  索</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="shop">
+           <form class="form-inline" role="form">
+            <div class="form-group">
+              <label for="txtShopDist" class="control-label">&nbsp;&nbsp;&nbsp;&nbsp;目的地</label>
+              <input type="text" class="form-control" id="txtShopDist" placeholder="城市名称" />
+            </div>
+            <div class="row mt">
+              <div class="form-group col-md-12">
+                <label for="txtShopName" class="control-label">商家名称</label>
+                <input type="text" class="form-control" id="txtShopName" placeholder="商家名称" />
+              </div>
+            </div>
+            <div class="row mt">
+              <div class="form-group col-md-12">
+                  <label for="txtHotelDist" class="control-label">人均消费</label>
+                  <select class="form-control">
+                    <option>不限</option>
+                    <option>0-50元</option>
+                    <option>50-100元</option>
+                    <option>100-200元</option>
+                    <option>300以上</option>
+                  </select>
+                </div>
+            </div>
+            <div class="row mt">
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-orange bold pull-right">搜  索</button>
+                </div>
+              </div>
+           </form> 
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="tour">
+            <form class="form-inline" role="form">
+              <dl>
+                <dt>热门景点</dt>
+                <dd>黄果树瀑布</dd>
+                <dd>江西千户苗寨</dd>
+                <dd>测试线路1</dd>
+                <dd>测试线路2</dd>
+                <dt>推荐景点</dt>
+                <dd>黄果树瀑布</dd>
+                <dd>江西千户苗寨</dd>
+                <dd>测试线路1</dd>
+                <dd>测试线路2</dd>
+              </dl>
+              <div class="form-group">
+                <label for="txtTour" class="control-label">目的地</label>
+                <input type="text" class="form-control" id="txtTour" placeholder="景点名称" />
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-orange bold">搜  索</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div> 
+    </div>
+    <div class="col-md-6"></div>
+  </div>
+</div>
 <div class="row">
   <div id="carousel-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
