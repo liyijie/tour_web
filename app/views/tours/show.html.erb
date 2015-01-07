@@ -17,6 +17,25 @@
   <ol class="breadcrumb">
     <%= render_breadcrumbs :tag => :li, :separator => "" %>
   </ol>
+  <div class="row">
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-4 tour-big-thumbnail">
+          <%= render partial: "share/tour_thumbnail" %>
+        </div>
+        <div class="col-md-8">
+          <% 2.times do %>
+            <!-- <div class="row"> -->
+              <% 3.times do %>
+                <div class="col-lg-4 col-md-6 tour-test"><%= render partial: "share/tour_thumbnail" %></div>
+              <% end %>
+            <!-- </div> -->
+          <% end %>
+        </div>
+      </div>    
+    </div>
+  </div>
+  
 </div>
 <div class="container tour_show">
 	<div class="row title">
