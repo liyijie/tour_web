@@ -29,22 +29,26 @@
 
 	var Web = window.Web = {
 
-		Top : {
-
-			init : function(menuId) {
-				$(menuId).addClass('active');
+		Search : {
+			setup : function() {
+				var $searchRadio = $(".search-radio");
+				if($searchRadio != undefined && $searchRadio.length > 0) {
+					$(".search-panel").hide();
+					$("#search-hotel").show();
+					$searchRadio.click(function() {
+						var $this = $(this);
+						$(".search-panel").hide();
+						$("#" + $this.attr("to")).fadeIn("fast");
+					});
+				}
 			}
-
-		}
+		}	
 
 	};
 
 	jQuery(document).ready(function($) {
-		
 		$("img").lazyload();
-
-
-
+		Web.Search.setup();
 	});
 
 })(jQuery, window, document, undefined);

@@ -33,10 +33,14 @@ $breadcrumb-padding-horizontal: 0;
 $font-size-base: 13px;
 $link-hover-decoration: none;
 
+$font-size-up: 14px;
+
 $color-blue: #2577E3;
 $color-blue-light: #ECF4FC;
 $color-blue-light-hover: #92BBF0;
+$color-font-gray: #555;
 $color-bg-gray: #f3f3f3;
+$color-bg-gray-light: #F5F5F5;
 $color-orange: #FFB000;
 $color-orange-hover: #F79700;
 
@@ -83,6 +87,54 @@ $color-orange-hover: #F79700;
 		border-top: 2px solid #FFA024;
 		background: #fff !important;
 	}
+}
+.panel.search-menu {
+	border: 5px solid $color-blue;
+	.panel-heading {
+		border-radius: 0;
+		background: $color-blue;
+		color: #fff;
+	}
+	.panel-body {
+		padding-top: 0px;
+		.select {
+			background: $color-bg-gray-light;
+			text-align: center;
+			padding: 10px 0 10px 0;
+			.radio-inline {
+				font-size: $font-size-up;
+				font-weight: bold;
+			}
+		}
+		.search-panel {
+			padding-top: 10px;
+			font-size: $font-size-up;
+			display: none;
+			.form-group {
+				.control-label {
+					padding-right: 0;
+				}
+			}
+			dl {
+				padding: 0 30px;
+				dt {
+					clear: both;
+					float: left;
+					color: $color-font-gray;
+					font-size: $font-size-up;
+				}
+				dd {
+					float: left;
+					margin-left: 7px;
+					a {
+						font-size: $font-size-up;
+						color: $color-blue;
+					}
+				}
+			}
+		}
+	}
+	
 }
 
 .menu-left {
