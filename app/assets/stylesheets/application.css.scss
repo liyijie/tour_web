@@ -232,6 +232,10 @@ body {
 		height: $navbar-height;
 		li {
 			line-height: $navbar-height;
+			.dropdown-menu {
+				border: 4px solid $color-orange;
+				border-radius: 0;
+			}
 		}
 		li.phone span {
 			padding-right: 20px;
