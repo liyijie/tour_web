@@ -32,6 +32,7 @@ $breadcrumb-padding-vertical: 0;
 $breadcrumb-padding-horizontal: 0;
 $font-size-base: 13px;
 $link-hover-decoration: none;
+$font-family-sans-serif: "microsoft yahei", Helvetica, Arial, sans-serif;
 
 $font-size-up: 14px;
 
@@ -115,6 +116,10 @@ $color-orange-hover: #F79700;
 					font-size: $font-size-up;
 					color: $color-font-gray;
 					padding-right: 0;
+				}
+				.btn {
+					font-size: $font-size-up;
+					font-weight: bold !important;
 				}
 			}
 			dl {
