@@ -102,7 +102,20 @@
 						}, 1500);
 					}
 				}
+ 			},
 
+ 			/**
+ 			 * 地址解析
+ 			 */
+ 			Geocoder: {
+ 				// 通过地址得到point对象, fn(point), 如果解析出错，point则为0
+ 				getPoint: function(city, addr, fn) {
+	 				new BMap.Geocoder().getPoint(addr, fn, city);
+	 			},
+	 			// 根据point获取地址信息
+	 			getLocation: function(point, fn) {
+	 				new BMap.Geocoder().getLocation(point, fn);
+	 			}
  			},
 
  			/**
