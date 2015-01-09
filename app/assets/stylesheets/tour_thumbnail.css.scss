@@ -3,19 +3,7 @@
   font: 22px/1.5 arial;
 }
 
-.blue {
-  font: 12px/1.5 arial,Simsun, sans-serif;
-  color: #06c;
-}
-.tour-test {
-  // border: 1px solid black;
-  padding: 5px;
-  // height: 150px;
-}
-
 .tour-thumbnail {
-  // width: 180px;
-
   .thumbnail {
     padding: 0px;
     margin-bottom: 0px;
@@ -28,17 +16,21 @@
   .caption {
     height: 46px;
     background: #f3f3f3;
-    padding: 0px;
+    padding: 5px;
+    .title {
+      font: 12px/1.5 arial,Simsun, sans-serif;
+      color: #06c;
+    }
   }
 }
 
 .tour-big-thumbnail {
-  .tour-thumbnail {
-    // width: 280px;
+  .thumbnail {
     width: 100%;
     img {
       width: 100%;
-      height: 275px;
+      height: 269px;
     }
   }
+  
 }
