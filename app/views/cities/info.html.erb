@@ -1,5 +1,6 @@
 <% content_for :heads do %>
 	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW" data-turbolinks-track="true" ></script>
+  <script type="text/javascript" src="/assets/map.js" data-turbolinks-track="true" ></script>
 <% end %>
 
 <% content_for :scripts do %>
@@ -80,7 +81,8 @@
 			  <div role="tabpanel" class="tab-pane" id="car">...</div>
 			</div>
 		</div>	
-		<div id="bmap" class="col-md-7">
+		<div class="col-md-7">
+			<div id="bmap"></div>
 		</div>
 	</div>
 	<div class="row mt info-menu">
