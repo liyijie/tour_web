@@ -21,7 +21,7 @@
 	<div class="row">
 		<div class="col-md-9 tour_list">
 			<% @tours.each do |tour| %>
-				<div class="row has-hover">
+				<div class="row item">
 					<div class="col-xs-4 tour_image">
 						<%= link_to image_tag(tour.image_thumb, lazy: true), tour if tour.cover_image%>
 					</div>
@@ -45,6 +45,41 @@
 						  <span class="price_color">元起</span>
 						<% end %>
 		      </div>
+		      <div class="clearfix col-md-12 ticket-table">
+		      	<div class="row title">
+		      		<div class="col-xs-2 col-md-1">类型</div>
+		      		<div class="col-xs-6 col-md-7">名字</div>
+		      		<div class="col-xs-2 col-md-2">市场价</div>
+		      		<div class="col-xs-2 col-md-2">贵途价</div>
+		      	</div>
+		      	<div class="row info">
+		      		<div class="col-xs-2 col-md-1">套票</div>
+		      		<div class="col-xs-6 col-md-7"><a href="#">天波杨府+包公祠+铁塔直通车</a></div>
+		      		<div class="col-xs-2 col-md-2"><del class="h6 gray-light">￥120</del></div>
+		      		<div class="col-xs-2 col-md-2 orange bold">￥100</div>
+		      	</div>
+		      	<div class="row info">
+		      		<div class="col-xs-2 col-md-1">套票</div>
+		      		<div class="col-xs-6 col-md-7"><a href="#">天波杨府+包公祠+铁塔直通车</a></div>
+		      		<div class="col-xs-2 col-md-2"><del class="h6 gray-light">￥120</del></div>
+		      		<div class="col-xs-2 col-md-2 orange bold">￥100</div>
+		      	</div>
+		      	<div class="row info vis">
+		      		<div class="col-xs-2 col-md-1">套票</div>
+		      		<div class="col-xs-6 col-md-7"><a href="#">天波杨府+包公祠+铁塔直通车</a></div>
+		      		<div class="col-xs-2 col-md-2"><del class="h6 gray-light">￥120</del></div>
+		      		<div class="col-xs-2 col-md-2 orange bold">￥100</div>
+		      	</div>
+		      	<div class="row info vis">
+		      		<div class="col-xs-2 col-md-1">套票</div>
+		      		<div class="col-xs-6 col-md-7"><a href="#">天波杨府+包公祠+铁塔直通车</a></div>
+		      		<div class="col-xs-2 col-md-2"><del class="h6 gray-light">￥120</del></div>
+		      		<div class="col-xs-2 col-md-2 orange bold">￥100</div>
+		      	</div>
+					</div>
+					<div class="clearfix col-md-12 text-right">
+						<a class="btn-ticket-more">查看更多<span class="caret"></span></a>
+					</div>
 				</div>
 			<% end %>
 			<div class="apple_pagination">
@@ -59,5 +94,4 @@
 			</div>
 		</div>
 	</div>
-
 </div>

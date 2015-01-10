@@ -36,3 +36,16 @@ $ ->
     #     map.centerAndZoom(point, 16);
     #     map.addOverlay(new BMap.Marker(point));
     # , city);
+
+  if $(".btn-ticket-more").length > 0
+    $(".btn-ticket-more").click -> 
+      isShow = $(this).attr("isShow");
+      if isShow isnt "undefined" and isShow isnt "show"
+        $(this).parent().prev(".ticket-table").children(".info:gt(1)").slideDown(300)
+        $(this).addClass("dropup")
+        $(this).attr("isShow", "show")
+      else
+        $(this).parent().prev(".ticket-table").children(".info:gt(1)").slideUp(300)
+        $(this).removeClass("dropup")
+        $(this).attr("isShow", "hide")
+

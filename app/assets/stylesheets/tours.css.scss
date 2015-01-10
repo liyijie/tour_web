@@ -2,25 +2,59 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "variables";
+@import "bootstrap";
+
 .tour_list {
 	border: 1px solid #cacaca;
 	background: #fff;
-	.row {
+	.row.item {
 		padding-top: 15px;
 		padding-bottom: 15px;
 		border-bottom: 1px solid #cacaca;
 	}
+
 	.addr {
 		img {
 			width: 20px;	
 		}
 	}
 	.work_range {
-		padding: 15px 0px;
+		padding: 15px 0;
 	}
 	img {
 		width: 100%;
 	}
+	table {
+		margin-top: 5px;
+	}
+	.btn-ticket-more {
+		cursor: pointer;
+	}
+
+	.ticket-table {
+		clear: both;
+		margin-top: 5px;
+		.info,
+		.title {
+			margin: 0;
+			border-bottom: 1px solid $table-border-color;
+		}
+		.title {
+			padding: 9px 0 9px 0;
+			border-top: 1px solid $table-border-color;
+			background: $color-bg-gray;
+			color: $color-font-gray;	
+			font-weight: bold;
+		}
+		.info {
+			padding: 8px 0 8px 0;
+		}
+		.info.vis {
+			display: none;
+		}
+	}
+		
 }
 #tour-list-map,
 .tour_hotels {

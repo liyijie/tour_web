@@ -1,4 +1,6 @@
 @import "variables";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 .has-hover {
 	background: inherit;
@@ -7,4 +9,3 @@
 .has-hover:hover {
 	background: $color-blue-hover !important;
 }
-
