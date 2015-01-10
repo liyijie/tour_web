@@ -21,7 +21,7 @@
 	<div class="row">
 		<div class="col-md-9 tour_list">
 			<% @tours.each do |tour| %>
-				<div class="row">
+				<div class="row has-hover">
 					<div class="col-xs-4 tour_image">
 						<%= link_to image_tag(tour.image_thumb, lazy: true), tour if tour.cover_image%>
 					</div>

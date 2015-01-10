@@ -40,7 +40,7 @@
       <% if @tours[index] %>
         <% tour = @tours[index] %>
         <div class="col-md-4">
-          <div class="thumbnail">
+          <div class="thumbnail has-hover">
             <%= link_to(image_tag(tour.image_large), tour , lazy: true) %>
             <div class="caption">
               <h4><%= tour.title %></h4>
@@ -57,7 +57,7 @@
         <% if @tours[index] %>
           <% tour = @tours[index] %>
           <div class="col-md-4">
-            <div class="thumbnail">
+            <div class="thumbnail has-hover">
               <%= link_to(image_tag(tour.image_large), tour , lazy: true) %>
               <div class="caption">
                 <h4><%= tour.title %></h4>
@@ -71,7 +71,7 @@
   <% end %>
 
   <% if @tours.size >= 6 %>
-    <div class="row more">
+    <div class="row more has-hover">
       <%= link_to(("更多景点"+ content_tag(:span, "", class: "glyphicon glyphicon-play", "aria-hidden" => true)).html_safe, city_tours_path(@city)) %>
     </div>
   <% end %>
@@ -82,7 +82,7 @@
       <% if @hotels[index] %>
         <% hotel = @hotels[index] %>
         <div class="col-md-3 col-xs-6">
-          <div class="thumbnail">
+          <div class="thumbnail has-hover">
             <%= link_to(image_tag(hotel.image_large), hotel , lazy: true) %>
             <div class="caption">
               <h4><%= hotel.name %></h4>
@@ -93,7 +93,7 @@
     <% end %>
   </div>
   <% if @tours.size >= 4 %>
-    <div class="row more">
+    <div class="row more has-hover">
       <%= link_to(("更多酒店"+ content_tag(:span, "", class: "glyphicon glyphicon-play", "aria-hidden" => true)).html_safe, city_hotels_path(@city)) %>
     </div> 
   <% end %>
@@ -114,7 +114,7 @@
     <% end %>
   </div> 
   <% if @shops.size >= 4 %>
-    <div class="row more">
+    <div class="row more has-hover">
       <%= link_to(("更多美食"+ content_tag(:span, "", class: "glyphicon glyphicon-play", "aria-hidden" => true)).html_safe, city_shops_path(@city)) %>
     </div> 
   <% end %>

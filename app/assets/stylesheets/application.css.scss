@@ -15,38 +15,12 @@
  *= require pagination
  */
 
-$navbar-height: 60px;
-$navbar-margin-bottom: 0;
-$navbar-default-bg: #fff;
-$navbar-default-border: 0;
-$navbar-default-color: #000;
-$navbar-default-link-active-color: #ffffff;
-$navbar-default-link-hover-color: #ffffff;
-$navbar-default-link-active-bg: #48c1ff;
-$navbar-default-link-hover-bg: #48c1ff;
-$carousel-control-width: 5%;
-$carousel-indicator-active-bg: #ff9c49;
-$breadcrumb-bg: transparent;
-$breadcrumb-separator: ">";
-$breadcrumb-padding-vertical: 0;
-$breadcrumb-padding-horizontal: 0;
-$font-size-base: 13px;
-$link-hover-decoration: none;
-$font-family-sans-serif: "microsoft yahei", Helvetica, Arial, sans-serif;
-
-$font-size-up: 14px;
-
-$color-blue: #2577E3;
-$color-blue-light: #ECF4FC;
-$color-blue-light-hover: #92BBF0;
-$color-font-gray: #555;
-$color-bg-gray: #f3f3f3;
-$color-bg-gray-light: #F5F5F5;
-$color-orange: #FFB000;
-$color-orange-hover: #F79700;
+@import "variables";
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@import "bootstrap-extend";
 
 .blue {
 	color: $color-blue;

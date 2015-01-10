@@ -1,0 +1,10 @@
+@import "variables";
+
+.has-hover {
+	background: inherit;
+}
+.has-hover.hover,
+.has-hover:hover {
+	background: $color-blue-hover !important;
+}
+
