@@ -20,7 +20,7 @@
   <div class="row">
     <div class="col-md-9 hotel_list">
       <% @hotels.each_with_index do |hotel, index| %>
-        <div class="row has-hover">
+        <div class="row">
           <div class="col-xs-4 hotel_image">
             <%= link_to image_tag(hotel.cover_image.photo.url(:product), lazy: true), hotel if hotel.cover_image %>
           </div>
@@ -44,6 +44,46 @@
               <span class="price_color lead"><%= hotel.price %></span>
               <span class="price_color">元起</span>
             <% end %>
+          </div>
+          <div class="clearfix col-md-12 room-table">
+            <div class="row title">
+              <div class="col-xs-4 col-md-4">房型</div>
+              <div class="col-xs-2 col-md-2">床型</div>
+              <div class="col-xs-2 col-md-2">早餐</div>
+              <div class="col-xs-2 col-md-2">宽带</div>
+              <div class="col-xs-2 col-md-2">房价</div>
+            </div>
+            <div class="row info">
+              <div class="col-xs-4 col-md-4">单床房</div>
+              <div class="col-xs-2 col-md-2">单人床</div>
+              <div class="col-xs-2 col-md-2">单早</div>
+              <div class="col-xs-2 col-md-2 green">免费宽带</div>
+              <div class="col-xs-2 col-md-2 orange bold">￥5301</div>
+            </div>
+            <div class="row info">
+              <div class="col-xs-4 col-md-4">豪华大床房</div>
+              <div class="col-xs-2 col-md-2">单/双</div>
+              <div class="col-xs-2 col-md-2">双早</div>
+              <div class="col-xs-2 col-md-2 green">免费宽带</div>
+              <div class="col-xs-2 col-md-2 orange bold">￥5301</div>
+            </div>
+            <div class="row info vis">
+              <div class="col-xs-4 col-md-4">单床房</div>
+              <div class="col-xs-2 col-md-2">单人床</div>
+              <div class="col-xs-2 col-md-2">单早</div>
+              <div class="col-xs-2 col-md-2 green">免费宽带</div>
+              <div class="col-xs-2 col-md-2 orange bold">￥5301</div>
+            </div>
+            <div class="row info vis">
+              <div class="col-xs-4 col-md-4">单床房</div>
+              <div class="col-xs-2 col-md-2">单人床</div>
+              <div class="col-xs-2 col-md-2">单早</div>
+              <div class="col-xs-2 col-md-2 green">免费宽带</div>
+              <div class="col-xs-2 col-md-2 orange bold">￥5301</div>
+            </div>
+          </div>
+          <div class="clearfix col-md-12 text-right">
+            <a class="btn-room-more">查看更多<span class="caret"></span></a>
           </div>
         </div>
       <% end %>

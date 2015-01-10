@@ -38,3 +38,17 @@ $ ->
     },{
       lon: 106.720322, lat: 26.632736, content: "3"
     }])
+
+  if $(".btn-room-more").length > 0
+    $(".btn-room-more").click -> 
+      isShow = $(this).attr("isShow");
+      if isShow isnt "undefined" and isShow isnt "show"
+        $(this).parent().prev(".room-table").children(".info:gt(1)").slideDown(300)
+        $(this).addClass("dropup")
+        $(this).attr("isShow", "show")
+        $(this).html("收起<span class='caret'></span>")
+      else
+        $(this).parent().prev(".room-table").children(".info:gt(1)").slideUp(300)
+        $(this).removeClass("dropup")
+        $(this).attr("isShow", "hide")
+        $(this).html("查看更多<span class='caret'></span>")

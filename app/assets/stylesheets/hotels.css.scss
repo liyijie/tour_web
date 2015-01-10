@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "variables";
+@import "bootstrap";
+
 .hotel_list {
 	border: 1px solid #cacaca;
 	background: #fff;
@@ -30,9 +33,39 @@
 	p {
 		line-height: 1;
 	}
-	a {
-		color: #48c1ff;
-		text-decoration: none;
+	
+
+	.btn-room-more {
+		cursor: pointer;
+	}
+
+	.room-table {
+		clear: both;
+		margin-top: 5px;
+		.info,
+		.title {
+			margin: 0;
+			border-bottom: 1px solid $table-border-color;
+		}
+		.title {
+			padding: 9px 0 9px 0;
+			border-top: 1px solid $table-border-color;
+			background: $color-bg-gray;
+			color: $color-font-gray;	
+			font-weight: bold;
+		}
+		.info {
+			padding: 8px 0 8px 0;
+			.del {
+				color: $color-font-gray-light;
+				font-size: 12px;
+				text-decoration: line-through;
+				font-family: Tahoma,Simsun,sans-serif;
+			}
+		}
+		.info.vis {
+			display: none;
+		}
 	}
 }
 

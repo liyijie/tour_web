@@ -42,6 +42,9 @@
 .orange {
 	color: $color-orange-hover;
 }
+.green {
+	color: $color-green;
+}
 
 .gray-light {
 	color: $color-font-gray-light !important;
@@ -64,7 +67,7 @@
 		border-top: 2px solid transparent;
 		background: transparent !important;
 	}
-	li a:hover, li a:active, li.active a {
+	li a:hover, li a:active, li.active a, li.active a:hover {
 		color: $color-blue;
 		border-top: 2px solid #FFA024;
 		background: #fff !important;
