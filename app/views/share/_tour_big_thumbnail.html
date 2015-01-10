@@ -1,0 +1,15 @@
+<div class="tour-thumbnail tour-big-thumbnail">
+  <div class="thumbnail">
+    <%= link_to image_tag(tour.cover_image.photo.url(:product)), tour if tour.cover_image %>
+    <div class="caption">
+      <div class="row">
+        <div class="col-xs-7">
+          <div class="title pull-left"><%= link_to truncate(tour.title*5, length: 16, omission: ''), tour %></div>
+        </div>
+        <div class="col-xs-5">
+          <div class="pull-right">¥<span class="c_price">4420</span>起</div>    
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>

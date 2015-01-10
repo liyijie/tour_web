@@ -19,24 +19,6 @@
     <%= render_breadcrumbs :tag => :li, :separator => "" %>
   </ol>
   <div class="row">
-    <div class="col-md-10">
-      <div class="row">
-        <div class="col-md-4 padding-5">
-          <%= render partial: "share/tour_big_thumbnail", locals: {tour: @tour} %>
-        </div>
-        <div class="col-md-8 no-space">
-          <% 2.times do %>
-            <!-- <div class="row"> -->
-              <% 3.times do %>
-                <div class="col-lg-4 col-md-6 padding-5"><%= render partial: "share/tour_thumbnail", locals: {tour: @tour} %></div>
-              <% end %>
-            <!-- </div> -->
-          <% end %>
-        </div>
-      </div>    
-    </div>
-  </div>
-  <div class="row">
     <div class="col-md-4 hotel_media">
       <div class="media bg-gray">
         <%= link_to image_tag(@tour.cover_image.photo(:small)), @tour, class: "media-left" %>

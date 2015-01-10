@@ -40,8 +40,27 @@
   </div>
 </div>
 
-<div class="container index-theme">
-  <div class="title_line">精品主题</div>
+<div class="container">
+  <div class="title_line">热门景点</div>
+
+
+  <div class="row">
+    <div class="col-lg-9 col-md-8">
+      <div class="row">
+        <div class="col-lg-4 col-md-5 padding-5">
+          <%= render partial: "share/tour_big_thumbnail", locals: {tour: @tours[0]} if @tours[0] %>
+        </div>
+        <div class="col-lg-8 col-md-7 no-space">
+          <% (1..2).each do |row_index| %>
+              <% (1..3).each do |col_index| %>
+                <% tour = @tours[row_index*col_index] %>
+                <div class="col-lg-4 col-md-6 padding-5"><%= render partial: "share/tour_thumbnail", locals: {tour: tour} if tour %></div>
+              <% end %>  
+          <% end %>
+        </div>
+      </div>    
+    </div>
+  </div>
   
   <% @categories.each_with_index do |category, index| %>
     <%= raw '<div class="row">' if index % 2 == 0 %>
