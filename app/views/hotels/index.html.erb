@@ -1,3 +1,15 @@
+<% content_for :heads do %>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW" data-turbolinks-track="true" ></script>
+  <script type="text/javascript" src="/assets/map.js" data-turbolinks-track="true" ></script>
+<% end %>
+
+<% content_for :scripts do %>
+  <%= javascript_tag do %>
+    city = "<%= @city.name %>"
+  <% end %>
+  <%= javascript_include_tag "hotels", 'data-turbolinks-track' => true %>
+<% end %>
+
 <div class="row top-image">
   <%= image_tag "hotel_title_bg.png", lazy: true %>
 </div>
@@ -40,6 +52,8 @@
       </div>
     </div>
     <div class="col-md-3 hidden-sm hidden-xs">
+      <div id="hotel-list-map" class="col-md-12">
+      </div>
       <div class="col-md-12 hotel_tours">
         <%= render partial: "share/relate_tours" %>  
       </div>
