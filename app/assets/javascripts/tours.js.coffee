@@ -2,7 +2,7 @@ $ ->
 
   if $("#tour-list-map").length > 0
     mapView = $("#tour-list-map").map({
-      city: city
+      city: city,
       navigation: {
         type: BMAP_NAVIGATION_CONTROL_ZOOM
       }
@@ -16,13 +16,23 @@ $ ->
     }])
 
   if $("#bmap").length > 0
-    map = new BMap.Map("bmap");
-    map.disableScrollWheelZoom();
-    map.addControl(new BMap.NavigationControl());
-    map.addControl(new BMap.PanoramaControl());
-    myGeo = new BMap.Geocoder();
-    myGeo.getPoint(tour_addr, (point)->
-      if (point)
-        map.centerAndZoom(point, 16);
-        map.addOverlay(new BMap.Marker(point));
-    , city);
+    mapView = $("#bmap").map({
+      city: city,
+      height: "400px"
+    })
+    mapView.Geocoder.getPoint(city, tour_addr, (point) -> 
+      if(point) 
+        mapView._map.centerAndZoom(point, 16)
+        mapView.addOverlay(new BMap.Marker(point))
+    );
+
+    # map = new BMap.Map("bmap");
+    # map.disableScrollWheelZoom();
+    # map.addControl(new BMap.NavigationControl());
+    # map.addControl(new BMap.PanoramaControl());
+    # myGeo = new BMap.Geocoder();
+    # myGeo.getPoint(tour_addr, (point)->
+    #   if (point)
+    #     map.centerAndZoom(point, 16);
+    #     map.addOverlay(new BMap.Marker(point));
+    # , city);
