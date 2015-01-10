@@ -44,8 +44,10 @@ $ ->
         $(this).parent().prev(".ticket-table").children(".info:gt(1)").slideDown(300)
         $(this).addClass("dropup")
         $(this).attr("isShow", "show")
+        $(this).html("收起<span class='caret'></span>")
       else
         $(this).parent().prev(".ticket-table").children(".info:gt(1)").slideUp(300)
         $(this).removeClass("dropup")
         $(this).attr("isShow", "hide")
+        $(this).html("查看更多<span class='caret'></span>")
 

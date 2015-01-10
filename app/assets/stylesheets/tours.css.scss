@@ -25,9 +25,6 @@
 	img {
 		width: 100%;
 	}
-	table {
-		margin-top: 5px;
-	}
 	.btn-ticket-more {
 		cursor: pointer;
 	}
@@ -49,6 +46,12 @@
 		}
 		.info {
 			padding: 8px 0 8px 0;
+			.del {
+				color: $color-font-gray-light;
+				font-size: 12px;
+				text-decoration: line-through;
+				font-family: Tahoma,Simsun,sans-serif;
+			}
 		}
 		.info.vis {
 			display: none;
