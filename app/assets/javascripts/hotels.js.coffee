@@ -17,7 +17,7 @@ $ ->
       city: city,
       height: "400px"
     })
-    mapView.Geocoder.getPoint(city, tour_addr, (point) -> 
+    mapView.Geocoder.getPoint(city, hotel_addr, (point) -> 
       if(point) 
         mapView._map.centerAndZoom(point, 16)
         mapView.addOverlay(new BMap.Marker(point))

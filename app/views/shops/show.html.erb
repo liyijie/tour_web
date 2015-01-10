@@ -1,9 +1,15 @@
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW"></script>
-<script type="text/javascript">
-  var map = new BMap.Map("bmap");
-  map.disableScrollWheelZoom();
-  map.centerAndZoom("<%= city.name %>", 15);
-</script>
+<% content_for :heads do %>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wBIWFAbfDRVkW0Hnsd5UGmlW" data-turbolinks-track="true" ></script>
+  <script type="text/javascript" src="/assets/map.js" data-turbolinks-track="true" ></script>
+<% end %>
+
+<% content_for :scripts do %>
+  <%= javascript_tag do %>
+    city = "<%= @city.name %>"
+    shop_addr = "<%= @shop.addr %>"
+  <% end %>
+  <%= javascript_include_tag "shops", 'data-turbolinks-track' => true %>
+<% end %>
 
 <div class="row top-image">
   <%= image_tag "food_title_bg.jpg", lazy: true %>
