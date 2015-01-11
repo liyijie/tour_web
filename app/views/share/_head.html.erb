@@ -24,9 +24,13 @@
 <div class="container-fluid bg-blue">
   <div class="container">
     <ul class="nav nav-tabs menu-top" role="tablist">
-      <li role="presentation" class="active"><a href="#">首页</a></li>
-      <li role="presentation"><a href="#">贵阳</a></li>
-      <li role="presentation"><a href="#">遵义</a></li>
+      <li  class="active"><a href="#">首页</a></li>
+      <% cities = City.all %>
+      <% cities.each do |city| %>
+        <li role="presentation">
+          <%= link_to(city.name, city) %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>
