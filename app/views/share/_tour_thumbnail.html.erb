@@ -7,7 +7,13 @@
           <div class="title pull-left"><%= link_to truncate(tour.title, length: 12, omission: ''), tour %></div>
         </div>
         <div class="col-xs-5">
-          <div class="pull-right">¥<span class="c_price">4420</span>起</div>    
+          <div class="pull-right">
+            <% if tour.price.blank? %>
+              <span class="price_color">暂缺</span>
+            <% else %>
+              ¥<span class="c_price"><%= tour.price %></span>起
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
