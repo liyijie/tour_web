@@ -130,6 +130,9 @@
 	 			} else {
 	 				$view.height(settings.height);
 	 			}
+	 			if(settings.style !== undefined && settings.style.length > 0) {
+	 				$view.css(settings.style);
+	 			}
 	 		},
 
 
@@ -166,6 +169,9 @@
 
 			// 高度，如果为auto则和宽度成正比例
 			height: "auto",
+
+			// 样式, 默认无
+			// style: {},
 
 			// 初始化城市
 			city: undefined,
