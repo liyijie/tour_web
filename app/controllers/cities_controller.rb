@@ -86,6 +86,6 @@ class CitiesController < ApplicationController
     end
 
     def set_mode
-      @mode = @city.name
+      # @mode = @city.name
     end
 end

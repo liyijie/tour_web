@@ -91,6 +91,6 @@ class ToursController < ApplicationController
     end
 
     def set_mode
-      @mode = @tour.city.name
+      # @mode = @tour.city.name
     end
 end
