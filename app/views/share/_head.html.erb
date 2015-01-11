@@ -21,13 +21,13 @@
     </ul>
   </div>
 </nav>
-<div class="container-fluid bg-blue">
+<div class="container-fluid bg-blue head-bar">
   <div class="container">
     <ul class="nav nav-tabs menu-top" role="tablist">
-      <li  class="active"><a href="#">首页</a></li>
+      <li class=<%= "active" if @mode.blank? %> ><%= link_to "首页", root_path %></li>
       <% cities = City.all %>
       <% cities.each do |city| %>
-        <li role="presentation">
+        <li role="presentation" class=<%= "active" if @mode == city.name %> >
           <%= link_to(city.name, city) %>
         </li>
       <% end %>

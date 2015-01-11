@@ -85,6 +85,6 @@ class HotelsController < ApplicationController
     end
 
     def set_mode
-      @mode = "city"
+      @mode = @hotel.city.name
     end
 end
