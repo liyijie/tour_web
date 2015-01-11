@@ -340,16 +340,16 @@ dl.explain {
 
 // spacing
 .no-space {
-	margin: 0px;
-	padding: 0px;
+	margin: 0px !important;
+	padding: 0px !important;
 }
 
 .padding-3 {
-	padding: 3px;
+	padding: 3px !important;;
 }
 
 .padding-5 {
-	padding: 5px;
+	padding: 5px !important;;
 }
 
 .relates {
