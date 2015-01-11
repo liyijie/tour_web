@@ -43,20 +43,42 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-9 col-md-8">
-      <div class="home_title">热门景点<span class="caret"></span></div>
+      <!-- 热门景点 -->
       <div class="row">
+        <div class="home_title">热门景点<span class="caret"></span></div>
         <div class="col-lg-4 col-md-5 tour-big">
           <%= render partial: "share/tour_big_thumbnail", locals: {tour: @tours[0]} if @tours[0] %>
         </div>
         <div class="col-lg-8 col-md-7 no-space">
           <% (1..2).each do |row_index| %>
               <% (1..3).each do |col_index| %>
-                <% tour = @tours[row_index*col_index] %>
-                <div class="col-lg-4 col-md-6 padding-5"><%= render partial: "share/tour_thumbnail", locals: {tour: tour} if tour %></div>
+                <% index = row_index * col_index %>
+                <% tour = @tours[index] %>
+                <div class="col-lg-4 col-md-6 padding-5 <%= 'hidden-xs hidden-sm hidden-md' if index > 3 %>"><%= render partial: "share/tour_thumbnail", locals: {tour: tour} if tour %></div>
               <% end %>  
           <% end %>
         </div>
       </div>    
+
+      <!-- 精品酒店 -->
+      <div class="row">
+        <div class="home_title">精品酒店<span class="caret"></span></div>
+        <% @hotels.each do |hotel| %>
+          <div class="col-md-6 no-space">
+            <%= render partial: "share/hotel_media", locals: {hotel: hotel} %>
+          </div>
+        <% end %>
+      </div>
+
+      <!-- 热门城市 -->
+      <div class="row">
+        <div class="home_title">热门城市<span class="caret"></span></div>
+        <% @cities.each_with_index do |city, index| %>
+          <div class="col-lg-4 col-md-6 no-space">
+            <%= render partial: "share/city_media", locals: {city: city} %>
+          </div>
+        <% end %>
+      </div>
     </div>
     <div class="col-lg-3 col-md-4">
       <h4>促销特惠</h4>
@@ -70,19 +92,6 @@
   </div>
 </div>
 <div class="container index-theme">
-  <div class="title_line">热门城市</div>
-  <% @cities.each_with_index do |city, index| %>
-    <%= raw '<div class="row">' if index % 3 == 0 %>
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <%= link_to image_tag(city.cover_image.photo.url), city, lazy: true %>
-          <div class="caption">
-            <!-- <p><%= city.desc %></p> -->
-            <%= truncate_html(city.desc, length: 80, omission: '...') %>
-          </div>
-        </div>
-      </div>
-    <%= raw '</div>' if index % 3 == 2 %>
-  <% end %>
+  
 </div>
 
