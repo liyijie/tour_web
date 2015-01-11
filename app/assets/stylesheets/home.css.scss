@@ -2,11 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+@import "variables";
 
 #carousel-generic .carousel-inner .item img {
 	width: 100%;
 	max-height: 190px;
+}
+
+.home_title {
+	font-weight: bold;
+	font-size: 16px;
+	padding-bottom: 5px;
+	color: $color-blue;
+	border: 0px;
+	border-bottom: 2px solid $color-blue;
+	margin-bottom: 5px;
 }
 
 

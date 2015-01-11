@@ -41,13 +41,11 @@
 </div>
 
 <div class="container">
-  <div class="title_line">热门景点</div>
-
-
   <div class="row">
     <div class="col-lg-9 col-md-8">
+      <div class="home_title">热门景点<span class="caret clearfix"></span></div>
       <div class="row">
-        <div class="col-lg-4 col-md-5 padding-5">
+        <div class="col-lg-4 col-md-5 tour-big">
           <%= render partial: "share/tour_big_thumbnail", locals: {tour: @tours[0]} if @tours[0] %>
         </div>
         <div class="col-lg-8 col-md-7 no-space">
