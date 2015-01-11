@@ -43,7 +43,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-9 col-md-8">
-      <div class="home_title">热门景点<span class="caret clearfix"></span></div>
+      <div class="home_title">热门景点<span class="caret"></span></div>
       <div class="row">
         <div class="col-lg-4 col-md-5 tour-big">
           <%= render partial: "share/tour_big_thumbnail", locals: {tour: @tours[0]} if @tours[0] %>
@@ -58,17 +58,16 @@
         </div>
       </div>    
     </div>
+    <div class="col-lg-3 col-md-4">
+      <h4>促销特惠</h4>
+      <%= image_tag "ad1.jpg", class: "ad-image" %>
+      <%= image_tag "ad2.jpg", class: "ad-image" %>
+      <%= image_tag "ad3.jpg", class: "ad-image" %>
+      <%= image_tag "ad4.jpg", class: "ad-image" %>
+      <%= image_tag "ad5.jpg", class: "ad-image" %>
+      <%= image_tag "ad6.jpg", class: "ad-image" %>
+    </div>
   </div>
-  
-  <% @categories.each_with_index do |category, index| %>
-    <%= raw '<div class="row">' if index % 2 == 0 %>
-      <div class="col-md-6">
-        <div class="box">
-          <%= link_to image_tag(category.cover_image.photo.url), category, class: "default" %>
-        </div>
-      </div>
-    <%= raw '</div>' if index % 2 == 1 %>
-  <% end %>
 </div>
 <div class="container index-theme">
   <div class="title_line">热门城市</div>

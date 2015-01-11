@@ -19,6 +19,15 @@
 	margin-bottom: 5px;
 }
 
+.ad-image {
+	width: 100%;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+.ad-image:hover {
+	border: 1px solid $color-orange !important;
+}
+
 
 .index-theme {
 	.title_line	{
