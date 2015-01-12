@@ -4,7 +4,7 @@
 <div class="container city">
 	<div class="title_line">城市介绍</div>
 	<div class="row info">
-    <div class="col-md-4">
+    <div class="city_images col-lg-4 col-md-5 hidden-sm hidden-xs">
       <div class="row">
         <% unless @info_images.blank? %>    
         <div class="col-md-6">
@@ -25,7 +25,7 @@
         </div>
         <% end %></div>
     </div>
-		<div class="col-md-8">
+		<div class="city_info col-lg-8 col-md-7">
         <div class="row">
           <%= @city.desc.html_safe if @city.desc %>
           <div class="clearfix">
