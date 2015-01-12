@@ -1,6 +1,5 @@
 class CitiesController < ApplicationController
   before_action :set_city, only: [:show, :edit, :update, :destroy, :info]
-  before_action :set_mode
   
   # GET /cities
   # GET /cities.json
@@ -10,6 +9,7 @@ class CitiesController < ApplicationController
 
   def info
     @weather = Weather.new(@city).sina_weather
+    @mode = @city.name
 
     add_breadcrumb "首页", :root_path
     add_breadcrumb @city.name, @city
@@ -23,6 +23,7 @@ class CitiesController < ApplicationController
     @tours = @city.tours.limit(6)
     @hotels = @city.hotels.limit(4)
     @shops = @city.shops.limit(4)
+    @mode = @city.name
   end
 
   # GET /cities/new
@@ -83,9 +84,5 @@ class CitiesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def city_params
       params[:city]
-    end
-
-    def set_mode
-      # @mode = @city.name
     end
 end

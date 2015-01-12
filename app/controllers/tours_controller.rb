@@ -1,6 +1,5 @@
 class ToursController < ApplicationController
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
-  before_action :set_mode
 
   # GET /tours
   # GET /tours.json
@@ -8,6 +7,7 @@ class ToursController < ApplicationController
     @city = City.find(params[:city_id])
     @tours = @city.tours.paginate(page: params[:page], per_page: 10)
     @relate_hotels = Hotel.relates @tours[0] if @tours[0]
+    @mode = @city.name
 
     add_breadcrumb "首页", :root_path
     add_breadcrumb @city.name, @city
@@ -19,6 +19,7 @@ class ToursController < ApplicationController
   def show
     @city = @tour.city
     @relate_hotels = Hotel.relates @tour
+    @mode = @city.name
 
     add_breadcrumb "首页", :root_path
     add_breadcrumb @city.name, @city
@@ -88,9 +89,5 @@ class ToursController < ApplicationController
         tickets_attributes: [:id, :title, :style, :desc, :price, :_destroy],
         images_attributes: [:id, :photo, :_destroy],
         )
-    end
-
-    def set_mode
-      # @mode = @tour.city.name
     end
 end

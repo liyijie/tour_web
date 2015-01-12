@@ -1,6 +1,5 @@
 class HotelsController < ApplicationController
   before_action :set_hotel, only: [:show, :edit, :update, :destroy]
-  before_action :set_mode
 
   # GET /hotels
   # GET /hotels.json
@@ -8,6 +7,7 @@ class HotelsController < ApplicationController
     @city = City.find(params[:city_id])
     @hotels = @city.hotels.paginate(page: params[:page], per_page: 10)
     @relate_tours = Tour.relates @hotels[0]
+    @mode = @city.name
 
     add_breadcrumb "首页", :root_path
     add_breadcrumb @city.name, @city
@@ -18,6 +18,7 @@ class HotelsController < ApplicationController
   # GET /hotels/1.json
   def show
     @city = @hotel.city
+    @mode = @city.name
     add_breadcrumb "首页", :root_path
     add_breadcrumb @city.name, @city
     add_breadcrumb "酒店列表", city_hotels_path(@city)
@@ -82,9 +83,5 @@ class HotelsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def hotel_params
       params[:hotel]
-    end
-
-    def set_mode
-      # @mode = @hotel.city.name
     end
 end
