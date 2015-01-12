@@ -2,7 +2,7 @@
   <div class="thumbnail">
     <%= link_to image_tag(city.cover_image.photo.url), city, lazy: true %>
     <div class="caption">
-      <%= truncate_html(city.desc, length: 40, omission: '...') %>
+      <%= truncate_html(city.desc, length: 60, omission: '...') %>
     </div>
   </div>
 </div>

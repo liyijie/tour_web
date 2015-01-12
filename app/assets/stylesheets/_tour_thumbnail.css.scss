@@ -4,6 +4,7 @@
 }
 
 .tour-thumbnail {
+
   .thumbnail {
     padding: 0px;
     margin-bottom: 0px;
@@ -22,7 +23,11 @@
       color: #06c;
     }
   }
+  .caption:hover {
+    background: #e2eeff;
+  }
 }
+
 .tour-big {
   padding: 5px 5px 5px 15px !important;
 }

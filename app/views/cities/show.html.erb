@@ -27,7 +27,7 @@
     </div>
 		<div class="city_info col-lg-8 col-md-7">
         <div class="row">
-          <%= @city.desc.html_safe if @city.desc %>
+          <%= truncate_html(@city.desc, length:600, ommission: '...') if @city.desc %>
           <div class="clearfix">
             <%= link_to ("更多详情" + content_tag(:span, "", class: "glyphicon glyphicon-expand", "aria-hidden" => true)).html_safe , info_city_path(@city) %>
           </div>

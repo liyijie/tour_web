@@ -54,7 +54,7 @@
               <% (1..3).each do |col_index| %>
                 <% index = row_index * col_index %>
                 <% tour = @tours[index] %>
-                <div class="col-lg-4 col-md-6 padding-5 <%= 'hidden-xs hidden-sm hidden-md' if index > 3 %>"><%= render partial: "share/tour_thumbnail", locals: {tour: tour} if tour %></div>
+                <div class="col-lg-4 col-xs-6 padding-5 <%= 'hidden-xs hidden-sm hidden-md' if index > 3 %>"><%= render partial: "share/tour_thumbnail", locals: {tour: tour} if tour %></div>
               <% end %>  
           <% end %>
         </div>
@@ -80,7 +80,7 @@
         <% end %>
       </div>
     </div>
-    <div class="col-lg-3 col-md-4">
+    <div class="col-lg-3 col-md-4 hidden-sm hidden-xs">
       <h4>促销特惠</h4>
       <%= image_tag "ad1.jpg", class: "ad-image" %>
       <%= image_tag "ad2.jpg", class: "ad-image" %>
